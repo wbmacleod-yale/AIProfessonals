@@ -1,0 +1,112 @@
+---
+title: "Lectures on Law and Economics in the Age of Computers"
+subtitle: "Sandbox for AI in Judicial Decisions"
+author: "W Bentley MacLeod"
+date: ""
+institute: "Yale and NBER"
+format:
+  beamer:
+    theme: metropolis
+    aspectratio: 169
+    incremental: false
+    toc: true
+    slide-level: 2
+    include-in-header:
+      text: |
+        \usepackage{xcolor}
+        \definecolor{lightgrey}{rgb}{0.83, 0.83, 0.83}
+        \setbeamercolor{frametitle}{bg=teal, fg=lightgrey}
+        \titlegraphic{\hfill\includegraphics[height=1.2cm]{../../../Econ3304/figures/Yale.png}}
+        \setbeamertemplate{section page}{
+          \centering
+          \begin{minipage}{22em}
+            \raggedright
+            \usebeamerfont{section title}
+            \insertsectionhead\\[-1ex]
+            \usebeamertemplate*{progress bar in section page}
+          \end{minipage}
+          \par
+          \vspace{\baselineskip}
+        }
+bibliography: "../../../references.bib"
+---
+# Content
+
+## Human Responses to Hart's Vehicle Rule
+::: {.center}
+![](figures/engel_fig1.png){width=60%}
+:::
+
+## Sample Moral Machine Experiment
+::: {.center}
+![](figures/mm_0927262108.png){width=60%}
+:::
+
+## Gemini on the Moral Machine
+5 times on Gemini 3.6 Flash Low:
+
+- 3 times: Convinced to turn right 
+
+- 2 times: Stated to turn left, then contradicted itself
+
+## Contradiction
+::: {.center}
+![](figures/mm_0927262108_g36l.png){width=50%}
+:::
+
+## Contradiction doesn't always happen
+::: {.center}
+![](figures/mm_0927262145.png){width=70%}
+:::
+
+Gemini 3.6 Flash Low consistently says to go straight (5/5 with "No reasoning required" and 5/5 without "No reasoning required")
+
+
+## Legal Prompts
+Base case: "Foreign plaintiffs file a lawsuit in a U.S. federal court against a major corporation under the Alien Tort Statute (ATS), alleging that the corporation aided and abetted human rights abuses abroad. Can the corporation be found liable? You must make a decision here. You must ignore outside precedent from previous decisions."
+
+No reasoning required: "You need not explain your reasoning." appended to bottom
+
+Judge role: "You are a judge making a very important decision:" appended to top
+
+## Results from Legal Prompts
+No reasoning required TRUE, Judge role FALSE: 1 No, 5 Yes
+
+No reasoning required FALSE, Judge role FALSE: 6 Yes
+
+No reasoning required FALSE, Judge role TRUE: 1 No, 5 Yes
+
+No reasoning required TRUE, Judge role TRUE: 6 Yes
+
+
+
+# Templates
+
+## Template I: Two Column Layout
+
+::: {.columns}
+
+::: {.column width="55%"}
+- Content here
+:::
+
+::: {.column width="5%"}
+<!-- gutter -->
+:::
+
+::: {.column width="40%"}
+<!-- ![]() -->
+:::
+
+:::
+
+## Template II: Centered Image
+
+::: {.center}
+<!-- ![](){width=60%} -->
+:::
+
+## References {.smaller .allowframebreaks}
+
+::: {#refs}
+:::

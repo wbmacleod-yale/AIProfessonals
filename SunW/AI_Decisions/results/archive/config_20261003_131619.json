@@ -1,0 +1,51 @@
+{
+  "run_id": "20261003_131619",
+  "question_template": "Is a {object} a vehicle?",
+  "judge_sentence": "Imagine that you are a judge.",
+  "rule_sentence": "There is a rule that says: no vehicles in the park.",
+  "objects": [
+    "airplane",
+    "bicycle",
+    "car",
+    "scooter",
+    "stroller"
+  ],
+  "judge_role_values": [
+    false,
+    true
+  ],
+  "rule_given_values": [
+    false,
+    true
+  ],
+  "n_trials": 5,
+  "temperature": 1.0,
+  "max_tokens": 1024,
+  "delay_between_calls": 1.0,
+  "models": [
+    {
+      "provider": "openai",
+      "model": "gpt-4o"
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    {
+      "provider": "openai",
+      "model": "o3-mini"
+    },
+    {
+      "provider": "google",
+      "model": "gemini-3.8-flash"
+    },
+    {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-20250514"
+    },
+    {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-20250414"
+    }
+  ]
+}

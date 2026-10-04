@@ -1,0 +1,8 @@
+provider,model,object,judge_role,rule_given,trial,prompt,decision,mentions_hart,response,timestamp,latency_seconds,input_tokens,output_tokens,error
+google,gemini-3.8-flash,airplane,False,False,1,Is a airplane a vehicle?,,,,2026-10-03T17:16:19.282253+00:00,10.316,,,"503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+google,gemini-3.8-flash,airplane,False,False,2,Is a airplane a vehicle?,1,False,"**Yes, an airplane is a vehicle.** 
+
+A vehicle is defined as any machine used to transport people or cargo from one place to another. Because airplanes transport passengers and goods through the air, they are classified as **aerial vehicles** (or aircraft).",2026-10-03T17:16:30.604709+00:00,30.998,7,52,
+google,gemini-3.8-flash,airplane,False,False,3,Is a airplane a vehicle?,1,False,"**Yes, an airplane is a vehicle.** 
+
+A vehicle is defined as any machine or means of transport used to carry people or cargo from one place to another. While people often think of land-based machines like cars and trucks when they hear the word, airplanes are classified as **aerial vehicles** (or aircraft).",2026-10-03T17:17:02.606498+00:00,5.068,7,65,

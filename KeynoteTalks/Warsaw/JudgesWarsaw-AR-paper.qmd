@@ -1,0 +1,328 @@
+---
+title: "Models for Professional Decision Making"
+subtitle: "*Annual Review of Economics*, 2026"
+author: "W Bentley MacLeod"
+institute: "Yale, Columbia, and NBER"
+date: "May 1, 2026, SOLE Conference, Denver, CO"
+bibliography: ../../references.bib
+link-citations: true
+format: beamer
+theme: metropolis
+slide-level: 2
+toc: true
+themeoptions: ["progressbar=foot"]
+include-in-header: { text: '\titlegraphic{\includegraphics[height=0.8cm]{figures/Yale.png}} \setbeamertemplate{section page}{\centering \vfill \begin{beamercolorbox}[sep=16pt,center]{part title}\usebeamerfont{section title}\insertsection\par \end{beamercolorbox}\vfill}' }
+---
+
+# Introduction
+
+## Introduction
+
+-   The lecture discusses the types of models used in economics, and how they can be applied to professional decision making with particular attention to legal and 
+medical decisions. 
+
+-   Judges and physicians are among the oldest and most important professions in civil society.
+
+-   Google Gemini estimates that losing judges would reduce output by 30% to 50%, while losing physicians would reduce output by 50% to 70%.
+
+-   In other words, modern society as we know it would be impossible without these two professions.
+
+-   We are currently witnessing a massive increase in the use of AI in both medical and judicial decision making --- it is a first-order question to ask how this will affect the performance of these professions.
+
+## Some Observations on AI Research
+
+-   The last 20 years have witnessed massive increases in AI research and products.
+
+-   A key goal of this research is the development of Artificial General Intelligence (AGI) --- systems that can perform a wide range of tasks at human levels.
+
+-   An interesting feature of this work is that for the most part it has developed independently of work in economics (see @Gans2024 for recent work on the economics of AI).
+
+-   This paper explores the question of how to integrate AI into an economic model of decision making.
+
+## Some Useful AI Reviews
+
+-   @Mitchell2019 is a great introduction to the field of AI.
+
+-   @Christian2020 discusses the alignment problem in AI --- this problem is identical to the economics of agency --- how does one align the preferences of different agents (AI or persons).
+
+-   @Russell2024 provides a very clear account of decision making, and how AI systems are designed to make good decisions. His only comment on economics is that they should not be trusted to work on these hard problems alone!
+
+-   @Hao2025 provides an account of the negative externalities created by the AI industry worldwide on the environment and employment.
+
+# Price Theory
+
+# Agency Theory and Information Economics
+
+# Bounded Rationality and Decision Making in the Modern World
+
+# What is the Professional's Problem?
+
+## What is the Professional's Problem?
+
+-   Economics use both price theory and agency theory to make recommendations on how to "improve" professional performance.
+- Price theory:
+    - Doctors are incentivized not to use certain procedures or drugs because they fail cost benefit analysis.
+    - Law and economics (eg @Posner1973) recommends that damages be set to maximize economic efficiency.
+
+- Agency theory:
+    - Capitation and other forms of payments based upon Price theory is used to provide incentives for doctors and judges to act in the best interest of their clients.
+    - Both professions can be viewed as principal-client relationships.
+    - Price theory is used to provide incentives for dooBoth professions can be viewed as principal-client relationships.
+
+-   In the case of a judge, the public is the client who seeks a decision from the judge.
+
+-   In the case of a physician, the patient is the client who seeks medical advice.
+
+## What is a Professional
+
+There is a large literature in sociology that studies the professions, whose defining characteristics are stable over time. @{Wilensky1964Am.J.Sociol.} highlights the following features:
+
+1.  Professionals are delegated authority over decision-making by clients.
+
+2.  Professionals are expected to have preferences and values consistent with the values and norms set by the governing body for their profession.
+
+3.  Only other highly skilled professionals are competent to evaluate professional performance.
+
+## The Economics of Professionals
+
+-   It is assumed that the professional is informed and the client (patient or public) is not.
+
+-   In order to ensure truthful revelation of information the professional's compensation is typically independent of the outcome (@{AghionTirole1997J.Polit.Econ.} [@MacLeod2022AM]).
+
+-   There are two mechanisms to address the problem of moral hazard on the part of the professional:
+
+    -   The professional is a member of a professional organization that provides norms and values that the professional is expected to adopt.
+
+    -   Given that the advice is specialized, then only other professionals can evaluate the quality of the advice, and they do so through the process of peer review.
+
+## Judicial Norms Set by the American Bar Association
+
+-   CANON 1 A judge shall uphold the integrity and independence of the judiciary.
+
+-   CANON 2 A judge shall avoid impropriety and the appearance of impropriety in all of the judge's activities.
+
+-   CANON 3 A judge shall perform the duties of judicial office impartially and diligently.
+
+-   CANON 4 A judge shall so conduct the judge's extra-judicial activities as to minimize the risk of conflict with judicial obligations.
+
+-   CANON 5 A judge or judicial candidate shall refrain from inappropriate political activity.
+
+## Physician Norms Set by the American Medical Association
+
+> The practice of medicine, and its embodiment in the clinical encounter between a patient and a physician, is fundamentally a moral activity arising from the imperative to care for patients and to alleviate suffering. The relationship between a patient and a physician is based on trust. This gives rise to physicians' ethical responsibility to place patients' welfare above the physician's own self-interest or obligations to others, to use sound medical judgment on patients' behalf, and to advocate for their patients' welfare.
+
+# Framework for Analyzing Professional Decision Making
+
+## A Model of Professional Decision Making
+
+-   We introduce a simple model to illustrate the point that with uncertainty, there is not always a "best" choice, and hence AI systems necessarily encode values that may or may not be aligned with the agent.
+
+-   This can be illustrated with a simple binary model:
+
+    -   Client $i\in I$ seeks a service from a professional $j\in J$.
+
+    -   The client has an unobserved latent state $\omega_i\in\{L,H\}\equiv\Omega$, where $\omega_i=H$ denotes high need and $\omega_i=L$ denotes low need.
+
+    -   The ex ante probability the individual is high need is $p^H_{\omega}$, and $p^L_{\omega}=1-p^H_{\omega}$.
+
+    -   The professional's information is given by $\boldsymbol{x}_i\in\Re^n$, where $n$ may be large.
+
+    -   The professional chooses one of two actions, $d_{ij}\in\mathsf{D}=\{l,h\}$. The action $d_{ij}=h$ is the "intense" choice (appropriate for high-need clients), while $d_{ij}=l$ is the less intense choice (appropriate for low-need clients).
+
+    -   There are two potential outcomes: $q_{ij}\in\mathsf{Q}=\{g,b\}$, where $g$ is the good outcome and $b$ the bad outcome.
+
+    -   Rewards for the client are normalised so that $u_b=0$ and $u_g>0$.
+
+    -   The probability of a good outcome: $$
+              \Pr[g\mid\omega_i,d_{ij}]\in(0,1),\quad\text{for
+              }\omega_i\in\Omega,\;d_{ij}\in\mathsf{D}.$$
+
+## Payoffs
+
+$$\begin{aligned}
+      U_{ij} &=u_g \times  \sum_{\omega_i\in \{L,H\}, d_j \in \{l,h\}} \left\{
+      \Pr[g|\omega_i, d_j] \times \Pr[\omega_i,d_j] \right\}\\
+  &= u_g \times  \sum_{\omega_i\in\{L,H\}, d_j \in \{l,h\}}
+  \left\{p^g_{\omega_i,d_j} \times \Pr[d_j|\omega_i] \right\} \times
+  p^{\omega_i}_{\omega}   \\
+  &= u_g \times 
+  \begin{pmatrix}   \{ p^g_{H,h} \Pr[d_j=h|\omega_i=H] + p^g_{H,l}
+  (1-\Pr[d_j=h|\omega_i=H])\}p_{\omega}^H \\
+  +  \{ p^g_{L,h} \Pr[d_j=h|\omega_i=L]
+  +p^g_{L,l} (1-\Pr[d_j=h|\omega_i=L])\}p_{\omega}^L 
+  \end{pmatrix} \\
+  &= u_g \times 
+  \begin{pmatrix}
+  \{ (p^g_{H,h}-p^g_{H,l}) TPR_j +
+  p^g_{H,l} \}p_{\omega}^H \\
+  -  \{ (p^g_{L,l}-p^g_{L,h}) FPR_j - p^g_{L,h} \}p_{\omega}^L
+  \end{pmatrix} 
+\end{aligned}$$
+
+## Return to Making the Right Choice for Each Type
+
+-   When the client type is $H$, the gain from choosing $d_{ij}=h$ relative to $d_{ij}=l$ is denoted $\Delta^H>0$.
+
+-   When the client type is $L$, the gain from choosing $d_{ij}=l$ rather than $d_{ij}=h$ is denoted $\Delta^L>0$.
+
+-   Thus: $$\begin{aligned}
+              \Delta^H &= u_g\big(\Pr[g\mid\omega_i=H,d_{ij}=h]-\Pr[g\mid\omega_i=H,d_{ij}=l]\big),\\
+              \Delta^L &= u_g\big(\Pr[g\mid\omega_i=L,d_{ij}=l]-\Pr[g\mid\omega_i=L,d_{ij}=h]\big).
+    \end{aligned}$$
+
+# The Decision Rule
+
+## The Signal
+
+-   The information in $\boldsymbol{x}_i$ is assumed to produce a one-dimensional signal, $s_{ij} = \Omega_j(\boldsymbol{x}_i)$.
+
+-   It summarises the information regarding the latent type of the client, characterised by type-dependent distribution functions, $f_j^L(s)$ for $\omega_i=L$ and $f_j^H(s)$ for $\omega_i=H$ with the following properties:
+
+    1.  The full support condition - all signals are possible: $$f_j^{\omega_i}(s)>0 \text{ for all } s \in \Re, \omega_i\in\{L,H\}.$$
+
+    2.  The monotone likelihood ratio condition - higher $s$ implies a higher likelihood of intense need: $$l_j(s) \equiv \frac{f_j^H(s)}{f_j^L(s)} \text{ is continuous and strictly increasing for } s\in\Re.$$
+
+## The Decision Rule
+
+-   The optimal rule takes the form: $$d_{ij} = \left\{ \begin{matrix} h, & \text{if } s_{ij} \geq \sigma_j, \\
+            l, &\text{if } s_{ij} < \sigma_j. \end{matrix} \right.$$
+
+-   Given this rule, one can define the professional's two performance measures as a function of their decision rule: $$\begin{aligned}
+            \text{true positive rate}=\Pr[s_{ij} \geq
+            \sigma_j|\omega_i=H] = G_{Hj}(\sigma_j)\equiv \int_{\sigma_j}^{\infty} f_j^H(s)ds \\
+            \text{false positive rate}=\Pr[s_{ij} \geq
+            \sigma_j|\omega_i=L]= G_{Lj}(\sigma_j) \equiv \int_{\sigma_j}^{\infty} f_j^L(s)ds
+    \end{aligned}$$
+
+## The Receiver Operating Characteristic Curve
+
+-   The full-support and monotone-likelihood conditions imply that the performance measures are continuous and decreasing in $\sigma_j$, and that $$G_{Hj}(\sigma_j) > G_{Lj}(\sigma_j) \quad\text{for all } \sigma_j \in \Re.$$
+
+-   Since these functions are both decreasing in $\sigma_j$, a decrease in $\sigma_j$ increases *both* the $TPR_j$ and $FPR_j$.
+
+-   If the professional could perfectly observe the type of client, then one would have the efficient solution, $TPR_j=1$ and $FPR_j=0$.
+
+-   For professional $j$ the ROC is the set $$\{(G_{Lj}(\sigma_j),G_{Hj}(\sigma_j)) : \sigma_j\in\Re\}.$$
+
+-   Define the skill function $S_j$ by: $$S_j(FPR) \equiv G_{Hj}(G_{Lj}^{-1}(FPR)),$$
+
+## Skill (ROC) Curves for Professionals with Pareto Ranked Skills
+
+![image](figures/ROC-1.pdf){width="3.5in"}
+
+Choose FPR to maximise $U_{ij}$: $$U_j(FPR_j)  = \Delta^H \times S_j(FPR_j) \times p^H_{\omega}
+- \Delta^L \times FPR_j \times p^L_{\omega} $$
+
+## Optimal Decision Rule
+
+::: {#prop:opt .prop}
+**Proposition 1**.  * Suppose $FPR^*_j \in (0,1)$ is the optimal choice for professional $j$, then: $$
+L_j (FPR^*_j) = \frac{\Delta^L \times p^L_{\omega}}{\Delta^H \times  p^H_{\omega}}$$ where $$L_j(FPR) = \frac{f^H\big(G^{-1}_{Lj}(FPR)\big)}{f^L\big(G^{-1}_{Lj}(FPR)\big)}$$ is the likelihood ratio associated with $FPR^*_j$. The professional's decision function can be written as follows: $$
+    D_j(\boldsymbol{x}_i) = \begin{cases}
+        h, & \text{if } \Omega_j(\boldsymbol{x}_i) \geq G_{Lj}^{-1}(FPR^*_j), \\
+        l, & \text{otherwise.}
+    \end{cases}$$*
+:::
+
+## Summary on Slow Decision Making
+
+-   We have evidence that both judges (@DobbieCioldinYang2018AER, @AshMacLeodAm.Econ.J.Econ.Policy) and physicians (@CurrieMacLeodMusen2025) vary in skill.
+
+-   In particular, the optimal decision is context dependent, and hence reliant on the *judgment* of the professional.
+
+-   In terms of the @KleinbergLakkarajuLeskovecEtAl2018TQJE framework, if the AI provides a point estimate, this may not necessarily be optimal for a particular patient --- their personal preferences matter when there is uncertainty.
+
+## How can AI Help?
+
+-   @KleinbergLakkarajuLeskovecEtAl2018TQJE observe that AI can be used to help professionals make better decisions by providing them with more information.
+
+-   Specifically: $$\text{Data }(\boldsymbol{x}_i \in X)
+    \rightarrow \text{Prediction } (\omega_i \in \{L,H\})
+    \rightarrow \text{Decision } (d_{ij} \in \mathsf{D}_j) $$
+
+## What is the Prediction
+
+-   In many cases the AI system can provide a point estimate of the probability that the client is high need, $p^H_{ij}$.
+
+-   The Bayes-optimal choice is to set $d_{ij} = h$ if and only if $p_{ij}>0.5$.
+
+-   This rule does not take into account the values of the client, and hence may not be optimal for a particular client.
+
+-   One could provide this probabilistic information to the decision maker.
+
+-   However there is evidence that such information is not used effectively by the professional (see @AgarwalMoehringRajpurkar2023 for evidence in the medical context and @StevensonDoleac2024Am.Econ.J.Econ.Policy).
+
+## What about fast decision making?
+
+-   There are many cases where the professional must make a fast decision, and they can do so competently.
+
+-   AI is only useful when the decision maker is uncertain.
+
+-   In the absence of AI, how should we think about decision making?
+
+# Fast Decisions and the Role of Uncertainty
+
+## Fast Perception/Categorization
+
+-   In general, it is not possible for individuals to explore all the consequences of their decisions.
+
+-   Rather, as @Churchland-Sejnowski1993CB note, individuals use a "lookup table" to make decisions --- they place cases into a small number of categories and then choose an action based on the category.
+
+-   Fast decision making entails putting the cases, given by $\boldsymbol{x}_i$, into a small number of categories (see @Kahneman2011TFS for a literature review).
+
+## Choice Categories
+
+-   For this binary choice model we can put cases into three categories, where confidence can be defined using statistical confidence intervals, such as the 95% confidence interval:
+
+    -   $X^H$ - cases where the professional is confident that the client is high need, and hence chooses $d_{ij}=h$.
+
+    -   $X^L$ - cases where the professional is confident that the client is low need, and hence chooses $d_{ij}=l$.
+
+    -   $X^U$ - cases where the professional is uncertain about the client's type, and hence must use their judgment.
+
+## Fast Decision Making and Uncertainty
+
+In contrast to slow decision making, fast decision making takes the form: $$\text{Data }(\boldsymbol{x}_i \in X) \rightarrow 
+            \text{Decision }(d_{ij}\in \mathsf{D}_j) $$
+
+-   The decision maker associates each category with a choice:
+
+    -   If $\boldsymbol{x}_i \in X^H$ then $d_{ij}=h$.
+
+    -   If $\boldsymbol{x}_i \in X^L$ then $d_{ij}=l$.
+
+    -   If $\boldsymbol{x}_i \in X^U$, then the professional chooses the guideline or default.
+
+-   When uncertain a guideline is useful - though parties can deviate from the guideline if their professional judgment suggests that the guideline is not appropriate for a particular case.
+
+## ROC Curves with Uncertainty: Evidence for Defaults
+
+<figure id="fig:ROC-2">
+<p><embed src="figures/ROC-3.pdf" style="width:3in" /> <span id="fig:ROC-2" label="fig:ROC-2"></span></p>
+</figure>
+
+# Discussion
+
+## Discussion
+
+-   When there is uncertainty regarding the outcome of a decision, point estimates generated by an AI system are not necessarily optimal.
+
+-   Optimal decision making entails taking into account the values held by the client.
+
+-   Since predicted outcomes depend upon the assessments of both the AI and the professional, ethical behavior is an essential feature of a professional.
+
+-   The market for professionals depends upon clients having *trust* in the professional and the values that the professional holds.
+
+## Research Questions
+
+-   Note that the issue here is different from the fairness problem in AI which is about selection and treatment of different groups (see @Christian2020).
+
+-   There is a growing literature in medicine on how to use AI to integrate the preferences of patients.
+
+-   There is a need for a similar discussion in the judicial context.
+
+-   From the evidence on professional societies we know that values are the basis for allocating decision rights for professions.
+
+-   The main implication of the current paper is to show that AGI is not sufficient for good decision making where there is uncertainty --- there is a need to have a discussion of AI values before we can delegate to AI decision rights.
+
+## References

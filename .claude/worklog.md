@@ -2,6 +2,16 @@
 
 Experiment-specific history migrated from `values_economics_law` on 2026-10-04.
 
+## 2026-10-04 - Publish AI experiments repository
+
+**Context / problem:** Establish a dedicated GitHub repository for the AI vehicle-classification experiments, separate from the course and book material.
+
+**Changes made:** Moved the experiment project to the `AIProfessonals` repository and pushed it to `git@github.com:wbmacleod-yale/AIProfessonals.git`.
+
+**Verification:** Confirmed the local repository has the `origin` fetch and push remote at that GitHub address.
+
+**Replication notes:** Use the `AIProfessonals` repository as the project root for future experiment development and analysis.
+
 ## 2026-10-04 - Retain only combined experiment data
 
 **Context / problem:** Reduce the new experiment repository's size after combining compatible replications.

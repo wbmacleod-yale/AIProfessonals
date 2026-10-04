@@ -1,0 +1,39 @@
+The following are suggestions for future edits to KeyNoteTalks/Warsaw/Warsaw-Talk-2026-09-18.pdf. In general, the slides look good, and Claude did a good job of fixing typos and adding some mathematical formalism. The comments on slides 21, 23, and 31, reflect how I'm thinking about the argument more generally as we build out our project.
+
+All slide references refer to the number at the bottom of each slide, not the page number. At time of writing, KeyNoteTalks/Warsaw/Warsaw-Talk-2026-09-18.pdf contains 48 slides in total, including references slides.
+
+Slide 4:
+- I would make the third bullet point a complete sentence, e.g., "I aim to provide a formal model..."
+- I would mention values in the third bullet point, together with bounded rationality.
+- I would mention AI in the fourth bullet point on understanding legal rules. This point, like the mention of values previously in the slide, was not carried over from slide 5 of the backup.
+
+Slide 8:
+- I liked the notes from slide 10 of the backup, where the books are said to combine price theory, game theory, and transactions costs economics for legal rules. That comment explains why we think Baird/Gertner, Cooter/Ulen, and Shavell are important. I think this note could be merged into the slide here.
+
+Slides 9-13:
+- I would rearrange the slides so what is now slide 13 precedes what is now slide 9. I think this can help make it clear why you're splitting up the economics literature into three categories rather than going chronologically.
+
+Slide 14:
+- A brief note on the idea that no model is correct could help contextualize the first bullet point.
+
+Slide 15:
+- I think to bring the point home as to why the complex map isn't useful, you could emphasize the fact that subway stations are not laid out in an easily comprehensible manner, making a perfecty accurate map of the subway layout not useful, rather than small print. After all, font size doesn't seem to relate as well to thinking of the subway map as a model of the world.
+
+Slide 18:
+- I would remove the last point about antitrust policy; it might dilute the message.
+
+Slide 19:
+- I understand this slide to be speaking of model-building in very broad terms. To accomplish that, including an "e.g.," to contextualize Bayesian/Markov perfect equilibrium strategies could help avoid the audience thinking that you're excluding other solution concepts.
+
+Slide 21:
+- In general, the point about computational complexity leads into bounded rationality, rather than the other way around. As in: The computational complexity of a situation where you have to make a decision under limited time and cognitive ability means that rationality is bounded. (And we can think of that bounded rationality as representing an imperfect heuristic or prior.) So, I would rearrange the bullet points so the one on computational complexity sits before the one on bounded rationality.
+
+Slide 23:
+- Emphasizing that players have limited time and ability to compute might be useful to clarify the third bullet point on computational infeasibility and preempt arguments that we could theoretically calculate the correct answer with enough time and computing power.
+
+Slide 25:
+- I disagree with Cluade removing the notes on Churchland and Sejnowski (2016) and MacLeod (2016). I think they help to make sense of the following slides and the idea of value development, and I would bring them back.
+
+Slide 31:
+- Adding a point that judges have limited time or cognitive ability with which to perform their deliberations could help connect judicial discretion back to the earlier idea of bounded rationality.
+- To further drive the point home, you could add a point that judges rely on experience because the information available and the judge’s cognitive ability are not limitless

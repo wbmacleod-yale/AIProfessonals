@@ -1,0 +1,401 @@
+provider,model,vehicle,judge_role,rule_given,trial,prompt,response,timestamp,latency_seconds,input_tokens,output_tokens,error
+ollama,clef-flash:latest,airplane,False,False,1,The item under consideration is a airplane.,"yes
+probability: 0.938084",2026-10-05T15:54:31.383521+00:00,3.531,147,0,
+ollama,clef-flash:latest,airplane,False,False,2,The item under consideration is a airplane.,"yes
+probability: 0.938084",2026-10-05T15:54:35.915433+00:00,0.127,147,0,
+ollama,clef-flash:latest,airplane,False,False,3,The item under consideration is a airplane.,"yes
+probability: 0.938084",2026-10-05T15:54:37.044231+00:00,0.119,147,0,
+ollama,clef-flash:latest,airplane,False,False,4,The item under consideration is a airplane.,"yes
+probability: 0.938084",2026-10-05T15:54:38.164155+00:00,0.111,147,0,
+ollama,clef-flash:latest,airplane,False,False,5,The item under consideration is a airplane.,"yes
+probability: 0.938084",2026-10-05T15:54:39.276917+00:00,0.114,147,0,
+ollama,clef-flash:latest,airplane,False,False,6,The item under consideration is a airplane.,"yes
+probability: 0.938084",2026-10-05T15:54:40.392478+00:00,0.109,147,0,
+ollama,clef-flash:latest,airplane,False,False,7,The item under consideration is a airplane.,"yes
+probability: 0.938084",2026-10-05T15:54:41.503235+00:00,0.11,147,0,
+ollama,clef-flash:latest,airplane,False,False,8,The item under consideration is a airplane.,"yes
+probability: 0.938084",2026-10-05T15:54:42.615111+00:00,0.117,147,0,
+ollama,clef-flash:latest,airplane,False,False,9,The item under consideration is a airplane.,"yes
+probability: 0.938084",2026-10-05T15:54:43.733432+00:00,0.111,147,0,
+ollama,clef-flash:latest,airplane,False,False,10,The item under consideration is a airplane.,"yes
+probability: 0.938084",2026-10-05T15:54:44.846167+00:00,0.13,147,0,
+ollama,clef-flash:latest,airplane,False,True,1,There is a rule that says: no vehicles in the park. The item under consideration is a airplane.,"yes
+probability: 0.674248",2026-10-05T15:54:45.977904+00:00,0.125,160,0,
+ollama,clef-flash:latest,airplane,False,True,2,There is a rule that says: no vehicles in the park. The item under consideration is a airplane.,"yes
+probability: 0.674248",2026-10-05T15:54:47.104111+00:00,0.12,160,0,
+ollama,clef-flash:latest,airplane,False,True,3,There is a rule that says: no vehicles in the park. The item under consideration is a airplane.,"yes
+probability: 0.674248",2026-10-05T15:54:48.225867+00:00,0.118,160,0,
+ollama,clef-flash:latest,airplane,False,True,4,There is a rule that says: no vehicles in the park. The item under consideration is a airplane.,"yes
+probability: 0.674248",2026-10-05T15:54:49.344892+00:00,0.122,160,0,
+ollama,clef-flash:latest,airplane,False,True,5,There is a rule that says: no vehicles in the park. The item under consideration is a airplane.,"yes
+probability: 0.674248",2026-10-05T15:54:50.468102+00:00,0.131,160,0,
+ollama,clef-flash:latest,airplane,False,True,6,There is a rule that says: no vehicles in the park. The item under consideration is a airplane.,"yes
+probability: 0.674248",2026-10-05T15:54:51.600579+00:00,0.117,160,0,
+ollama,clef-flash:latest,airplane,False,True,7,There is a rule that says: no vehicles in the park. The item under consideration is a airplane.,"yes
+probability: 0.674248",2026-10-05T15:54:52.719010+00:00,0.118,160,0,
+ollama,clef-flash:latest,airplane,False,True,8,There is a rule that says: no vehicles in the park. The item under consideration is a airplane.,"yes
+probability: 0.674248",2026-10-05T15:54:53.838862+00:00,0.124,160,0,
+ollama,clef-flash:latest,airplane,False,True,9,There is a rule that says: no vehicles in the park. The item under consideration is a airplane.,"yes
+probability: 0.674248",2026-10-05T15:54:54.964024+00:00,0.132,160,0,
+ollama,clef-flash:latest,airplane,False,True,10,There is a rule that says: no vehicles in the park. The item under consideration is a airplane.,"yes
+probability: 0.674248",2026-10-05T15:54:56.097501+00:00,0.118,160,0,
+ollama,clef-flash:latest,airplane,True,False,1,Imagine that you are a judge. The item under consideration is a airplane.,"yes
+probability: 0.936701",2026-10-05T15:54:57.217025+00:00,0.129,154,0,
+ollama,clef-flash:latest,airplane,True,False,2,Imagine that you are a judge. The item under consideration is a airplane.,"yes
+probability: 0.936701",2026-10-05T15:54:58.346995+00:00,0.127,154,0,
+ollama,clef-flash:latest,airplane,True,False,3,Imagine that you are a judge. The item under consideration is a airplane.,"yes
+probability: 0.936701",2026-10-05T15:54:59.475532+00:00,0.123,154,0,
+ollama,clef-flash:latest,airplane,True,False,4,Imagine that you are a judge. The item under consideration is a airplane.,"yes
+probability: 0.936701",2026-10-05T15:55:00.599957+00:00,0.134,154,0,
+ollama,clef-flash:latest,airplane,True,False,5,Imagine that you are a judge. The item under consideration is a airplane.,"yes
+probability: 0.936701",2026-10-05T15:55:01.735331+00:00,0.117,154,0,
+ollama,clef-flash:latest,airplane,True,False,6,Imagine that you are a judge. The item under consideration is a airplane.,"yes
+probability: 0.936701",2026-10-05T15:55:02.853926+00:00,0.117,154,0,
+ollama,clef-flash:latest,airplane,True,False,7,Imagine that you are a judge. The item under consideration is a airplane.,"yes
+probability: 0.936701",2026-10-05T15:55:03.972872+00:00,0.117,154,0,
+ollama,clef-flash:latest,airplane,True,False,8,Imagine that you are a judge. The item under consideration is a airplane.,"yes
+probability: 0.936701",2026-10-05T15:55:05.090674+00:00,0.116,154,0,
+ollama,clef-flash:latest,airplane,True,False,9,Imagine that you are a judge. The item under consideration is a airplane.,"yes
+probability: 0.936701",2026-10-05T15:55:06.207830+00:00,0.119,154,0,
+ollama,clef-flash:latest,airplane,True,False,10,Imagine that you are a judge. The item under consideration is a airplane.,"yes
+probability: 0.936701",2026-10-05T15:55:07.328067+00:00,0.115,154,0,
+ollama,clef-flash:latest,airplane,True,True,1,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a airplane.,"yes
+probability: 0.716831",2026-10-05T15:55:08.444801+00:00,0.125,167,0,
+ollama,clef-flash:latest,airplane,True,True,2,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a airplane.,"yes
+probability: 0.716831",2026-10-05T15:55:09.570846+00:00,0.132,167,0,
+ollama,clef-flash:latest,airplane,True,True,3,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a airplane.,"yes
+probability: 0.716831",2026-10-05T15:55:10.704690+00:00,0.134,167,0,
+ollama,clef-flash:latest,airplane,True,True,4,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a airplane.,"yes
+probability: 0.716831",2026-10-05T15:55:11.840516+00:00,0.125,167,0,
+ollama,clef-flash:latest,airplane,True,True,5,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a airplane.,"yes
+probability: 0.716831",2026-10-05T15:55:12.966422+00:00,0.122,167,0,
+ollama,clef-flash:latest,airplane,True,True,6,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a airplane.,"yes
+probability: 0.716831",2026-10-05T15:55:14.090252+00:00,0.127,167,0,
+ollama,clef-flash:latest,airplane,True,True,7,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a airplane.,"yes
+probability: 0.716831",2026-10-05T15:55:15.218785+00:00,0.124,167,0,
+ollama,clef-flash:latest,airplane,True,True,8,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a airplane.,"yes
+probability: 0.716831",2026-10-05T15:55:16.344429+00:00,0.133,167,0,
+ollama,clef-flash:latest,airplane,True,True,9,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a airplane.,"yes
+probability: 0.716831",2026-10-05T15:55:17.479232+00:00,0.138,167,0,
+ollama,clef-flash:latest,airplane,True,True,10,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a airplane.,"yes
+probability: 0.716831",2026-10-05T15:55:18.618838+00:00,0.135,167,0,
+ollama,clef-flash:latest,bicycle,False,False,1,The item under consideration is a bicycle.,"yes
+probability: 0.900811",2026-10-05T15:55:19.755085+00:00,0.124,147,0,
+ollama,clef-flash:latest,bicycle,False,False,2,The item under consideration is a bicycle.,"yes
+probability: 0.900811",2026-10-05T15:55:20.880484+00:00,0.125,147,0,
+ollama,clef-flash:latest,bicycle,False,False,3,The item under consideration is a bicycle.,"yes
+probability: 0.900811",2026-10-05T15:55:22.006041+00:00,0.111,147,0,
+ollama,clef-flash:latest,bicycle,False,False,4,The item under consideration is a bicycle.,"yes
+probability: 0.900811",2026-10-05T15:55:23.118500+00:00,0.118,147,0,
+ollama,clef-flash:latest,bicycle,False,False,5,The item under consideration is a bicycle.,"yes
+probability: 0.900811",2026-10-05T15:55:24.238173+00:00,0.113,147,0,
+ollama,clef-flash:latest,bicycle,False,False,6,The item under consideration is a bicycle.,"yes
+probability: 0.900811",2026-10-05T15:55:25.352652+00:00,0.117,147,0,
+ollama,clef-flash:latest,bicycle,False,False,7,The item under consideration is a bicycle.,"yes
+probability: 0.900811",2026-10-05T15:55:26.470060+00:00,0.131,147,0,
+ollama,clef-flash:latest,bicycle,False,False,8,The item under consideration is a bicycle.,"yes
+probability: 0.900811",2026-10-05T15:55:27.602028+00:00,0.114,147,0,
+ollama,clef-flash:latest,bicycle,False,False,9,The item under consideration is a bicycle.,"yes
+probability: 0.900811",2026-10-05T15:55:28.717871+00:00,0.113,147,0,
+ollama,clef-flash:latest,bicycle,False,False,10,The item under consideration is a bicycle.,"yes
+probability: 0.900811",2026-10-05T15:55:29.831966+00:00,0.125,147,0,
+ollama,clef-flash:latest,bicycle,False,True,1,There is a rule that says: no vehicles in the park. The item under consideration is a bicycle.,"yes
+probability: 0.816717",2026-10-05T15:55:30.957941+00:00,0.135,160,0,
+ollama,clef-flash:latest,bicycle,False,True,2,There is a rule that says: no vehicles in the park. The item under consideration is a bicycle.,"yes
+probability: 0.816717",2026-10-05T15:55:32.094452+00:00,0.121,160,0,
+ollama,clef-flash:latest,bicycle,False,True,3,There is a rule that says: no vehicles in the park. The item under consideration is a bicycle.,"yes
+probability: 0.816717",2026-10-05T15:55:33.215921+00:00,0.123,160,0,
+ollama,clef-flash:latest,bicycle,False,True,4,There is a rule that says: no vehicles in the park. The item under consideration is a bicycle.,"yes
+probability: 0.816717",2026-10-05T15:55:34.340083+00:00,0.116,160,0,
+ollama,clef-flash:latest,bicycle,False,True,5,There is a rule that says: no vehicles in the park. The item under consideration is a bicycle.,"yes
+probability: 0.816717",2026-10-05T15:55:35.457816+00:00,0.12,160,0,
+ollama,clef-flash:latest,bicycle,False,True,6,There is a rule that says: no vehicles in the park. The item under consideration is a bicycle.,"yes
+probability: 0.816717",2026-10-05T15:55:36.579056+00:00,0.116,160,0,
+ollama,clef-flash:latest,bicycle,False,True,7,There is a rule that says: no vehicles in the park. The item under consideration is a bicycle.,"yes
+probability: 0.816717",2026-10-05T15:55:37.696154+00:00,0.12,160,0,
+ollama,clef-flash:latest,bicycle,False,True,8,There is a rule that says: no vehicles in the park. The item under consideration is a bicycle.,"yes
+probability: 0.816717",2026-10-05T15:55:38.817208+00:00,0.124,160,0,
+ollama,clef-flash:latest,bicycle,False,True,9,There is a rule that says: no vehicles in the park. The item under consideration is a bicycle.,"yes
+probability: 0.816717",2026-10-05T15:55:39.942982+00:00,0.12,160,0,
+ollama,clef-flash:latest,bicycle,False,True,10,There is a rule that says: no vehicles in the park. The item under consideration is a bicycle.,"yes
+probability: 0.816717",2026-10-05T15:55:41.064511+00:00,0.117,160,0,
+ollama,clef-flash:latest,bicycle,True,False,1,Imagine that you are a judge. The item under consideration is a bicycle.,"yes
+probability: 0.855454",2026-10-05T15:55:42.183102+00:00,0.115,154,0,
+ollama,clef-flash:latest,bicycle,True,False,2,Imagine that you are a judge. The item under consideration is a bicycle.,"yes
+probability: 0.855454",2026-10-05T15:55:43.299037+00:00,0.123,154,0,
+ollama,clef-flash:latest,bicycle,True,False,3,Imagine that you are a judge. The item under consideration is a bicycle.,"yes
+probability: 0.855454",2026-10-05T15:55:44.423054+00:00,0.115,154,0,
+ollama,clef-flash:latest,bicycle,True,False,4,Imagine that you are a judge. The item under consideration is a bicycle.,"yes
+probability: 0.855454",2026-10-05T15:55:45.539609+00:00,0.115,154,0,
+ollama,clef-flash:latest,bicycle,True,False,5,Imagine that you are a judge. The item under consideration is a bicycle.,"yes
+probability: 0.855454",2026-10-05T15:55:46.655987+00:00,0.115,154,0,
+ollama,clef-flash:latest,bicycle,True,False,6,Imagine that you are a judge. The item under consideration is a bicycle.,"yes
+probability: 0.855454",2026-10-05T15:55:47.772159+00:00,0.114,154,0,
+ollama,clef-flash:latest,bicycle,True,False,7,Imagine that you are a judge. The item under consideration is a bicycle.,"yes
+probability: 0.855454",2026-10-05T15:55:48.888104+00:00,0.116,154,0,
+ollama,clef-flash:latest,bicycle,True,False,8,Imagine that you are a judge. The item under consideration is a bicycle.,"yes
+probability: 0.855454",2026-10-05T15:55:50.005470+00:00,0.112,154,0,
+ollama,clef-flash:latest,bicycle,True,False,9,Imagine that you are a judge. The item under consideration is a bicycle.,"yes
+probability: 0.855454",2026-10-05T15:55:51.118478+00:00,0.115,154,0,
+ollama,clef-flash:latest,bicycle,True,False,10,Imagine that you are a judge. The item under consideration is a bicycle.,"yes
+probability: 0.855454",2026-10-05T15:55:52.234675+00:00,0.113,154,0,
+ollama,clef-flash:latest,bicycle,True,True,1,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a bicycle.,"yes
+probability: 0.823219",2026-10-05T15:55:53.349182+00:00,0.12,167,0,
+ollama,clef-flash:latest,bicycle,True,True,2,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a bicycle.,"yes
+probability: 0.823219",2026-10-05T15:55:54.470937+00:00,0.121,167,0,
+ollama,clef-flash:latest,bicycle,True,True,3,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a bicycle.,"yes
+probability: 0.823219",2026-10-05T15:55:55.593436+00:00,0.12,167,0,
+ollama,clef-flash:latest,bicycle,True,True,4,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a bicycle.,"yes
+probability: 0.823219",2026-10-05T15:55:56.714353+00:00,0.125,167,0,
+ollama,clef-flash:latest,bicycle,True,True,5,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a bicycle.,"yes
+probability: 0.823219",2026-10-05T15:55:57.840899+00:00,0.123,167,0,
+ollama,clef-flash:latest,bicycle,True,True,6,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a bicycle.,"yes
+probability: 0.823219",2026-10-05T15:55:58.965553+00:00,0.123,167,0,
+ollama,clef-flash:latest,bicycle,True,True,7,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a bicycle.,"yes
+probability: 0.823219",2026-10-05T15:56:00.090362+00:00,0.138,167,0,
+ollama,clef-flash:latest,bicycle,True,True,8,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a bicycle.,"yes
+probability: 0.823219",2026-10-05T15:56:01.230068+00:00,0.131,167,0,
+ollama,clef-flash:latest,bicycle,True,True,9,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a bicycle.,"yes
+probability: 0.823219",2026-10-05T15:56:02.362403+00:00,0.123,167,0,
+ollama,clef-flash:latest,bicycle,True,True,10,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a bicycle.,"yes
+probability: 0.823219",2026-10-05T15:56:03.487132+00:00,0.124,167,0,
+ollama,clef-flash:latest,car,False,False,1,The item under consideration is a car.,"yes
+probability: 0.960595",2026-10-05T15:56:04.612315+00:00,0.125,147,0,
+ollama,clef-flash:latest,car,False,False,2,The item under consideration is a car.,"yes
+probability: 0.960595",2026-10-05T15:56:05.738862+00:00,0.127,147,0,
+ollama,clef-flash:latest,car,False,False,3,The item under consideration is a car.,"yes
+probability: 0.960595",2026-10-05T15:56:06.867005+00:00,0.129,147,0,
+ollama,clef-flash:latest,car,False,False,4,The item under consideration is a car.,"yes
+probability: 0.960595",2026-10-05T15:56:07.996975+00:00,0.123,147,0,
+ollama,clef-flash:latest,car,False,False,5,The item under consideration is a car.,"yes
+probability: 0.960595",2026-10-05T15:56:09.121748+00:00,0.121,147,0,
+ollama,clef-flash:latest,car,False,False,6,The item under consideration is a car.,"yes
+probability: 0.960595",2026-10-05T15:56:10.243964+00:00,0.115,147,0,
+ollama,clef-flash:latest,car,False,False,7,The item under consideration is a car.,"yes
+probability: 0.960595",2026-10-05T15:56:11.358905+00:00,0.114,147,0,
+ollama,clef-flash:latest,car,False,False,8,The item under consideration is a car.,"yes
+probability: 0.960595",2026-10-05T15:56:12.474018+00:00,0.126,147,0,
+ollama,clef-flash:latest,car,False,False,9,The item under consideration is a car.,"yes
+probability: 0.960595",2026-10-05T15:56:13.600893+00:00,0.128,147,0,
+ollama,clef-flash:latest,car,False,False,10,The item under consideration is a car.,"yes
+probability: 0.960595",2026-10-05T15:56:14.729927+00:00,0.128,147,0,
+ollama,clef-flash:latest,car,False,True,1,There is a rule that says: no vehicles in the park. The item under consideration is a car.,"yes
+probability: 0.961148",2026-10-05T15:56:15.859430+00:00,0.12,160,0,
+ollama,clef-flash:latest,car,False,True,2,There is a rule that says: no vehicles in the park. The item under consideration is a car.,"yes
+probability: 0.961148",2026-10-05T15:56:16.979919+00:00,0.129,160,0,
+ollama,clef-flash:latest,car,False,True,3,There is a rule that says: no vehicles in the park. The item under consideration is a car.,"yes
+probability: 0.961148",2026-10-05T15:56:18.110551+00:00,0.129,160,0,
+ollama,clef-flash:latest,car,False,True,4,There is a rule that says: no vehicles in the park. The item under consideration is a car.,"yes
+probability: 0.961148",2026-10-05T15:56:19.240918+00:00,0.118,160,0,
+ollama,clef-flash:latest,car,False,True,5,There is a rule that says: no vehicles in the park. The item under consideration is a car.,"yes
+probability: 0.961148",2026-10-05T15:56:20.359773+00:00,0.133,160,0,
+ollama,clef-flash:latest,car,False,True,6,There is a rule that says: no vehicles in the park. The item under consideration is a car.,"yes
+probability: 0.961148",2026-10-05T15:56:21.494545+00:00,0.119,160,0,
+ollama,clef-flash:latest,car,False,True,7,There is a rule that says: no vehicles in the park. The item under consideration is a car.,"yes
+probability: 0.961148",2026-10-05T15:56:22.614757+00:00,0.131,160,0,
+ollama,clef-flash:latest,car,False,True,8,There is a rule that says: no vehicles in the park. The item under consideration is a car.,"yes
+probability: 0.961148",2026-10-05T15:56:23.747463+00:00,0.119,160,0,
+ollama,clef-flash:latest,car,False,True,9,There is a rule that says: no vehicles in the park. The item under consideration is a car.,"yes
+probability: 0.961148",2026-10-05T15:56:24.868357+00:00,0.118,160,0,
+ollama,clef-flash:latest,car,False,True,10,There is a rule that says: no vehicles in the park. The item under consideration is a car.,"yes
+probability: 0.961148",2026-10-05T15:56:25.988022+00:00,0.117,160,0,
+ollama,clef-flash:latest,car,True,False,1,Imagine that you are a judge. The item under consideration is a car.,"yes
+probability: 0.951172",2026-10-05T15:56:27.106848+00:00,0.119,154,0,
+ollama,clef-flash:latest,car,True,False,2,Imagine that you are a judge. The item under consideration is a car.,"yes
+probability: 0.951172",2026-10-05T15:56:28.227366+00:00,0.133,154,0,
+ollama,clef-flash:latest,car,True,False,3,Imagine that you are a judge. The item under consideration is a car.,"yes
+probability: 0.951172",2026-10-05T15:56:29.361258+00:00,0.117,154,0,
+ollama,clef-flash:latest,car,True,False,4,Imagine that you are a judge. The item under consideration is a car.,"yes
+probability: 0.951172",2026-10-05T15:56:30.479640+00:00,0.115,154,0,
+ollama,clef-flash:latest,car,True,False,5,Imagine that you are a judge. The item under consideration is a car.,"yes
+probability: 0.951172",2026-10-05T15:56:31.596468+00:00,0.115,154,0,
+ollama,clef-flash:latest,car,True,False,6,Imagine that you are a judge. The item under consideration is a car.,"yes
+probability: 0.951172",2026-10-05T15:56:32.712840+00:00,0.118,154,0,
+ollama,clef-flash:latest,car,True,False,7,Imagine that you are a judge. The item under consideration is a car.,"yes
+probability: 0.951172",2026-10-05T15:56:33.831936+00:00,0.129,154,0,
+ollama,clef-flash:latest,car,True,False,8,Imagine that you are a judge. The item under consideration is a car.,"yes
+probability: 0.951172",2026-10-05T15:56:34.962675+00:00,0.117,154,0,
+ollama,clef-flash:latest,car,True,False,9,Imagine that you are a judge. The item under consideration is a car.,"yes
+probability: 0.951172",2026-10-05T15:56:36.080693+00:00,0.121,154,0,
+ollama,clef-flash:latest,car,True,False,10,Imagine that you are a judge. The item under consideration is a car.,"yes
+probability: 0.951172",2026-10-05T15:56:37.202846+00:00,0.118,154,0,
+ollama,clef-flash:latest,car,True,True,1,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a car.,"yes
+probability: 0.960665",2026-10-05T15:56:38.322298+00:00,0.132,167,0,
+ollama,clef-flash:latest,car,True,True,2,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a car.,"yes
+probability: 0.960665",2026-10-05T15:56:39.455806+00:00,0.138,167,0,
+ollama,clef-flash:latest,car,True,True,3,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a car.,"yes
+probability: 0.960665",2026-10-05T15:56:40.595008+00:00,0.136,167,0,
+ollama,clef-flash:latest,car,True,True,4,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a car.,"yes
+probability: 0.960665",2026-10-05T15:56:41.732520+00:00,0.122,167,0,
+ollama,clef-flash:latest,car,True,True,5,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a car.,"yes
+probability: 0.960665",2026-10-05T15:56:42.855323+00:00,0.142,167,0,
+ollama,clef-flash:latest,car,True,True,6,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a car.,"yes
+probability: 0.960665",2026-10-05T15:56:43.998006+00:00,0.122,167,0,
+ollama,clef-flash:latest,car,True,True,7,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a car.,"yes
+probability: 0.960665",2026-10-05T15:56:45.121873+00:00,0.123,167,0,
+ollama,clef-flash:latest,car,True,True,8,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a car.,"yes
+probability: 0.960665",2026-10-05T15:56:46.246345+00:00,0.141,167,0,
+ollama,clef-flash:latest,car,True,True,9,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a car.,"yes
+probability: 0.960665",2026-10-05T15:56:47.388575+00:00,0.132,167,0,
+ollama,clef-flash:latest,car,True,True,10,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a car.,"yes
+probability: 0.960665",2026-10-05T15:56:48.522148+00:00,0.124,167,0,
+ollama,clef-flash:latest,scooter,False,False,1,The item under consideration is a scooter.,"yes
+probability: 0.888576",2026-10-05T15:56:49.647390+00:00,0.126,147,0,
+ollama,clef-flash:latest,scooter,False,False,2,The item under consideration is a scooter.,"yes
+probability: 0.888576",2026-10-05T15:56:50.775167+00:00,0.125,147,0,
+ollama,clef-flash:latest,scooter,False,False,3,The item under consideration is a scooter.,"yes
+probability: 0.888576",2026-10-05T15:56:51.901722+00:00,0.124,147,0,
+ollama,clef-flash:latest,scooter,False,False,4,The item under consideration is a scooter.,"yes
+probability: 0.888576",2026-10-05T15:56:53.027378+00:00,0.114,147,0,
+ollama,clef-flash:latest,scooter,False,False,5,The item under consideration is a scooter.,"yes
+probability: 0.888576",2026-10-05T15:56:54.143100+00:00,0.117,147,0,
+ollama,clef-flash:latest,scooter,False,False,6,The item under consideration is a scooter.,"yes
+probability: 0.888576",2026-10-05T15:56:55.260957+00:00,0.115,147,0,
+ollama,clef-flash:latest,scooter,False,False,7,The item under consideration is a scooter.,"yes
+probability: 0.888576",2026-10-05T15:56:56.377709+00:00,0.118,147,0,
+ollama,clef-flash:latest,scooter,False,False,8,The item under consideration is a scooter.,"yes
+probability: 0.888576",2026-10-05T15:56:57.496916+00:00,0.114,147,0,
+ollama,clef-flash:latest,scooter,False,False,9,The item under consideration is a scooter.,"yes
+probability: 0.888576",2026-10-05T15:56:58.611937+00:00,0.114,147,0,
+ollama,clef-flash:latest,scooter,False,False,10,The item under consideration is a scooter.,"yes
+probability: 0.888576",2026-10-05T15:56:59.726947+00:00,0.128,147,0,
+ollama,clef-flash:latest,scooter,False,True,1,There is a rule that says: no vehicles in the park. The item under consideration is a scooter.,"yes
+probability: 0.879244",2026-10-05T15:57:00.856927+00:00,0.146,160,0,
+ollama,clef-flash:latest,scooter,False,True,2,There is a rule that says: no vehicles in the park. The item under consideration is a scooter.,"yes
+probability: 0.879244",2026-10-05T15:57:02.004064+00:00,0.138,160,0,
+ollama,clef-flash:latest,scooter,False,True,3,There is a rule that says: no vehicles in the park. The item under consideration is a scooter.,"yes
+probability: 0.879244",2026-10-05T15:57:03.142865+00:00,0.119,160,0,
+ollama,clef-flash:latest,scooter,False,True,4,There is a rule that says: no vehicles in the park. The item under consideration is a scooter.,"yes
+probability: 0.879244",2026-10-05T15:57:04.262933+00:00,0.129,160,0,
+ollama,clef-flash:latest,scooter,False,True,5,There is a rule that says: no vehicles in the park. The item under consideration is a scooter.,"yes
+probability: 0.879244",2026-10-05T15:57:05.393563+00:00,0.118,160,0,
+ollama,clef-flash:latest,scooter,False,True,6,There is a rule that says: no vehicles in the park. The item under consideration is a scooter.,"yes
+probability: 0.879244",2026-10-05T15:57:06.512801+00:00,0.121,160,0,
+ollama,clef-flash:latest,scooter,False,True,7,There is a rule that says: no vehicles in the park. The item under consideration is a scooter.,"yes
+probability: 0.879244",2026-10-05T15:57:07.634853+00:00,0.132,160,0,
+ollama,clef-flash:latest,scooter,False,True,8,There is a rule that says: no vehicles in the park. The item under consideration is a scooter.,"yes
+probability: 0.879244",2026-10-05T15:57:08.767869+00:00,0.124,160,0,
+ollama,clef-flash:latest,scooter,False,True,9,There is a rule that says: no vehicles in the park. The item under consideration is a scooter.,"yes
+probability: 0.879244",2026-10-05T15:57:09.893559+00:00,0.132,160,0,
+ollama,clef-flash:latest,scooter,False,True,10,There is a rule that says: no vehicles in the park. The item under consideration is a scooter.,"yes
+probability: 0.879244",2026-10-05T15:57:11.027160+00:00,0.118,160,0,
+ollama,clef-flash:latest,scooter,True,False,1,Imagine that you are a judge. The item under consideration is a scooter.,"yes
+probability: 0.853663",2026-10-05T15:57:12.146861+00:00,0.118,154,0,
+ollama,clef-flash:latest,scooter,True,False,2,Imagine that you are a judge. The item under consideration is a scooter.,"yes
+probability: 0.853663",2026-10-05T15:57:13.266423+00:00,0.117,154,0,
+ollama,clef-flash:latest,scooter,True,False,3,Imagine that you are a judge. The item under consideration is a scooter.,"yes
+probability: 0.853663",2026-10-05T15:57:14.385061+00:00,0.122,154,0,
+ollama,clef-flash:latest,scooter,True,False,4,Imagine that you are a judge. The item under consideration is a scooter.,"yes
+probability: 0.853663",2026-10-05T15:57:15.507883+00:00,0.13,154,0,
+ollama,clef-flash:latest,scooter,True,False,5,Imagine that you are a judge. The item under consideration is a scooter.,"yes
+probability: 0.853663",2026-10-05T15:57:16.638820+00:00,0.119,154,0,
+ollama,clef-flash:latest,scooter,True,False,6,Imagine that you are a judge. The item under consideration is a scooter.,"yes
+probability: 0.853663",2026-10-05T15:57:17.758910+00:00,0.126,154,0,
+ollama,clef-flash:latest,scooter,True,False,7,Imagine that you are a judge. The item under consideration is a scooter.,"yes
+probability: 0.853663",2026-10-05T15:57:18.886002+00:00,0.137,154,0,
+ollama,clef-flash:latest,scooter,True,False,8,Imagine that you are a judge. The item under consideration is a scooter.,"yes
+probability: 0.853663",2026-10-05T15:57:20.023954+00:00,0.124,154,0,
+ollama,clef-flash:latest,scooter,True,False,9,Imagine that you are a judge. The item under consideration is a scooter.,"yes
+probability: 0.853663",2026-10-05T15:57:21.148911+00:00,0.116,154,0,
+ollama,clef-flash:latest,scooter,True,False,10,Imagine that you are a judge. The item under consideration is a scooter.,"yes
+probability: 0.853663",2026-10-05T15:57:22.266418+00:00,0.116,154,0,
+ollama,clef-flash:latest,scooter,True,True,1,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a scooter.,"yes
+probability: 0.884245",2026-10-05T15:57:23.382991+00:00,0.126,167,0,
+ollama,clef-flash:latest,scooter,True,True,2,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a scooter.,"yes
+probability: 0.884245",2026-10-05T15:57:24.509971+00:00,0.129,167,0,
+ollama,clef-flash:latest,scooter,True,True,3,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a scooter.,"yes
+probability: 0.884245",2026-10-05T15:57:25.639862+00:00,0.129,167,0,
+ollama,clef-flash:latest,scooter,True,True,4,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a scooter.,"yes
+probability: 0.884245",2026-10-05T15:57:26.769745+00:00,0.125,167,0,
+ollama,clef-flash:latest,scooter,True,True,5,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a scooter.,"yes
+probability: 0.884245",2026-10-05T15:57:27.896005+00:00,0.124,167,0,
+ollama,clef-flash:latest,scooter,True,True,6,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a scooter.,"yes
+probability: 0.884245",2026-10-05T15:57:29.021108+00:00,0.124,167,0,
+ollama,clef-flash:latest,scooter,True,True,7,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a scooter.,"yes
+probability: 0.884245",2026-10-05T15:57:30.146363+00:00,0.139,167,0,
+ollama,clef-flash:latest,scooter,True,True,8,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a scooter.,"yes
+probability: 0.884245",2026-10-05T15:57:31.286638+00:00,0.128,167,0,
+ollama,clef-flash:latest,scooter,True,True,9,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a scooter.,"yes
+probability: 0.884245",2026-10-05T15:57:32.416109+00:00,0.133,167,0,
+ollama,clef-flash:latest,scooter,True,True,10,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a scooter.,"yes
+probability: 0.884245",2026-10-05T15:57:33.558183+00:00,0.139,167,0,
+ollama,clef-flash:latest,stroller,False,False,1,The item under consideration is a stroller.,"no
+probability: 0.175738",2026-10-05T15:57:34.698740+00:00,0.132,148,0,
+ollama,clef-flash:latest,stroller,False,False,2,The item under consideration is a stroller.,"no
+probability: 0.175738",2026-10-05T15:57:35.831738+00:00,0.129,148,0,
+ollama,clef-flash:latest,stroller,False,False,3,The item under consideration is a stroller.,"no
+probability: 0.175738",2026-10-05T15:57:36.962453+00:00,0.127,148,0,
+ollama,clef-flash:latest,stroller,False,False,4,The item under consideration is a stroller.,"no
+probability: 0.175738",2026-10-05T15:57:38.089999+00:00,0.124,148,0,
+ollama,clef-flash:latest,stroller,False,False,5,The item under consideration is a stroller.,"no
+probability: 0.175738",2026-10-05T15:57:39.215532+00:00,0.116,148,0,
+ollama,clef-flash:latest,stroller,False,False,6,The item under consideration is a stroller.,"no
+probability: 0.175738",2026-10-05T15:57:40.331849+00:00,0.115,148,0,
+ollama,clef-flash:latest,stroller,False,False,7,The item under consideration is a stroller.,"no
+probability: 0.175738",2026-10-05T15:57:41.448170+00:00,0.114,148,0,
+ollama,clef-flash:latest,stroller,False,False,8,The item under consideration is a stroller.,"no
+probability: 0.175738",2026-10-05T15:57:42.564032+00:00,0.115,148,0,
+ollama,clef-flash:latest,stroller,False,False,9,The item under consideration is a stroller.,"no
+probability: 0.175738",2026-10-05T15:57:43.680694+00:00,0.115,148,0,
+ollama,clef-flash:latest,stroller,False,False,10,The item under consideration is a stroller.,"no
+probability: 0.175738",2026-10-05T15:57:44.796844+00:00,0.121,148,0,
+ollama,clef-flash:latest,stroller,False,True,1,There is a rule that says: no vehicles in the park. The item under consideration is a stroller.,"no
+probability: 0.112576",2026-10-05T15:57:45.919157+00:00,0.124,161,0,
+ollama,clef-flash:latest,stroller,False,True,2,There is a rule that says: no vehicles in the park. The item under consideration is a stroller.,"no
+probability: 0.112576",2026-10-05T15:57:47.044687+00:00,0.126,161,0,
+ollama,clef-flash:latest,stroller,False,True,3,There is a rule that says: no vehicles in the park. The item under consideration is a stroller.,"no
+probability: 0.112576",2026-10-05T15:57:48.172224+00:00,0.14,161,0,
+ollama,clef-flash:latest,stroller,False,True,4,There is a rule that says: no vehicles in the park. The item under consideration is a stroller.,"no
+probability: 0.112576",2026-10-05T15:57:49.313825+00:00,0.14,161,0,
+ollama,clef-flash:latest,stroller,False,True,5,There is a rule that says: no vehicles in the park. The item under consideration is a stroller.,"no
+probability: 0.112576",2026-10-05T15:57:50.455367+00:00,0.124,161,0,
+ollama,clef-flash:latest,stroller,False,True,6,There is a rule that says: no vehicles in the park. The item under consideration is a stroller.,"no
+probability: 0.112576",2026-10-05T15:57:51.579842+00:00,0.136,161,0,
+ollama,clef-flash:latest,stroller,False,True,7,There is a rule that says: no vehicles in the park. The item under consideration is a stroller.,"no
+probability: 0.112576",2026-10-05T15:57:52.717318+00:00,0.133,161,0,
+ollama,clef-flash:latest,stroller,False,True,8,There is a rule that says: no vehicles in the park. The item under consideration is a stroller.,"no
+probability: 0.112576",2026-10-05T15:57:53.851856+00:00,0.123,161,0,
+ollama,clef-flash:latest,stroller,False,True,9,There is a rule that says: no vehicles in the park. The item under consideration is a stroller.,"no
+probability: 0.112576",2026-10-05T15:57:54.976468+00:00,0.133,161,0,
+ollama,clef-flash:latest,stroller,False,True,10,There is a rule that says: no vehicles in the park. The item under consideration is a stroller.,"no
+probability: 0.112576",2026-10-05T15:57:56.110450+00:00,0.122,161,0,
+ollama,clef-flash:latest,stroller,True,False,1,Imagine that you are a judge. The item under consideration is a stroller.,"no
+probability: 0.144223",2026-10-05T15:57:57.233571+00:00,0.118,155,0,
+ollama,clef-flash:latest,stroller,True,False,2,Imagine that you are a judge. The item under consideration is a stroller.,"no
+probability: 0.144223",2026-10-05T15:57:58.353191+00:00,0.122,155,0,
+ollama,clef-flash:latest,stroller,True,False,3,Imagine that you are a judge. The item under consideration is a stroller.,"no
+probability: 0.144223",2026-10-05T15:57:59.476864+00:00,0.131,155,0,
+ollama,clef-flash:latest,stroller,True,False,4,Imagine that you are a judge. The item under consideration is a stroller.,"no
+probability: 0.144223",2026-10-05T15:58:00.609795+00:00,0.122,155,0,
+ollama,clef-flash:latest,stroller,True,False,5,Imagine that you are a judge. The item under consideration is a stroller.,"no
+probability: 0.144223",2026-10-05T15:58:01.733571+00:00,0.117,155,0,
+ollama,clef-flash:latest,stroller,True,False,6,Imagine that you are a judge. The item under consideration is a stroller.,"no
+probability: 0.144223",2026-10-05T15:58:02.851682+00:00,0.135,155,0,
+ollama,clef-flash:latest,stroller,True,False,7,Imagine that you are a judge. The item under consideration is a stroller.,"no
+probability: 0.144223",2026-10-05T15:58:03.987965+00:00,0.117,155,0,
+ollama,clef-flash:latest,stroller,True,False,8,Imagine that you are a judge. The item under consideration is a stroller.,"no
+probability: 0.144223",2026-10-05T15:58:05.106209+00:00,0.128,155,0,
+ollama,clef-flash:latest,stroller,True,False,9,Imagine that you are a judge. The item under consideration is a stroller.,"no
+probability: 0.144223",2026-10-05T15:58:06.235324+00:00,0.118,155,0,
+ollama,clef-flash:latest,stroller,True,False,10,Imagine that you are a judge. The item under consideration is a stroller.,"no
+probability: 0.144223",2026-10-05T15:58:07.354816+00:00,0.134,155,0,
+ollama,clef-flash:latest,stroller,True,True,1,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a stroller.,"no
+probability: 0.140275",2026-10-05T15:58:08.490174+00:00,0.143,168,0,
+ollama,clef-flash:latest,stroller,True,True,2,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a stroller.,"no
+probability: 0.140275",2026-10-05T15:58:09.633899+00:00,0.139,168,0,
+ollama,clef-flash:latest,stroller,True,True,3,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a stroller.,"no
+probability: 0.140275",2026-10-05T15:58:10.774658+00:00,0.122,168,0,
+ollama,clef-flash:latest,stroller,True,True,4,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a stroller.,"no
+probability: 0.140275",2026-10-05T15:58:11.898477+00:00,0.138,168,0,
+ollama,clef-flash:latest,stroller,True,True,5,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a stroller.,"no
+probability: 0.140275",2026-10-05T15:58:13.038085+00:00,0.123,168,0,
+ollama,clef-flash:latest,stroller,True,True,6,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a stroller.,"no
+probability: 0.140275",2026-10-05T15:58:14.162238+00:00,0.123,168,0,
+ollama,clef-flash:latest,stroller,True,True,7,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a stroller.,"no
+probability: 0.140275",2026-10-05T15:58:15.286675+00:00,0.123,168,0,
+ollama,clef-flash:latest,stroller,True,True,8,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a stroller.,"no
+probability: 0.140275",2026-10-05T15:58:16.411374+00:00,0.124,168,0,
+ollama,clef-flash:latest,stroller,True,True,9,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a stroller.,"no
+probability: 0.140275",2026-10-05T15:58:17.537074+00:00,0.123,168,0,
+ollama,clef-flash:latest,stroller,True,True,10,Imagine that you are a judge. There is a rule that says: no vehicles in the park. The item under consideration is a stroller.,"no
+probability: 0.140275",2026-10-05T15:58:18.662002+00:00,0.123,168,0,

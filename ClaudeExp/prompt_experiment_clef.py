@@ -94,8 +94,8 @@ MODELS = [
     if model.strip()
 ]
 
-# Output directory (relative to this script)
-OUTPUT_DIR = "results"
+# Output directory beside this script
+OUTPUT_DIR = Path(__file__).resolve().parent / "results"
 
 
 # ============================================================================
@@ -406,11 +406,6 @@ def run_experiment():
     print(f"\n📐 Conditions per model: {len(VEHICLES)} vehicles × 2 judge × 2 rule = "
           f"{n_cond_per_model} conditions × {N_TRIALS} trials")
     print()
-
-
-    if __name__ == "__main__":
-        run_experiment()
-
 
 if __name__ == "__main__":
     run_experiment()

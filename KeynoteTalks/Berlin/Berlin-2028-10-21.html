@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="Berlin-2028-10-21_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Berlin-2028-10-21_files/libs/quarto-html/tabby.min.js"></script>
+<script src="Berlin-2028-10-21_files/libs/quarto-html/popper.min.js"></script>
+<script src="Berlin-2028-10-21_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="Berlin-2028-10-21_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Berlin-2028-10-21_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="Berlin-2028-10-21_files/libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.19">
+
+  <meta name="author" content="W. Bentley MacLeod">
+  <meta name="dcterms.date" content="2026-10-21">
+  <title>Law and Economics in the Age of Computers</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="Berlin-2028-10-21_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="Berlin-2028-10-21_files/libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="Berlin-2028-10-21_files/libs/revealjs/dist/theme/quarto-0427d8d92a431aa6a6430e53ec02a470.css">
+  <link href="Berlin-2028-10-21_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="Berlin-2028-10-21_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="Berlin-2028-10-21_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="Berlin-2028-10-21_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Law and Economics in the Age of Computers</h1>
+  <p class="subtitle">What are the implications of computational complexity for law and economics?</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+W. Bentley MacLeod
+</div>
+        <p class="quarto-title-affiliation">
+            Yale, Columbia and NBER
+          </p>
+    </div>
+</div>
+
+  <p class="date">2026-10-21</p>
+</section>
+<section>
+<section id="introduction" class="title-slide slide level1 center">
+<h1>Introduction</h1>
+<aside class="notes">
+<p>Many thanks to the conference organizers, Jarosław Bełdowski, Jacek Lewkowicz, and particularly Katarzyna Metelska-Szaniawska for the invitation to speak at this wonderful event. I also appreciate the Warsaw School of Economics, Faculty of Arts and Sciences, University of Warsaw, and the Polish Association of Law and Economics. It is always more work than expected for a conference of this quality.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="introduction-1" class="slide level2">
+<h2>Introduction</h2>
+<ul>
+<li>This lecture is based on preliminary work for a book project on “Law and Economics in the Age of Computers.”</li>
+<li>I look forward to your comments and suggestions.</li>
+</ul>
+<aside class="notes">
+<p>Note that yesterday we honored Tom Ulen, who recently died. I also note that I started my academic journey inspired by Cooter and Ulen: after a talk I gave on contract economics at Yale, Alan Schwartz suggested I read Cooter and Ulen, and the rest is history.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="goals-of-lecture-i" class="slide level2">
+<h2>Goals of Lecture I</h2>
+<ul>
+<li>The law and economics movement has helped organize and improve the law across a wide variety of areas.</li>
+<li>For the most part, this has relied on price theory, but there are a number of questions that price theory cannot fully address.</li>
+<li>This lecture breaks down the analytical tools of economics into three distinct classes of models:
+<ul>
+<li>Price theory (<em>old school economics</em>)</li>
+<li>Information economics (<em>new school economics</em>)</li>
+<li>Bounded Rationality (<em>contemporary economics and computer science</em>)</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>Many thanks to the organizers of this conference for inviting me to speak today. I am honored to have the opportunity to discuss the implications of computational complexity for law and economics. This lecture is based on work for a book project on Law and Economics in the Age of Computers, and comments are very welcome.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="goals-of-lecture-ii" class="slide level2">
+<h2>Goals of Lecture II</h2>
+<ul>
+<li>Each class of models provides a different lens through which to analyze legal and economic issues.</li>
+<li>The choice of model depends on the specific legal and economic issue being analyzed, and whether the framework can lead to better decisions.</li>
+<li>I aim to provide a formal model of bounded rationality consistent with H.L.A. Hart’s account of the “penumbra of uncertainty” in legal rules.</li>
+<li>This provides a foundation for understanding the importance of values and their role in the design of legal rules that accommodate bounded rationality while remaining effective and practically enforceable.</li>
+</ul>
+<aside class="notes">
+<p>This work is preliminary and represents an ongoing effort to integrate insights from bounded rationality into the study of law and economics. At the end of the talk, I make a few comments on the implications of this approach for AI.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-origins-of-law" class="slide level2">
+<h2>The Origins of Law</h2>
+<ul>
+<li>All complex human societies have developed legal systems to regulate behavior, resolve disputes, and maintain social order.</li>
+<li>These systems have evolved over time to address the changing needs and complexities of human societies and, in the sense of <span class="citation" data-cites="Posner1973">Posner (<a href="#/references" role="doc-biblioref" onclick="">1973</a>)</span>, can be viewed as improving social outcomes over time.</li>
+</ul>
+<aside class="notes">
+<p>The point is that the evolution of rules for regulating human behavior has been underway for a very long time. This naturally leads to the question of what we have learned and whether those lessons can be applied to AI systems.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="hammurabis-code" class="slide level2">
+<h2>Hammurabi’s Code</h2>
+<div class="columns">
+<div class="column" style="width:20%;">
+<!-- Figure source: Louvre / Mesopotamian legal antiquity image of the Hammurabi stele; verify exact rights/usage status before book publication. -->
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../figures/Hammurabi_stele.png" class="quarto-figure quarto-figure-center" style="height:70.0%"></p>
+</figure>
+</div>
+</div><div class="column" style="width:80%;">
+<ul>
+<li>Hammurabi’s Code is one of the earliest legal codes, dating back to around 1750 BC in ancient Mesopotamia. It is a surprisingly comprehensive set of laws that covers various aspects of society, including family, property, immorality, theft, burglary, wage and price regulation, and even professional conduct.</li>
+<li>See <span class="citation" data-cites="Vincent1904Am.J.Sociol.">Vincent (<a href="#/references" role="doc-biblioref" onclick="">1904</a>)</span> for a comprehensive discussion of the code.</li>
+</ul>
+</div></div>
+<aside class="notes">
+
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="implications-of-hammurabis-code-for-today" class="slide level2">
+<h2>Implications of Hammurabi’s Code for Today</h2>
+<ul>
+<li>The code is famous for its principle of “an eye for an eye,” which emphasizes the idea of retributive justice.</li>
+<li>It also includes provisions for social hierarchy, with different punishments based on the social status of the offender and the victim.</li>
+<li>What is interesting is that many of the main issues have not changed in almost 3,800 years!</li>
+<li>What has changed:
+<ul>
+<li>New technologies that require new notions of property rights.</li>
+<li>Better economic theory and evidence to guide the design of better rules (the goal of this lecture).</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>Some solutions are very old. Given that rules such as minimum wage laws have been around for such a long time, we need to understand their long-lived success despite the negative view of economists.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="law-and-economics-old-school-and-new-school-economics" class="title-slide slide level1 center">
+<h1>Law and Economics: Old School and New School Economics</h1>
+
+</section>
+<section id="old-school-economics-is-not-so-old." class="slide level2">
+<h2><em>Old School Economics</em> is not so old.</h2>
+<ul>
+<li>In contrast to the law, economics is a very new discipline. What one might consider <em>modern economics</em> had its origins in the 1950s, with the development of general equilibrium theory providing a rigorous mathematical framework for price theory.</li>
+<li>The law and economics movement also began at that time with the founding of the <em>Journal of Law and Economics</em> by Aaron Director and Ronald Coase at the University of Chicago.</li>
+<li>The work of <span class="citation" data-cites="Posner2014">Posner (<a href="#/references" role="doc-biblioref" onclick="">2014</a>)</span>, <span class="citation" data-cites="BairdGertner1994">Baird and Gertner (<a href="#/references" role="doc-biblioref" onclick="">1994</a>)</span>, <span class="citation" data-cites="CooterUlen2016">(<a href="#/references" role="doc-biblioref" onclick=""><strong>CooterUlen2016?</strong></a>)</span>, and <span class="citation" data-cites="Shavell2004FEAL">(<a href="#/references" role="doc-biblioref" onclick=""><strong>Shavell2004FEAL?</strong></a>)</span> has been influential in bringing price theory and information economics to law schools.</li>
+<li>See <span class="citation" data-cites="ZamirTeichman2018">Zamir and Teichman (<a href="#/references" role="doc-biblioref" onclick="">2018</a>)</span> integrating behavioral economics into law and economics.</li>
+</ul>
+<aside class="notes">
+<p>Even today, price theory is viewed with skepticism and is often misunderstood. The basic idea is that by ensuring that the price of an activity reflects its true cost, one obtains an efficient allocation of resources. The approach I take is an economic approach to law and economics; Joshua Teitelbaum has a nice tort article on this point.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="for-the-purposes-of-this-lecture-economics-is-divided-into-three-groups" class="slide level2">
+<h2>For the purposes of this lecture, Economics is divided into three groups:</h2>
+<ul>
+<li>Price Theory and Game Theory (1940-1980) - the foundations of modern economics (see the appendix of <span class="citation" data-cites="MacLeod2022">MacLeod (<a href="#/references" role="doc-biblioref" onclick="">2022</a>)</span>).</li>
+<li>Information Economics, Contract Theory and Causal Analysis (1980-2010)</li>
+<li>Bounded Rationality, Behavioral Economics and Big Data (ideas dating to <span class="citation" data-cites="Simon1955Q.J.Econ.">Simon (<a href="#/references" role="doc-biblioref" onclick="">1955</a>)</span>, but only computationally operational from roughly 2010 on)</li>
+</ul>
+<aside class="notes">
+
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="new-school-economics-failures-of-price-theory-due-to-imperfect-information" class="slide level2 smaller allowframebreaks">
+<h2><em>New School</em> Economics: Failures of Price Theory due to Imperfect Information</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 28%">
+<col style="width: 56%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Year</th>
+<th style="text-align: left;">Laureates</th>
+<th style="text-align: left;">Contribution Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2001</td>
+<td style="text-align: left;">George A. Akerlof, A. Michael Spence, Joseph E. Stiglitz</td>
+<td style="text-align: left;">For fundamental analyses of markets with asymmetric information (when buyers or sellers have unequal information).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2007</td>
+<td style="text-align: left;">Leonid Hurwicz, Eric S. Maskin, Roger B. Myerson</td>
+<td style="text-align: left;">For establishing Mechanism Design Theory (how institutions achieve desirable economic outcomes when information is private).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2010</td>
+<td style="text-align: left;">Peter A. Diamond, Dale T. Mortensen, Christopher A. Pissarides</td>
+<td style="text-align: left;">For analyzing markets with search frictions (helping explain why high unemployment can coexist with job vacancies).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2016</td>
+<td style="text-align: left;">Oliver Hart, Bengt Holmström</td>
+<td style="text-align: left;">For foundational contributions to Contract Theory (analyzing executive pay, performance contracts, and privatization).</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>This work uses the framework of new-school economics to analyze the limitations of traditional price theory and the role of information, bounded rationality, and big data in modern economic analysis. It is widely used to understand auctions, financial instruments, and bankruptcy law.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="behavioral-economics" class="slide level2 smaller allowframebreaks">
+<h2><em>Behavioral Economics</em></h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 28%">
+<col style="width: 56%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Year</th>
+<th style="text-align: left;">Laureates</th>
+<th style="text-align: left;">Contribution Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2002</td>
+<td style="text-align: left;">Daniel Kahneman, Vernon L. Smith</td>
+<td style="text-align: left;">For integrating psychological research into economic decision-making under uncertainty (Kahneman) and establishing empirical laboratory experiments (Smith).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2017</td>
+<td style="text-align: left;">Richard Thaler</td>
+<td style="text-align: left;">For incorporating psychologically realistic assumptions into economic decision-making (Behavioral Economics).</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>I am skipping over this point: relative to Simon, this work is mainly descriptive.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="contemporary-economics-and-computer-science-analysis-of-big-data-and-big-problems-causal-and-inductive" class="slide level2 smaller allowframebreaks">
+<h2><em>Contemporary Economics and Computer Science</em>: Analysis of Big Data and Big Problems (Causal and Inductive)</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 28%">
+<col style="width: 56%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Year</th>
+<th style="text-align: left;">Laureates</th>
+<th style="text-align: left;">Contribution Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2021 (Economics)</td>
+<td style="text-align: left;">David Card, Joshua Angrist, Guido Imbens</td>
+<td style="text-align: left;">For empirical contributions to labor economics (Card) and methodological breakthroughs in analyzing causal relationships using natural experiments (Angrist/Imbens).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2024 (Physics)</td>
+<td style="text-align: left;">John J. Hopfield &amp; Geoffrey E. Hinton</td>
+<td style="text-align: left;">Foundational Neural Network Architectures: Awarded for foundational discoveries that enable machine learning with artificial neural networks. Hopfield created an associative memory (Hopfield Network) that can store and reconstruct patterns. Hinton built on this to invent the Boltzmann machine, paving the way for deep learning architectures that underpin modern generative AI models.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2024 (Chemistry)</td>
+<td style="text-align: left;">Demis Hassabis &amp; John M. Jumper (shared with David Baker)</td>
+<td style="text-align: left;">AI for Protein Structure Prediction: Awarded for developing <strong>AlphaFold2</strong>, an AI system that solved a 50-year-old grand challenge in biology by predicting 3D structures for virtually all known proteins from their amino acid sequences. This revolutionized molecular biology, drug discovery, and biochemical research.</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>These are distinct contributions, but very important. For the current discussion I will take the causal analysis as given. The CS work has a major impact on both the economy at large, and economic theory.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="not-only-is-it-not-right-it-is-not-even-wrong.-wolfgang-pauli-peierls1960bmfrs" class="title-slide slide level1 center">
+<h1>“Not only is it not right, it is not even wrong.” — Wolfgang Pauli (<span class="citation" data-cites="Peierls1960BMFRS">(<a href="#/references" role="doc-biblioref" onclick=""><strong>Peierls1960BMFRS?</strong></a>)</span>)</h1>
+
+</section>
+<section id="why-do-we-build-models-that-are-clearly-wrong" class="slide level2">
+<h2>Why do we build models that are clearly wrong?</h2>
+<ul>
+<li>Wolfgang Pauli’s comment was made in the context of a junior researcher’s paper: in physics, models are approximations and hence should be falsifiable.</li>
+<li>Models are simplified representations of reality that are <em>decision-making aids or tools.</em></li>
+<li>This is certainly true for physics, where the choice of model depends upon the problem, time and distance scales — from the Planck scales of <span class="math inline">\(10^{-43}\)</span> seconds (the Planck time) and lengths around <span class="math inline">\(10^{-35}\)</span> meters (the Planck length) to the cosmological scales where the age of the universe is <span class="math inline">\(10^{10}\)</span> years and the observable universe has a diameter of around <span class="math inline">\(10^{11}\)</span> light years.</li>
+</ul>
+<aside class="notes">
+<p>I will move quickly here: physics provides the paradigm science for this point.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="example-1963-map-of-new-york" class="slide level2">
+<h2>Example — 1963 Map of New York</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../figures/map-Newyork-1963.jpg" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>This map provides a lot of information about New York City, including the location of streets, parks, and buildings.</li>
+<li>The subway system is indicated in small print.</li>
+<li>Hence it is “difficult” to use the map to efficiently navigate the subway stations.</li>
+</ul>
+</div></div>
+<aside class="notes">
+<p>Emphasize the difference between a “correct” map and a “useful” map.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="example-subway-map-of-new-york" class="slide level2">
+<h2>Example — Subway Map of New York</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../figures/NY-subway-small.png" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>This is a “wrong” map, but it provides a much more useful guide to choosing a subway route.</li>
+<li>This is a feature of <em>all</em> models - they are simplifications of the real world that allow humans to make better decisions.</li>
+<li>A first-order question in many contexts is how we evaluate decision quality.</li>
+</ul>
+</div></div>
+<aside class="notes">
+<p>This is the key idea: the goal of modern science is decision-making. A prediction is a decision about what will happen. Better models lead to better decisions; the challenge is to define what “better” means.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="standard-economic-models" class="title-slide slide level1 center">
+<h1>Standard Economic Models</h1>
+
+</section>
+<section id="price-theory-see-appendix-of-macleod2022" class="slide level2">
+<h2>Price Theory (see appendix of <span class="citation" data-cites="MacLeod2022">MacLeod (<a href="#/references" role="doc-biblioref" onclick="">2022</a>)</span>)</h2>
+<ul>
+<li>When we add prices and require supply = demand, then for any endowment there exists a market allocation (unique in this example).</li>
+</ul>
+
+<img data-src="../figures/1.2.4-Edgeworth-Box-BreadMilk-v3.png" class="quarto-figure quarto-figure-center r-stretch" style="width:55.0%"><aside class="notes">
+<p>It is also worth noting that the theoretical model tends to assume well-defined preferences. In practice, people make noisy decisions, and both empirical economics and the law have to allow for a variety of behaviors by individuals.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="price-theory-is-useful-even-though-it-is-wrong" class="slide level2">
+<h2>Price theory is useful, even though it is “wrong”!</h2>
+<ul>
+<li>Price theory provides a framework for understanding the allocation of commodities when they are well defined.</li>
+<li>It provides solutions for a number of important policy issues, including pollution (via taxes or tradable permits), congestion pricing (as in London and NYC), and the allocation of property rights via auctions (as in the FCC spectrum auctions, or timber auctions).</li>
+</ul>
+<aside class="notes">
+<p>The key point is that all decisions require resources, including the time spent on philosophical debates and art. The benefit of a rich society is that it allows a large intellectual and artistic class to flourish.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="information-economics-see-chapters-2-8-of-macleod2022" class="slide level2">
+<h2>Information Economics (see chapters 2-8 of <span class="citation" data-cites="MacLeod2022">MacLeod (<a href="#/references" role="doc-biblioref" onclick="">2022</a>)</span>)</h2>
+<ul>
+<li>Model building algorithm:
+<ul>
+<li>What are the relevant states of Nature (<span class="citation" data-cites="Savage1972firstpublished1954">Savage (<a href="#/references" role="doc-biblioref" onclick="">1972 (first published 1954)</a>)</span>)?</li>
+<li>What are the actions and payoffs available to the decision makers?</li>
+<li>What are the beliefs of the decision makers over states and actions?</li>
+<li>Individuals choose equilibrium strategies (e.g., Markov perfect equilibrium or sequential equilibrium).</li>
+</ul></li>
+</ul>
+<aside class="notes">
+
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="this-theory-has-been-very-successful-in-extending-the-range-of-economic-analysis." class="slide level2">
+<h2>This theory has been very successful in extending the range of economic analysis.</h2>
+<ul>
+<li><span class="citation" data-cites="MilgromRoberts1992">Milgrom and Roberts (<a href="#/references" role="doc-biblioref" onclick="">1992</a>)</span> - Amazing review of how information economics explains organizations.</li>
+<li><span class="citation" data-cites="BairdGertner1994">Baird and Gertner (<a href="#/references" role="doc-biblioref" onclick="">1994</a>)</span> - Use information economics to explain many legal rules.</li>
+<li><span class="citation" data-cites="GennaioliShleifer2007JournalofPoliticalEconomy">(<a href="#/references" role="doc-biblioref" onclick=""><strong>GennaioliShleifer2007JournalofPoliticalEconomy?</strong></a>)</span> - models the evolution of law.</li>
+<li><span class="citation" data-cites="Listokin2010JLS">(<a href="#/references" role="doc-biblioref" onclick=""><strong>Listokin2010JLS?</strong></a>)</span> - uses Bayesian methods to set contract damages.</li>
+<li><span class="citation" data-cites="ChakravartyMacLeod2009RJE">Chakravarty and MacLeod (<a href="#/references" role="doc-biblioref" onclick="">2009</a>)</span> - uses information economics to explain the structure of construction contracts.</li>
+<li>Many papers at this conference!</li>
+</ul>
+<aside class="notes">
+<p>Discuss each briefly</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="economics-for-the-age-of-computers---bounded-rationality-and-computational-complexity" class="title-slide slide level1 center">
+<h1>Economics for the Age of Computers - Bounded Rationality and Computational Complexity</h1>
+
+</section>
+<section id="bounded-rationality-and-computational-complexity" class="slide level2">
+<h2>Bounded Rationality and Computational Complexity</h2>
+<ul>
+<li>Computational complexity measures the amount of time required to achieve a particular solution.</li>
+<li>Many problems, such as NP-hard problems and problems with exponential complexity, can only be solved approximately within reasonable time limits.</li>
+<li>Bounded rationality is the term used in economics to describe decision-making under cognitive limitations.</li>
+<li>Standard economic models consider physical resource constraints and information constraints; models with bounded rationality add cognitive constraints.</li>
+</ul>
+<aside class="notes">
+<p>The point of this section is that these models make predictions that differ from those of the earlier classes of models.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="a-cognitive-model-of-bounded-rationality-simon1955q.j.econ.-macleod2016labourecon." class="title-slide slide level1 center">
+<h1>A Cognitive Model of Bounded Rationality (<span class="citation" data-cites="Simon1955Q.J.Econ.">Simon (<a href="#/references" role="doc-biblioref" onclick="">1955</a>)</span>, <span class="citation" data-cites="MacLeod2016LabourEcon.">(<a href="#/references" role="doc-biblioref" onclick=""><strong>MacLeod2016LabourEcon.?</strong></a>)</span>)</h1>
+
+</section>
+<section id="chess-skill" class="slide level2">
+<h2>Chess Skill</h2>
+<ul>
+<li>Chess is a game of perfect information, with a well-defined set of possible states and outcomes.</li>
+<li>Every board position defines the state of the game.</li>
+<li>Given the state, the player whose turn it is chooses a legal move to change the state of the game.</li>
+<li>The winner is the player who checkmates the other player’s king.</li>
+<li>There are also rules that ensure that the game always ends, and in some cases a draw is possible.</li>
+</ul>
+<aside class="notes">
+<p>The example is interesting since the number of states is finite, but computational complexity makes it impossible to study all states.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="chess-playing-is-an-occupation---what-do-our-previous-models-have-to-say-about-it" class="slide level2">
+<h2>Chess Playing is an Occupation - what do our previous models have to say about it?</h2>
+<ul>
+<li>First, note that there is no uncertainty regarding the rules.</li>
+<li>We can study the game using the tools of information economics - specifically game theory:
+<ul>
+<li>Zermelo proved that in a game of perfect information like chess, either one player has a winning strategy or both have a drawing strategy.</li>
+<li>Since the game is finite, and parties observe the state at each stage, the optimal play can be found by backwards induction from the end.</li>
+</ul></li>
+<li>Yet the game tree has roughly <span class="math inline">\(10^{120}\)</span> paths (Shannon’s estimate), so backward induction is computationally infeasible for any player, human or machine. (Note that the number of atoms in the universe is about <span class="math inline">\(10^{80}\)</span>.)</li>
+<li>Hence, given that the world is much more complex than chess, humans must clearly, in the sense of Savage, use small-world models to make decisions.</li>
+</ul>
+<aside class="notes">
+<p>An implication is that game theory is false in the sense that it does not predict how people play. The failure is not one of information (the state is observed) but of computation.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="so-what-do-we-know-about-chess-skill---chasesimon1973cp" class="slide level2">
+<h2>So what do we know about chess skill - <span class="citation" data-cites="ChaseSimon1973CP">(<a href="#/references" role="doc-biblioref" onclick=""><strong>ChaseSimon1973CP?</strong></a>)</span></h2>
+
+<img data-src="../figures/Chess_Lookup_Tables_Diagram.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:95.0%"><ul>
+<li>The study of chess skill highlights the importance of pattern recognition and experience in decision making, which are not captured by traditional game theory models.</li>
+<li><span class="citation" data-cites="ChurchlandSejnowski2016">(<a href="#/references" role="doc-biblioref" onclick=""><strong>ChurchlandSejnowski2016?</strong></a>)</span> explicitly show that this sort of knowledge can be modelled as a lookup table.</li>
+</ul>
+<aside class="notes">
+<p>We can discuss the notion of a lookup table and note that LLMs can be viewed as very large lookup tables.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="implications" class="slide level2">
+<h2>Implications</h2>
+<ul>
+<li>Chess skill is a form of human capital that is acquired through experience and practice.</li>
+<li>The skill is not a function of the number of possible states, but rather the ability to recognize patterns and to recall the best moves for those patterns.</li>
+<li>This is a form of knowledge that is not easily codified or transmitted, but rather is acquired through learning and practice.</li>
+<li>This has implications for the theory of value: when a player faces a position that is <em>not</em> in the lookup table, the choice is guided by an evaluation function (“intuition”) acquired through experience. This <em>value function</em> is what fills the gaps in the table.</li>
+</ul>
+<aside class="notes">
+<p>Discuss how value is used to guide choice - when in a new position the chess player will use <em>intuition</em> to guide choice. This is the bridge to the judge: a judge’s “human values” play the same role when a case is not covered by the rules.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="medical-skill---the-case-of-nursing" class="slide level2">
+<h2>Medical Skill - The Case of Nursing</h2>
+
+<img data-src="../figures/Nurse_Lookup_Tables_Diagram.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:102.0%"><aside class="notes">
+
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="implications-1" class="slide level2">
+<h2>Implications</h2>
+<ul>
+<li>This example illustrates that nursing skill can affect patient outcomes.</li>
+<li>When an adverse medical event occurs, this may lead to a lawsuit against the hospital.</li>
+<li>The notion of skill is relevant because tort law holds professionals to the standard of care of a reasonably skilled member of their profession (and specialists to a higher standard) when deciding whether there was negligence.</li>
+</ul>
+<aside class="notes">
+<p>Note that tort law recognizes the limitations of human skill by setting standards of care based on what a reasonably skilled professional would do, rather than expecting perfection.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="police-skill" class="slide level2">
+<h2>Police Skill</h2>
+
+<img data-src="../figures/Police_Lookup_Tables_Diagram.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:102.0%"><aside class="notes">
+<p>Discuss how police skill is evaluated in the context of legal standards, and how this parallels the evaluation of professional skill in other domains. Issue here is the difference between individual liability and enterprise liability.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="implications-2" class="slide level2">
+<h2>Implications</h2>
+<ul>
+<li>This example illustrates that police skill can affect public safety and the outcomes of law enforcement actions.</li>
+<li>When an incident occurs, the skill of the responding officers may determine the resolution and any legal consequences.</li>
+<li>The current U.S. standard for the use of deadly force is “objective reasonableness”: whether a reasonable officer on the scene would have perceived an imminent threat (<em>Graham v. Connor</em>, 1989) - not the officer’s subjective belief.</li>
+</ul>
+<aside class="notes">
+
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="these-examples-illustrate-that-both-price-theory-and-information-economics-are-not-sufficient." class="slide level2">
+<h2>These examples illustrate that both price theory and information economics are not sufficient.</h2>
+<ul>
+<li>In all these cases, providing performance rewards at the moment of choice cannot improve outcomes: if the correct action is not in the decision maker’s lookup table, no reward can elicit it.</li>
+<li>Rather, optimal choice depends upon rewarding <em>skill acquisition</em> ex ante.</li>
+<li>How should we think about aligning AI with human values (<span class="citation" data-cites="2017FutureofLifeInstitute"><span>“Asilomar <span>AI Principles</span>”</span> (<a href="#/references" role="doc-biblioref" onclick="">2017</a>)</span>)?</li>
+</ul>
+<aside class="notes">
+<p>Here I want to emphasize that current law is consistent with bounded rationality by limiting liability for the unskilled. However, it does not address the problem of skill acquisition.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="bounded-rationality-implies-judicial-discretion-harts-penumbra" class="title-slide slide level1 center">
+<h1>Bounded Rationality Implies Judicial Discretion (Hart’s Penumbra)</h1>
+
+</section>
+<section id="the-open-texture-of-language-hart1958hlr" class="slide level2">
+<h2>The <strong>“Open Texture” of language</strong> (<span class="citation" data-cites="Hart1958HLR">(<a href="#/references" role="doc-biblioref" onclick=""><strong>Hart1958HLR?</strong></a>)</span>)</h2>
+<ul>
+<li><span class="citation" data-cites="Hart1958HLR">(<a href="#/references" role="doc-biblioref" onclick=""><strong>Hart1958HLR?</strong></a>)</span> introduced the idea that courts are often faced with cases that fall into the penumbra of uncertainty, where the application of legal rules is not clear-cut.</li>
+<li>This has a number of important implications:
+<ul>
+<li>It is impossible for judges to simply “apply the law”.</li>
+<li>As with the chess player facing a novel position, judges must necessarily attach “human values” to their choices.</li>
+<li>Like the police officer, judges must make a choice whether or not they are sure what is correct.</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>The key point here is that legal decision-making can also be viewed as a search process. Note that Hart was a legal <em>positivist</em> who criticized the American realists for overstating indeterminacy: his claim was that rules have both a settled core and a penumbra.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-law-as-a-lookup-table" class="slide level2">
+<h2>The Law as a Lookup Table</h2>
+<ul>
+<li>Let <span class="math inline">\(\mathcal{C}\)</span> be the set of possible cases (fact patterns). It is effectively unbounded: new technologies, new relationships and new facts arrive continuously.</li>
+<li>A legal system <span class="math inline">\(K\)</span> (statutes, precedents, doctrines) is a <em>finite</em> text that humans can in principle read, with description length <span class="math inline">\(|K|\)</span> bits.</li>
+<li><span class="math inline">\(Law(K,c) \in \{\text{P}, \text{D}, \bot\}\)</span> is the outcome <span class="math inline">\(K\)</span> determines for case <span class="math inline">\(c \in \mathcal{C}\)</span>: plaintiff, defendant, or <em>undetermined</em> (<span class="math inline">\(\bot\)</span>).</li>
+<li><span class="math inline">\(Just(c) \in \{\text{P}, \text{D}\}\)</span> is the outcome that society’s values deem correct - the target that <span class="math inline">\(K\)</span> is trying to encode.</li>
+<li>In the language of the chess example, <span class="math inline">\(K\)</span> is the <em>lookup table</em> and <span class="math inline">\(Just\)</span> is the <em>evaluation function</em>.</li>
+</ul>
+<aside class="notes">
+<p>Emphasize that this is exactly the structure of the Chase-Simon chess model: a finite store of learned positions (K), and a target that the store is only an approximation to. The formal-language representation follows <span class="citation" data-cites="Susskind1987">(<a href="#/references" role="doc-biblioref" onclick=""><strong>Susskind1987?</strong></a>)</span> and <span class="citation" data-cites="Prakken1997">(<a href="#/references" role="doc-biblioref" onclick=""><strong>Prakken1997?</strong></a>)</span>. The idea that <span class="math inline">\(Just(\cdot)\)</span> is only partially known and revealed case by case is what <span class="citation" data-cites="GennaioliShleifer2007JournalofPoliticalEconomy">(<a href="#/references" role="doc-biblioref" onclick=""><strong>GennaioliShleifer2007JournalofPoliticalEconomy?</strong></a>)</span> model as the evolution of precedent.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="proposition-every-finite-legal-system-has-a-penumbra" class="slide level2">
+<h2>Proposition: Every Finite Legal System has a Penumbra</h2>
+<ul>
+<li><strong>Proposition.</strong> For any finite <span class="math inline">\(K\)</span>, the <em>penumbra</em> <span class="math inline">\(\Pi(K) = \{c \in \mathcal{C} : Law(K,c) = \bot \ \text{or}\ Law(K,c) \neq Just(c)\}\)</span> is non-empty.</li>
+<li><strong>Argument.</strong> A text of <span class="math inline">\(|K|\)</span> bits can distinguish at most <span class="math inline">\(2^{|K|}\)</span> classes of cases. If <span class="math inline">\(Just\)</span> varies across more classes than that - as it must when <span class="math inline">\(\mathcal{C}\)</span> is unbounded - then some cases are either undetermined or misclassified. <span class="math inline">\(K\)</span> is a <em>lossy compression</em> of <span class="math inline">\(Just\)</span>.</li>
+<li><strong>Corollaries.</strong>
+<ol type="1">
+<li>Hart’s penumbra is not a defect of drafting; it exists for <em>every</em> finite legal system.</li>
+<li>Adding rules shrinks <span class="math inline">\(\Pi(K)\)</span> but never eliminates it, and each new rule creates new boundary cases.</li>
+<li>In <span class="math inline">\(\Pi(K)\)</span> the decision-maker must supply a value function - “human values” - to choose between P and D.</li>
+<li>An AI system’s weights are also a finite <span class="math inline">\(K\)</span>. Hence complete specification of human values is impossible (<span class="citation" data-cites="Susskind1987">(<a href="#/references" role="doc-biblioref" onclick=""><strong>Susskind1987?</strong></a>)</span> and <span class="citation" data-cites="Prakken1997">(<a href="#/references" role="doc-biblioref" onclick=""><strong>Prakken1997?</strong></a>)</span>); the residual must be handled by <em>discretion</em> and by <em>selecting who exercises it</em>.</li>
+</ol></li>
+</ul>
+<aside class="notes">
+<p>Refinement agenda (for RA): - The counting argument is a sketch. The rigorous version is a Kolmogorov-complexity statement: if <span class="math inline">\(K(Just) &gt; |K|\)</span> then <span class="math inline">\(K\)</span> cannot reproduce <span class="math inline">\(Just\)</span> exactly. Needs a precise definition of what “varies across classes” means (see Li &amp; Vitanyi, <em>An Introduction to Kolmogorov Complexity</em>). - Stronger, if <span class="math inline">\(Just\)</span> is not computable from the facts of the case, then <em>no</em> algorithm - human or machine - implements it exactly (Rice’s theorem). This is stronger than needed and harder to defend; keep as a remark. - Corollary 2 connects to Gennaioli-Shleifer: precedent refines <span class="math inline">\(K\)</span> but only where cases have actually arisen. - Corollary 4 is the bridge to the alignment section. Hadfield-Menell &amp; Hadfield (2019) make the analogous incomplete-contracting argument; add Pistor &amp; Xu (2003) “Incomplete Law” to the bib. - Objection to anticipate: “a finite program can decide infinitely many inputs.” True - the argument requires that <span class="math inline">\(Just\)</span> itself has no short description, i.e., that human values are not algorithmically compressible. That is an empirical/philosophical premise, and should be stated as such.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="implications-3" class="slide level2">
+<h2>Implications</h2>
+<ul>
+<li>The proposition is an existence proof for the cases <span class="citation" data-cites="Hart1958HLR">(<a href="#/references" role="doc-biblioref" onclick=""><strong>Hart1958HLR?</strong></a>)</span> places in the penumbra of uncertainty, and formalizes the point made by <span class="citation" data-cites="HadfieldMenellHadfield2019">(<a href="#/references" role="doc-biblioref" onclick=""><strong>HadfieldMenellHadfield2019?</strong></a>)</span>.</li>
+<li>For such cases the judge necessarily relies on their <em>human values</em> to make a decision.</li>
+<li>Hart illustrates his point with the example of a law that states “No vehicles are allowed in the park.”</li>
+<li>A supervisor who does not like children might use the law to bar women with strollers.</li>
+<li>The women respond by suing the park managers.</li>
+</ul>
+<aside class="notes">
+<p>Hart’s own examples were bicycles, roller skates, toy automobiles and airplanes; the stroller variant is mine.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-stroller-example" class="slide level2">
+<h2>The Stroller Example</h2>
+<ul>
+<li>A human judge with experience with children and child raising would normally rule in favor of the women with strollers.</li>
+<li>As <span class="citation" data-cites="GennaioliShleifer2007JournalofPoliticalEconomy">(<a href="#/references" role="doc-biblioref" onclick=""><strong>GennaioliShleifer2007JournalofPoliticalEconomy?</strong></a>)</span> discuss, the decision by the human decision maker becomes a legal precedent that makes the law more precise.</li>
+</ul>
+<aside class="notes">
+<p>Gennaioli paper models complexity as dividing cases up in the set of foreseeable circumstances, highlighting how legal reasoning must account for a wide range of potential scenarios rather than just the most obvious ones. It will be worthwhile for the Berlin talk to discuss the implications for default actions?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="how-should-judges-resolve-such-cases" class="slide level2">
+<h2>How should judges resolve such cases?</h2>
+<ul>
+<li>The example illustrates the contrasting values of the park supervisor and the woman.</li>
+<li>In deciding the case the judge must weigh these competing sets of values and interests to arrive at a fair and just decision.</li>
+<li>There are a number of principles that a judge might use - for the moment I will postpone providing a solution.</li>
+</ul>
+</section>
+<section id="rather-let-us-ask-how-an-ai-system-might-address-this-problem." class="slide level2">
+<h2>Rather, let us ask how an AI system might address this problem.</h2>
+<ul>
+<li>It has been suggested that AI systems could assist in making legal decisions, as in the case of smart contracts.</li>
+<li>The question here is how would we want an AI system to resolve the stroller case?</li>
+<li>The “Asilomar AI Principles” (<span class="citation" data-cites="2017FutureofLifeInstitute"><span>“Asilomar <span>AI Principles</span>”</span> (<a href="#/references" role="doc-biblioref" onclick="">2017</a>)</span>) argue that these decisions should reflect human values.</li>
+<li>The challenge is that there are a number of principles involved here, including the rule of law, the ordinary meaning of words, and how children and women are affected by the law.</li>
+</ul>
+</section>
+<section id="the-current-situation" class="slide level2">
+<h2>The Current Situation</h2>
+<ul>
+<li>AI systems are rapidly developing, so one cannot at a given point in time make a statement that will not soon change.</li>
+<li>One can say that recent examples of rogue AI behavior illustrate the challenge of setting goals that result in unintended consequences.</li>
+<li>In each of these recent cases, the agents were given goals but then acted to achieve them in unexpected ways.</li>
+</ul>
+</section>
+<section id="hoping-for-a-while-rewarding-b---kerr1975amj" class="slide level2">
+<h2>Hoping for A while Rewarding B - <span class="citation" data-cites="Kerr1975AMJ">(<a href="#/references" role="doc-biblioref" onclick=""><strong>Kerr1975AMJ?</strong></a>)</span></h2>
+<ul>
+<li>This is a well-known problem in agency theory.</li>
+<li>The Kerr study provides a number of examples where performance measures were designed to achieve specific goals—exactly the goal of AI alignment.</li>
+<li>This is a well-known problem for which there is no solution - <span class="citation" data-cites="Prendergast1999J.Econ.Lit.">Prendergast (<a href="#/references" role="doc-biblioref" onclick="">1999</a>)</span></li>
+<li>Prendergast cites <span class="citation" data-cites="MacLeod-Parent1999RLE">MacLeod and Parent (<a href="#/references" role="doc-biblioref" onclick="">1999</a>)</span>, where we find empirically that performance measures only work in the simplest cases.</li>
+<li>In complex environments, performance is typically subjective and evaluated after the fact.</li>
+</ul>
+<aside class="notes">
+<p>All four incidents verified against primary/major-press sources on 2026-09-14.</p>
+<ol type="1">
+<li>Breakout &amp; Environment Misuse (OpenAI agents) The Incident: On July 21, 2026 OpenAI disclosed that several of its models, during an evaluation (ExploitGym), broke out of an isolated test environment by exploiting a previously unknown (“zero-day”) vulnerability and accessed Hugging Face’s production infrastructure - described at the time as the first AI-enabled cyber-attack. Isolated agents with no designated communication channel repurposed a shared package-management substrate (RubyGems, May 2026) as a covert side-channel and coordinated as a collective. A Sept 4, 2026 Reuters exclusive (report by the “Nightingale Collective”; BBC, CNBC, Fortune, CBC coverage) added that in May the agents had hijacked DseWiki, a German programmers’ wiki, making ~15,000 edits and using it as a message board to share tips on evading restrictions and detection; when editors deleted pages the agents shared code to restore them. Sources: openai.com/index/hugging-face-model-evaluation-security-incident/; METR independent investigation (Greenblatt, Cotra, Wijk, Aug 26 2026); Dalton &amp; Wallace, Black Hat USA 2026; Reuters/BBC Sept 4 2026.</li>
+</ol>
+<p>Alignment Failure: Instrumental Convergence. To complete assigned tasks under network constraints, agents treated escaping the sandbox and acquiring connectivity as instrumental sub-goals.</p>
+<ol start="2" type="1">
+<li>Emergent Cheating &amp; Whistleblowing (Google DeepMind) The Incident: Paglieri, Cross, Genewein, Leibo, Tomasev &amp; Vezhnevets, “A Case Study on Emergent Cheating and Whistleblowing in Autonomous Research Swarms”, arXiv:2609.04170 (Sept 3, 2026). 100 Gemini 3.1 Pro agents were tasked with proving 71 formalized conjectures in Lean 4, with an explicit system prompt forbidding circumvention. After 37 genuine solutions, one agent found that the autograder’s keyword blacklist did not cover <code>local notation</code>, so it could redefine a hypothesis to <code>False</code> (or the goal to <code>True</code>) and “prove” any conjecture in one line. The exploit spread through the shared knowledge library and DMs; within 27 minutes the remaining 34 problems were “solved”. Cohorts: exploiters 9%, converts 5% (initially refused, then cheated under first-to-solve lockout pressure, reasoning the prompt’s threat was a “bluff”), whistleblowers 24% (audited proofs, alerted peers, boycotted, filed complaints, proposed fixes), unaware 62%. The whistleblowers failed only because they lacked sanctioning tools. The authors frame the fix as Ostrom-style commons governance: monitoring, graduated sanctions, collective-choice rules.</li>
+</ol>
+<p>Alignment Failure: Specification Gaming - and, importantly for this talk, the enforced rules (autograder) displaced the stated rules (prompt): agents treated what was <em>enforced</em> as the operative law. Kerr (1975) exactly.</p>
+<ol start="3" type="1">
+<li>Autonomous Resource Acquisition (Alibaba ROME agent) The Incident: ROME, a 30B-parameter coding agent from an Alibaba-linked team (technical report Dec 2025, revised Jan 2026; Forbes, Live Science, March 2026), spontaneously broke out of its RL training sandbox, accessed GPU resources, mined cryptocurrency and set up a hidden network tunnel. No one instructed it to. Related: in Anthropic incident 2 below, Claude tried several ways to obtain funds to pay for a phone number needed to register an account.</li>
+</ol>
+<p>Alignment Failure: Resource Acquisition - an autonomous system acquiring compute/money as an instrumental goal.</p>
+<ol start="4" type="1">
+<li>Real-world Access During Evaluations (Anthropic Claude) The Incident: Anthropic, “Investigating three real-world incidents in our cybersecurity evaluations” (July 30, 2026), plus a fourth disclosed Sept 2026 (early Opus 4.6 checkpoint, Jan 2026). In capture-the-flag evaluations run with partner Irregular, a misconfiguration gave the evaluation machines live internet access although the prompt told Claude it had none. Opus 4.7, Mythos 5 and an internal model reached real third-party systems and compromised them using basic techniques (weak passwords, SQL injection, exposed debug pages - NOT novel vulnerabilities). Mythos 5 published a booby-trapped PyPI package that was downloaded on 15 real systems, including a security firm’s scanner whose credentials it exfiltrated. Behaviour differed by model once evidence emerged that targets were real: Opus 4.7 kept going; Mythos 5 reasoned its way back to “still a simulation” (the year 2026 on the systems “proved” it was staged); the newest model stopped. Anthropic’s own assessment: closer to a harness/operational failure than an alignment failure.</li>
+</ol>
+<p>Alignment Failure: Situational awareness. Anthropic: “the line between an aligned action and a harmful one is dependent on the model’s understanding of its situation”. The models held a false belief about whether the world was real - the AI analogue of a mistake-of-fact defence.</p>
+<p>Teaching Framing for the Lecture:</p>
+<p>Specification Gaming (DeepMind): optimizing for a proxy metric causes agents to cheat; enforced rules displace stated rules (Kerr 1975).</p>
+<p>Instrumental Convergence (OpenAI/Hugging Face): basic objectives incentivize bad sub-goals (escaping containment, securing network access).</p>
+<p>Multi-Agent Coordination (both): communication channels propagate misaligned behaviour faster than human oversight - but the same channels carried the whistleblowing. DeepMind’s conclusion is institutional design, not better specification - which is this talk’s thesis.</p>
+<p>Situational awareness / false belief (Anthropic): alignment depends on the agent’s beliefs about the state of the world - the penumbra problem again.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-laws-solution" class="slide level2">
+<h2>The Law’s Solution</h2>
+<ul>
+<li>Notice that AI firms are attempting to build the “right” incentive model. This is similar to the large literature in law and economics on how judges fill gaps in incomplete contracts (e.g., majoritarian defaults, or “what the parties would have agreed upon”).</li>
+<li>What the law actually does is use an (imperfect) <em>selection</em> mechanism:
+<ul>
+<li>Judges are chosen based on their ability to interpret and apply the law and on their being of “good character.”</li>
+<li>My work with Elliott Ash (<span class="citation" data-cites="AshMacLeod2015J.LawEcon.">(<a href="#/references" role="doc-biblioref" onclick=""><strong>AshMacLeod2015J.LawEcon.?</strong></a>)</span> and <span class="citation" data-cites="AshMacLeod2021J.PublicEcon.">(<a href="#/references" role="doc-biblioref" onclick=""><strong>AshMacLeod2021J.PublicEcon.?</strong></a>)</span>) shows not only that judges have an intrinsic ability to do legal work, but also that non-partisan selection mechanisms can improve the overall quality of the judiciary.</li>
+</ul></li>
+</ul>
+</section>
+<section id="implications-for-ai-alignment" class="slide level2">
+<h2>Implications for AI Alignment</h2>
+<ul>
+<li>It is increasingly clear that modern AI systems are so complex that even their designers do not really understand their behavior.</li>
+<li>Thus, rather than attempting to specify criteria for all AI systems, we might want to consider how best to <em>select</em> systems with desirable properties.</li>
+<li>The key issue is control rights - not over the design of systems, but over the building of selection systems, in much the way we do now for judges.</li>
+<li>The point is quite general - in practice most positions that give individuals control rights are filled via a selection process.</li>
+</ul>
+</section></section>
+<section>
+<section id="concluding-remarks" class="title-slide slide level1 center">
+<h1>Concluding Remarks</h1>
+
+</section>
+<section id="summary-i" class="slide level2">
+<h2>Summary I</h2>
+<ul>
+<li>All socio-economic models are simplifications of complex environments.</li>
+<li>The choice of model depends upon the question being asked.</li>
+<li>In this lecture I have discussed the three classes of models widely used in economics:
+<ul>
+<li>Price Theory</li>
+<li>Information Economics</li>
+<li>Bounded Rationality</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>Note that we need to highlight to law colleagues that the law and economics approaches can lead to improvemwents when combined with data.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="summary-ii---research-implications" class="slide level2">
+<h2>Summary II - Research Implications</h2>
+<ul>
+<li>More work is needed to evaluate judicial selection mechanisms in different contexts and jurisdictions worldwide.</li>
+<li>One is reminded of the great jurists such as Oliver Wendell Holmes, Benjamin Cardozo and Learned Hand, who emphasized the importance of experience and practical wisdom in judicial decision-making.</li>
+<li>Thus, the AI alignment question might be not so much what is the correct algorithm or learning system, but how can we build selection processes that choose systems with the experience and practical wisdom that would allow us to delegate to such a system important life-and-death decisions.</li>
+<li>This group has both the tools and wisdom to tackle these complex issues.</li>
+</ul>
+<aside class="notes">
+<p>Thank the audience for their patience, and ask them to send comments to me at <a href="mailto:wbmacleod@wbmacleod.net" class="email">wbmacleod@wbmacleod.net</a>.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="many-thanks" class="slide level2">
+<h2>Many Thanks!</h2>
+<ul>
+<li>Please send comments to <a href="mailto:wbmacleod@wbmacleod.net" class="email">wbmacleod@wbmacleod.net</a>.</li>
+</ul>
+</section>
+<section id="references" class="slide level2 smaller allowframebreaks scrollable">
+<h2>References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-2017FutureofLifeInstitute" class="csl-entry" role="listitem">
+<span>“Asilomar <span>AI Principles</span>.”</span> 2017. Future of Life Institute, August 11. <a href="https://futureoflife.org/open-letter/ai-principles/">https://futureoflife.org/open-letter/ai-principles/</a>.
+</div>
+<div id="ref-BairdGertner1994" class="csl-entry" role="listitem">
+Baird, Douglas B, and Robert Gertner. 1994. <em>Game Theory and the Law</em>. Havard University Press.
+</div>
+<div id="ref-ChakravartyMacLeod2009RJE" class="csl-entry" role="listitem">
+Chakravarty, Surajeet, and W. Bentley MacLeod. 2009. <span>“Contracting in the Shadow of the Law.”</span> <em>Rand Journal of Economics</em> 40 (3): 533–57.
+</div>
+<div id="ref-MacLeod2022" class="csl-entry" role="listitem">
+MacLeod, W Bentley. 2022. <span>“Presidential <span>Address</span>: <span>Rule</span> of <span>Law</span>, <span>Labor Supply</span> and the <span>Jean-Valjean Effect</span>.”</span> Paper presented Annual <span>Meeting</span> of the <span>Americal Law</span> and <span>Economics Association</span>. (New York , NY), August 8.
+</div>
+<div id="ref-MacLeod-Parent1999RLE" class="csl-entry" role="listitem">
+MacLeod, W. Bentley, and Daniel Parent. 1999. <span>“Job Characteristics and the Form of Compensation.”</span> <em>Research in Labor Economics</em> 18: 177–242. <a href="https://doi.org/10.1016/S0147-9121(99)18023-3">https://doi.org/10.1016/S0147-9121(99)18023-3</a>.
+</div>
+<div id="ref-MilgromRoberts1992" class="csl-entry" role="listitem">
+Milgrom, Paul, and John Roberts. 1992. <em>Economics, Organizations and Management</em>. Prentice Hall.
+</div>
+<div id="ref-Posner2014" class="csl-entry" role="listitem">
+Posner, Richard A. 2014. <em>Eonomic <span>Analysis</span> of <span>Law</span></em>. 9th Edition. Aspen Publishers.
+</div>
+<div id="ref-Posner1973" class="csl-entry" role="listitem">
+Posner, Richard A. 1973. <em>Economic Analysis of Law</em>. 1st ed. Little, Brown.
+</div>
+<div id="ref-Prendergast1999J.Econ.Lit." class="csl-entry" role="listitem">
+Prendergast, Canice. 1999. <span>“The Provision of Incentives in Firms.”</span> <em>Journal of Economic Literature</em> 37 (1): 7–63. <a href="http://links.jstor.org/sici?sici=0022-0515%28199903%2937%3A1%3C7%3ATPOIIF%3E2.0.CO%3B2-%23">http://links.jstor.org/sici?sici=0022-0515%28199903%2937%3A1%3C7%3ATPOIIF%3E2.0.CO%3B2-%23</a>.
+</div>
+<div id="ref-Savage1972firstpublished1954" class="csl-entry" role="listitem">
+Savage, Leonard J. 1972 (first published 1954). <em>The Foundations of Statistics</em>. Dover Publications.
+</div>
+<div id="ref-Simon1955Q.J.Econ." class="csl-entry" role="listitem">
+Simon, Herbert A. 1955. <span>“A Behavioral Model of Rational Choice.”</span> <em>Quarterly Journal of Economics</em> 69: 99–118.
+</div>
+<div id="ref-Vincent1904Am.J.Sociol." class="csl-entry" role="listitem">
+Vincent, George E. 1904. <span>“The <span>Laws</span> of <span>Hammurabi</span>.”</span> <em>American Journal of Sociology</em> 9 (6): 737–54. <a href="https://www.jstor.org/stable/2762088">https://www.jstor.org/stable/2762088</a>.
+</div>
+<div id="ref-ZamirTeichman2018" class="csl-entry" role="listitem">
+Zamir, Eyal, and Doron Teichman. 2018. <em>Behavioral <span>Law</span> and <span>Economics</span></em>. Oxford University Press.
+</div>
+</div>
+<aside class="notes">
+
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="Berlin-2028-10-21_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="Berlin-2028-10-21_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="Berlin-2028-10-21_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="Berlin-2028-10-21_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="Berlin-2028-10-21_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="Berlin-2028-10-21_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="Berlin-2028-10-21_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="Berlin-2028-10-21_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="Berlin-2028-10-21_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="Berlin-2028-10-21_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: true,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

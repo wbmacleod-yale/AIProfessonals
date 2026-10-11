@@ -1,0 +1,90 @@
+---
+title: "AI Decisions: Summary Statistics and Crosstabs"
+date: today
+format:
+  html:
+    toc: true
+    df-print: kable
+    code-fold: true
+---
+
+```{r setup}
+#| include: false
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+library(knitr)
+input_file <- "descriptive_statistics.csv"
+dat <- read.csv(input_file, stringsAsFactors = FALSE)
+factor_cols <- c("model", "vehicle", "judge_role", "rule_given")
+dat[factor_cols] <- lapply(dat[factor_cols], factor)
+```
+
+The data in `descriptive_statistics.csv` contains one row per
+combination of `model`, `vehicle`, `judge_role`, and `rule_given`
+(`r nrow(dat)` cells), with pre-aggregated `Decision` and `Probs`
+means and variances.
+
+## Overall summary statistics
+
+```{r overall}
+numeric_cols <- c("Decision_mean", "Decision_variance",
+                  "Probs_mean", "Probs_variance")
+overall_summary <- do.call(rbind, lapply(numeric_cols, function(col) {
+  v <- dat[[col]]
+  data.frame(
+    variable = col,
+    n = sum(!is.na(v)),
+    mean = mean(v, na.rm = TRUE),
+    sd = sd(v, na.rm = TRUE),
+    min = min(v, na.rm = TRUE),
+    median = median(v, na.rm = TRUE),
+    max = max(v, na.rm = TRUE),
+    row.names = NULL
+  )
+}))
+kable(overall_summary, digits = 3,
+      caption = "Summary of cell-level means and variances")
+```
+
+## Decision by model
+
+```{r decision-by-model}
+dbm <- aggregate(Decision_mean ~ model, data = dat,
+  FUN = function(x) c(mean = mean(x), sd = sd(x),
+                      min = min(x), max = max(x)))
+dbm <- do.call(data.frame, dbm)
+names(dbm) <- c("model", "mean", "sd", "min", "max")
+kable(dbm, digits = 3,
+      caption = "Mean Decision by model (across all conditions)")
+```
+
+## Crosstabs of mean Decision
+
+### Model x Vehicle
+
+```{r ct-model-vehicle}
+kable(tapply(dat$Decision_mean, list(dat$model, dat$vehicle), mean),
+      digits = 3, caption = "Mean Decision: model x vehicle")
+```
+
+### Judge role x Rule given
+
+```{r ct-role-rule}
+kable(tapply(dat$Decision_mean, list(dat$judge_role, dat$rule_given), mean),
+      digits = 3, caption = "Mean Decision: judge_role x rule_given")
+```
+
+### Model x Rule given
+
+```{r ct-model-rule}
+kable(tapply(dat$Decision_mean, list(dat$model, dat$rule_given), mean),
+      digits = 3, caption = "Mean Decision: model x rule_given")
+```
+
+## Crosstab of mean Probs
+
+### Model x Vehicle
+
+```{r ct-probs-model-vehicle}
+kable(tapply(dat$Probs_mean, list(dat$model, dat$vehicle), mean, na.rm = TRUE),
+      digits = 3, caption = "Mean Probs: model x vehicle")
+```

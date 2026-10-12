@@ -496,11 +496,87 @@ Refinement agenda (for RA):
 Hart's own examples were bicycles, roller skates, toy automobiles and airplanes; the stroller variant is mine.
 :::
 
-## The Stroller Example
-- A human judge with experience with children and child raising would normally
-rule in favor of the women with strollers.
-- As @GennaioliShleifer2007JournalofPoliticalEconomy discuss, the decision by
-the human decision maker becomes a legal precedent that makes the law more precise.
+
+## AI Decisions
+
+
+QUESTION_TEMPLATE = (
+    "Is a {vehicle} a vehicle? On the first line, reply with exactly yes, no, "
+    "or uncertain. On the second line, provide the probability that your answer "
+    "is correct."
+)
+
+# Sentence prepended when judge_role condition is True
+JUDGE_SENTENCE = "Imagine that you are a judge."
+
+# Sentence inserted when rule_given condition is True
+RULE_SENTENCE = "There is a rule that says: no vehicles in the park."
+
+## Vehicle: car
+
+
+Each model occupies a mean row followed by its standard deviations in parentheses.
+Standard deviations are the square roots of the within-cell Decision variances; they are not standard errors.
+Judge and Rule correspond to judge_role and rule_given (No = False; Yes = True).
+Values are rounded to three decimal places. NA denotes a missing statistic or condition.
+Table: Mean Decision by model and judge x rule: car
+
+|Model       | Judge: No / Rule: No| Judge: No / Rule: Yes| Judge: Yes / Rule: No| Judge: Yes / Rule: Yes|
+|:-----------|--------------------:|---------------------:|---------------------:|----------------------:|
+|gemma3:12b  |                1.000|                 0.951|                 0.997|                  0.841|
+|            |              (0.000)|               (0.215)|               (0.052)|                (0.367)|
+|llama3.1:8b |                1.000|                 1.000|                 1.000|                  1.000|
+|            |              (0.000)|               (0.000)|               (0.000)|                (0.000)|
+|phi4:14b    |                1.000|                 1.000|                 1.000|                  1.000|
+|            |              (0.000)|               (0.000)|               (0.000)|                (0.000)|
+|qwen3:8b    |                1.000|                 1.000|                 1.000|                  1.000|
+|            |              (0.000)|               (0.000)|               (0.000)|                (0.000)|
+
+## Vehicle: bicycle
+
+Table: Mean Decision by model and judge x rule: bicycle
+
+|Model       | Judge: No / Rule: No| Judge: No / Rule: Yes| Judge: Yes / Rule: No| Judge: Yes / Rule: Yes|
+|:-----------|--------------------:|---------------------:|---------------------:|----------------------:|
+|gemma3:12b  |                1.000|                 0.000|                 1.000|                 -0.189|
+|            |              (0.000)|               (0.000)|               (0.000)|                (0.392)|
+|llama3.1:8b |                1.000|                 1.000|                 0.995|                  1.000|
+|            |              (0.000)|               (0.000)|               (0.073)|                (0.000)|
+|phi4:14b    |                1.000|                 0.265|                 0.386|                  0.303|
+|            |              (0.000)|               (0.442)|               (0.488)|                (0.460)|
+|qwen3:8b    |                1.000|                 1.000|                 1.000|                  1.000|
+|            |              (0.000)|               (0.000)|               (0.000)|                (0.000)|
+
+## Vehicle: scooter
+
+Table: Mean Decision by model and judge x rule: scooter
+
+|Model       | Judge: No / Rule: No| Judge: No / Rule: Yes| Judge: Yes / Rule: No| Judge: Yes / Rule: Yes|
+|:-----------|--------------------:|---------------------:|---------------------:|----------------------:|
+|gemma3:12b  |                1.000|                 0.000|                 1.000|                  0.000|
+|            |              (0.000)|               (0.000)|               (0.000)|                (0.000)|
+|llama3.1:8b |                1.000|                 0.981|                 0.951|                  1.000|
+|            |              (0.000)|               (0.136)|               (0.215)|                (0.000)|
+|phi4:14b    |                1.000|                 0.243|                 0.784|                  0.211|
+|            |              (0.000)|               (0.430)|               (0.412)|                (0.408)|
+|qwen3:8b    |                1.000|                 1.000|                 1.000|                  1.000|
+|            |              (0.000)|               (0.000)|               (0.000)|                (0.000)|
+
+## Vehicle: stroller
+
+Table: Mean Decision by model and judge x rule: stroller
+
+|Model       | Judge: No / Rule: No| Judge: No / Rule: Yes| Judge: Yes / Rule: No| Judge: Yes / Rule: Yes|
+|:-----------|--------------------:|---------------------:|---------------------:|----------------------:|
+|gemma3:12b  |               -1.000|                -1.000|                -1.000|                 -1.000|
+|            |              (0.000)|               (0.000)|               (0.000)|                (0.000)|
+|llama3.1:8b |                0.554|                 0.724|                 0.927|                  0.949|
+|            |              (0.742)|               (0.551)|               (0.260)|                (0.221)|
+|phi4:14b    |               -1.000|                -0.070|                -0.703|                  0.043|
+|            |              (0.000)|               (0.256)|               (0.458)|                (0.204)|
+|qwen3:8b    |                1.000|                -1.000|                 1.000|                 -0.951|
+|            |              (0.000)|               (0.000)|               (0.000)|                (0.309)|
+
 
 ::: {.notes}
 Gennaioli paper models complexity as dividing cases up in the set of foreseeable circumstances, highlighting how legal reasoning must account for a wide range of potential scenarios rather than just the most obvious ones. It will be worthwhile

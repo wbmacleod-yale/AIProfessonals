@@ -1,0 +1,77 @@
+---
+title: "AI Decisions: Summary Statistics and Crosstabs"
+format: html
+---
+
+The data contain 64 cells defined by model, vehicle, judge role, and rule given.
+These tables summarize pre-aggregated cell means and variances, not individual trials.
+Means across conditions give each cell equal weight; missing probability means are excluded.
+
+## Overall summary statistics
+
+Table: Summary of cell-level means and variances
+
+|variable          |  n|  mean|    sd|    min| median|   max|
+|:-----------------|--:|-----:|-----:|------:|------:|-----:|
+|Decision_mean     | 64| 0.581| 0.677| -1.000|  1.000| 1.000|
+|Decision_variance | 64| 0.046| 0.098|  0.000|  0.000| 0.551|
+|Probs_mean        | 61| 0.734| 0.249|  0.131|  0.833| 0.975|
+|Probs_variance    | 61| 0.050| 0.040|  0.008|  0.031| 0.138|
+
+## Decision by model
+
+Table: Mean Decision by model (across all conditions)
+
+|model       |  mean|    sd|    min| max|
+|:-----------|-----:|-----:|------:|---:|
+|gemma3:12b  | 0.225| 0.850| -1.000|   1|
+|llama3.1:8b | 0.943| 0.125|  0.554|   1|
+|phi4:14b    | 0.404| 0.628| -1.000|   1|
+|qwen3:8b    | 0.753| 0.675| -1.000|   1|
+
+## Crosstabs of mean Decision
+
+### Model x Vehicle
+
+Table: Mean Decision: model x vehicle
+
+|            | bicycle|   car| scooter| stroller|
+|:-----------|-------:|-----:|-------:|--------:|
+|gemma3:12b  |   0.453| 0.947|   0.500|   -1.000|
+|llama3.1:8b |   0.999| 1.000|   0.983|    0.789|
+|phi4:14b    |   0.489| 1.000|   0.559|   -0.432|
+|qwen3:8b    |   1.000| 1.000|   1.000|    0.012|
+
+### Judge role x Rule given
+
+Table: Mean Decision: judge_role x rule_given
+
+|      | False|  True|
+|:-----|-----:|-----:|
+|False | 0.722| 0.443|
+|True  | 0.709| 0.450|
+
+### Model x Rule given
+
+Table: Mean Decision: model x rule_given
+
+|            | False|   True|
+|:-----------|-----:|------:|
+|gemma3:12b  | 0.500| -0.050|
+|llama3.1:8b | 0.928|  0.957|
+|phi4:14b    | 0.433|  0.374|
+|qwen3:8b    | 1.000|  0.506|
+
+## Crosstab of mean Probs
+
+### Model x Vehicle
+
+Table: Mean Probs: model x vehicle
+
+|            | bicycle|   car| scooter| stroller|
+|:-----------|-------:|-----:|-------:|--------:|
+|gemma3:12b  |   0.636| 0.797|   0.681|    0.261|
+|llama3.1:8b |   0.961| 0.917|   0.872|    0.842|
+|phi4:14b    |   0.781| 0.748|   0.731|    0.352|
+|qwen3:8b    |   0.894| 0.889|   0.826|    0.501|
+

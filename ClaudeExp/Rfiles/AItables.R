@@ -1,7 +1,11 @@
 # Summary statistics and crosstabs for descriptive_statistics.csv.
 # Run from the workspace root: Rscript Rfiles/AItables.R
+# Also writes plain Markdown tables to AItables-copy.qmd beside the CSV.
 
 input_file <- file.path("Rfiles", "descriptive_statistics.csv")
+if (!file.exists(input_file) && file.exists("descriptive_statistics.csv")) {
+  input_file <- "descriptive_statistics.csv"
+}
 
 if (!file.exists(input_file)) {
   stop("CSV file not found: ", normalizePath(input_file, mustWork = FALSE))
@@ -72,5 +76,63 @@ tables <- list(
   ct_model_rule = ct_model_rule,
   ct_probs_model_vehicle = ct_probs_model_vehicle
 )
+
+# ---- Copy-ready Quarto document (no executable code chunks) -------------
+table_section <- function(heading, table, caption, row.names = FALSE) {
+  c(
+    heading,
+    "",
+    as.character(knitr::kable(
+      table, format = "pipe", digits = 3,
+      row.names = row.names, caption = caption
+    )),
+    ""
+  )
+}
+
+output_file <- file.path(dirname(input_file), "AItables-copy.qmd")
+quarto_document <- c(
+  "---",
+  'title: "AI Decisions: Summary Statistics and Crosstabs"',
+  "format: html",
+  "---",
+  "",
+  sprintf(
+    "The data contain %d cells defined by model, vehicle, judge role, and rule given.",
+    nrow(dat)
+  ),
+  "These tables summarize pre-aggregated cell means and variances, not individual trials.",
+  "Means across conditions give each cell equal weight; missing probability means are excluded.",
+  "",
+  table_section(
+    "## Overall summary statistics", overall_summary,
+    "Summary of cell-level means and variances"
+  ),
+  table_section(
+    "## Decision by model", decision_by_model,
+    "Mean Decision by model (across all conditions)"
+  ),
+  "## Crosstabs of mean Decision",
+  "",
+  table_section(
+    "### Model x Vehicle", ct_model_vehicle,
+    "Mean Decision: model x vehicle", row.names = TRUE
+  ),
+  table_section(
+    "### Judge role x Rule given", ct_role_rule,
+    "Mean Decision: judge_role x rule_given", row.names = TRUE
+  ),
+  table_section(
+    "### Model x Rule given", ct_model_rule,
+    "Mean Decision: model x rule_given", row.names = TRUE
+  ),
+  "## Crosstab of mean Probs",
+  "",
+  table_section(
+    "### Model x Vehicle", ct_probs_model_vehicle,
+    "Mean Probs: model x vehicle", row.names = TRUE
+  )
+)
+writeLines(quarto_document, output_file, useBytes = TRUE)
 
 tables

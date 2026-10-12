@@ -10,13 +10,14 @@ format:
 
 ```{r setup}
 #| include: false
-knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 library(knitr)
-input_file <- "descriptive_statistics.csv"
-dat <- read.csv(input_file, stringsAsFactors = FALSE)
-factor_cols <- c("model", "vehicle", "judge_role", "rule_given")
-dat[factor_cols] <- lapply(dat[factor_cols], factor)
+source("AItables.R", local = TRUE)
 ```
+
+Rendering this report also creates **AItables-copy.qmd** alongside the CSV.
+That document contains plain Markdown tables with no R chunks; copy its tables
+directly into another Quarto document.
 
 The data in `descriptive_statistics.csv` contains one row per
 combination of `model`, `vehicle`, `judge_role`, and `rule_given`
@@ -26,21 +27,6 @@ means and variances.
 ## Overall summary statistics
 
 ```{r overall}
-numeric_cols <- c("Decision_mean", "Decision_variance",
-                  "Probs_mean", "Probs_variance")
-overall_summary <- do.call(rbind, lapply(numeric_cols, function(col) {
-  v <- dat[[col]]
-  data.frame(
-    variable = col,
-    n = sum(!is.na(v)),
-    mean = mean(v, na.rm = TRUE),
-    sd = sd(v, na.rm = TRUE),
-    min = min(v, na.rm = TRUE),
-    median = median(v, na.rm = TRUE),
-    max = max(v, na.rm = TRUE),
-    row.names = NULL
-  )
-}))
 kable(overall_summary, digits = 3,
       caption = "Summary of cell-level means and variances")
 ```
@@ -48,12 +34,7 @@ kable(overall_summary, digits = 3,
 ## Decision by model
 
 ```{r decision-by-model}
-dbm <- aggregate(Decision_mean ~ model, data = dat,
-  FUN = function(x) c(mean = mean(x), sd = sd(x),
-                      min = min(x), max = max(x)))
-dbm <- do.call(data.frame, dbm)
-names(dbm) <- c("model", "mean", "sd", "min", "max")
-kable(dbm, digits = 3,
+kable(decision_by_model, digits = 3,
       caption = "Mean Decision by model (across all conditions)")
 ```
 

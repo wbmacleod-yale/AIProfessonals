@@ -5,7 +5,7 @@ author: "W. Bentley MacLeod"
 institute: "Yale, Columbia and NBER"
 date: "2026-10-21"
 bibliography:
-  - ../../../MyLibrary.bib
+  - ../../MyLibrary.bib
 link-citations: true
 format:
   revealjs:
@@ -245,22 +245,27 @@ Emphasize the difference between a "correct" map and a "useful" map.
 ![](../figures/NY-subway-small.png){fig-align="center" width="80%"}
 :::
 :::{.column width="50%"}
-- This is a "wrong" map, but it provides a much more useful guide to choosing a subway route.
-- This is a feature of *all* models - they are simplifications of the real world that allow humans to make better decisions.
+- This is a "wrong" map, but it provides a much more useful guide to choosing a
+subway route.
+- This is a feature of *all* models - they are simplifications of the real world
+that allow humans to make better decisions.
 - A first-order question in many contexts is how we evaluate decision quality.
 :::
 ::::
 
 ::: {.notes}
-This is the key idea: the goal of modern science is decision-making. A prediction is a decision about what will happen.
-Better models lead to better decisions; the challenge is to define what "better" means.
+This is the key idea: the goal of modern science is decision-making. A
+prediction is a decision about what will happen.
+Better models lead to better decisions; the challenge is to define what "better"
+means.
 :::
 
 # Standard Economic Models
 
 ## Price Theory (see appendix of @MacLeod2022)
 
-- When we add prices and require supply = demand, then for any endowment there exists a market allocation (unique in this example).
+- When we add prices and require supply = demand, then for any endowment there
+exists a market allocation (unique in this example).
 
 ![](../figures/1.2.4-Edgeworth-Box-BreadMilk-v3.png){fig-align="center" width="55%"}
 
@@ -353,8 +358,11 @@ The failure is not one of information (the state is observed) but of computation
 ## So what do we know about chess skill - @ChaseSimon1973CP
 ![](../figures/Chess_Lookup_Tables_Diagram.svg){fig-align="center" width="95%"}
 
-- The study of chess skill highlights the importance of pattern recognition and experience in decision making, which are not captured by traditional game theory models.
-- @ChurchlandSejnowski2016 explicitly show that this sort of knowledge can be modelled as a lookup table.
+- The study of chess skill highlights the importance of pattern recognition and
+experience in decision making, which are not captured by traditional game theory
+models.
+- @ChurchlandSejnowski2016 explicitly show that this sort of knowledge can be
+modelled as a lookup table.
 
 ::: {.notes}
 We can discuss the notion of a lookup table and note that LLMs can be viewed as very large lookup tables.
@@ -373,8 +381,10 @@ that is *not* in the lookup table, the choice is guided by an evaluation functio
 the gaps in the table.
 
 ::: {.notes}
-Discuss how value is used to guide choice - when in a new position the chess player will use *intuition* to guide choice.
-This is the bridge to the judge: a judge's "human values" play the same role when a case is not covered by the rules.
+Discuss how value is used to guide choice - when in a new position the chess
+player will use *intuition* to guide choice.
+This is the bridge to the judge: a judge's "human values" play the same role
+when a case is not covered by the rules.
 :::
 
 ## Medical Skill - The Case of Nursing
@@ -392,7 +402,9 @@ of a reasonably skilled member of their profession (and specialists to a higher 
 when deciding whether there was negligence.
 
 ::: {.notes}
-Note that tort law recognizes the limitations of human skill by setting standards of care based on what a reasonably skilled professional would do, rather than expecting perfection.
+Note that tort law recognizes the limitations of human skill by setting
+standards of care based on what a reasonably skilled professional would do,
+rather than expecting perfection.
 :::
 
 ## Police Skill
@@ -400,21 +412,30 @@ Note that tort law recognizes the limitations of human skill by setting standard
 ![](../figures/Police_Lookup_Tables_Diagram.svg){fig-align="center" width="102%"}
 
 ::: {.notes}
-Discuss how police skill is evaluated in the context of legal standards, and how this parallels the evaluation of professional skill in other domains. Issue here is the difference between individual liability and enterprise liability.
+Discuss how police skill is evaluated in the context of legal standards, and how
+this parallels the evaluation of professional skill in other domains. Issue here
+is the difference between individual liability and enterprise liability.
 :::
 
 ## Implications
-- This example illustrates that police skill can affect public safety and the outcomes of law enforcement actions.
-- When an incident occurs, the skill of the responding officers may determine the resolution and any legal consequences.
-- The current U.S. standard for the use of deadly force is "objective reasonableness": whether a reasonable
-officer on the scene would have perceived an imminent threat (*Graham v. Connor*, 1989) - not the officer's subjective belief.
+
+- This example illustrates that police skill can affect public safety and the
+outcomes of law enforcement actions.
+- When an incident occurs, the skill of the responding officers may determine
+the resolution and any legal consequences.
+- The current U.S. standard for the use of deadly force is "objective
+reasonableness": whether a reasonable officer on the scene would have perceived
+an imminent threat (*Graham v. Connor*, 1989) - not the officer's subjective
+belief.
 
 ::: {.notes}
 :::
 
 ## These examples illustrate that both price theory and information economics are not sufficient.
-- In all these cases, providing performance rewards at the moment of choice cannot improve outcomes:
-if the correct action is not in the decision maker's lookup table, no reward can elicit it.
+
+- In all these cases, providing performance rewards at the moment of choice
+cannot improve outcomes: if the correct action is not in the decision maker's
+lookup table, no reward can elicit it.
 - Rather, optimal choice depends upon rewarding *skill acquisition* ex ante.
 - How should we think about aligning AI with human values (@2017FutureofLifeInstitute)?
 
@@ -426,11 +447,15 @@ However, it does not address the problem of skill acquisition.
 # Bounded Rationality Implies Judicial Discretion (Hart's Penumbra)
 
 ## The **"Open Texture" of language** (@{Hart1958HLR})
-- @Hart1958HLR introduced the idea that courts are often faced with cases that fall into the penumbra of uncertainty, where the application of legal rules is not clear-cut.
+- @Hart1958HLR introduced the idea that courts are often faced with cases that
+fall into the penumbra of uncertainty, where the application of legal rules is
+not clear-cut.
 - This has a number of important implications:
   - It is impossible for judges to simply "apply the law".
-  - As with the chess player facing a novel position, judges must necessarily attach "human values" to their choices.
-  - Like the police officer, judges must make a choice whether or not they are sure what is correct.
+  - As with the chess player facing a novel position, judges must necessarily
+  attach "human values" to their choices.
+  - Like the police officer, judges must make a choice whether or not they are
+  sure what is correct.
 
 ::: {.notes}
 The key point here is that legal decision-making can also be viewed as a search process.
@@ -439,25 +464,29 @@ indeterminacy: his claim was that rules have both a settled core and a penumbra.
 :::
 
 ## The Law as a Lookup Table
-- Let $\mathcal{C}$ be the set of possible cases (fact patterns). It is effectively unbounded: new
-technologies, new relationships and new facts arrive continuously.
-- A legal system $K$ (statutes, precedents, doctrines) is a *finite* text that humans can in principle read,
-with description length $|K|$ bits.
-- $Law(K,c) \in \{\text{P}, \text{D}, \bot\}$ is the outcome $K$ determines for case $c \in \mathcal{C}$:
-plaintiff, defendant, or *undetermined* ($\bot$).
-- $Just(c) \in \{\text{P}, \text{D}\}$ is the outcome that society's values deem correct - the target that
-$K$ is trying to encode.
-- In the language of the chess example, $K$ is the *lookup table* and $Just$ is the *evaluation function*.
+- Let $\mathcal{C}$ be the set of possible cases (fact patterns). It is
+effectively unbounded: new technologies, new relationships and new facts arrive
+continuously.
+- A legal system $K$ (statutes, precedents, doctrines) is a *finite* text that
+humans can in principle read, with description length $|K|$ bits.
+- $Law(K,c) \in \{\text{P}, \text{D}, \bot\}$ is the outcome $K$ determines for
+case $c \in \mathcal{C}$: plaintiff, defendant, or *undetermined* ($\bot$).
+- $Just(c) \in \{\text{P}, \text{D}\}$ is the outcome that society's values deem
+correct - the target that $K$ is trying to encode.
+- In the language of the chess example, $K$ is the *lookup table* and $Just$ is
+the *evaluation function*.
 
 ::: {.notes}
-Emphasize that this is exactly the structure of the Chase-Simon chess model: a finite store of
-learned positions (K), and a target that the store is only an approximation to.
-The formal-language representation follows @Susskind1987 and @Prakken1997.
-The idea that $Just(\cdot)$ is only partially known and revealed case by case is what
-@GennaioliShleifer2007JournalofPoliticalEconomy model as the evolution of precedent.
+Emphasize that this is exactly the structure of the Chase-Simon chess model: a
+finite store of learned positions (K), and a target that the store is only an
+approximation to.  The formal-language representation follows @Susskind1987 and
+@Prakken1997.  The idea that $Just(\cdot)$ is only partially known and revealed
+case by case is what @GennaioliShleifer2007JournalofPoliticalEconomy model as
+the evolution of precedent.
 :::
 
 ## Proposition: Every Finite Legal System has a Penumbra
+
 - **Proposition.** For any finite $K$, the *penumbra*
 $\Pi(K) = \{c \in \mathcal{C} : Law(K,c) = \bot \ \text{or}\ Law(K,c) \neq Just(c)\}$ is non-empty.
 - **Argument.** A text of $|K|$ bits can distinguish at most $2^{|K|}$ classes of cases. If $Just$ varies
@@ -486,7 +515,9 @@ Refinement agenda (for RA):
 :::
 
 ## Implications
-- The proposition is an existence proof for the cases @Hart1958HLR places in the penumbra of uncertainty, and formalizes the point made by @HadfieldMenellHadfield2019.
+
+- The proposition is an existence proof for the cases @Hart1958HLR places in the
+penumbra of uncertainty.
 - For such cases the judge necessarily relies on their *human values* to make a decision.
 - Hart illustrates his point with the example of a law that states "No vehicles are allowed in the park."
 - A supervisor who does not like children might use the law to bar women with strollers.

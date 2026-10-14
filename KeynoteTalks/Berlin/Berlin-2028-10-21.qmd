@@ -263,7 +263,7 @@ means.
 
 # Standard Economic Models
 
-## Price Theory (see appendix of @MacLeod2022)
+## Price Theory (see appendix of @MacLeod2022AM)
 
 - When we add prices and require supply = demand, then for any endowment there
 exists a market allocation (unique in this example).
@@ -291,13 +291,13 @@ The benefit of a rich society is that it allows a large intellectual and artisti
 
 ## Recent Empirical Papers Using Price Theory
 
-- @Chetty2011QJE - Empirical analysis of tax policy using price theory.
-- @Goolsbee2000AER - Empirical study of consumer behavior and pricing.
-- @EinavLevin2014JEL - Review of empirical industrial organization using price theory.
+- Chetty (2011) - Empirical analysis of tax policy using price theory.
+- Goolsbee (2000) - Empirical study of consumer behavior and pricing.
+- Einav and Levin (2014) - Review of empirical industrial organization using price theory.
 
 
 
-## Information Economics (see chapters 2-8 of @MacLeod2022)
+## Information Economics (see chapters 2-8 of @MacLeod2022AM)
 - Model building algorithm:
   - What are the relevant states of Nature (@Savage1972firstpublished1954)?
   - What are the actions and payoffs available to the decision makers?
@@ -316,9 +316,9 @@ The benefit of a rich society is that it allows a large intellectual and artisti
 - @ChakravartyMacLeod2009RJE - uses information economics to explain the structure of construction contracts.
 
 ## Recent Empirical Papers Using Information Economics
-- @EinavLevin2008AER - Empirical analysis of information asymmetries in online markets.
-- @CrawfordShin2007Econometrica - Empirical study of signaling and screening in auctions.
-- @Aguirregabiria2010JPE - Empirical investigation of dynamic games with incomplete information.
+- Einav and Levin (2008) - Empirical analysis of information asymmetries in online markets.
+- Crawford and Shin (2007) - Empirical study of signaling and screening in auctions.
+- Aguirregabiria (2010) - Empirical investigation of dynamic games with incomplete information.
 
 ::: {.notes}
 Discuss each briefly
@@ -459,11 +459,11 @@ However, it does not address the problem of skill acquisition.
 
 ## Empirical Papers Using Bounded Rationality
 - @GennaioliShleifer2007JournalofPoliticalEconomy - Empirical analysis of the evolution of legal precedent as a bounded rationality process.
-- @Chetty2015AER - Empirical study of behavioral economics and bounded rationality in tax policy.
-- @KaurKumar2018QJE - Investigation of bounded rationality in consumer choice and market outcomes.
-- @DellaVigna2018JEP - Review of behavioral economics and bounded rationality in various economic contexts.
+- Chetty (2015) - Empirical study of behavioral economics and bounded rationality in tax policy.
+- Kaur and Kumar (2018) - Investigation of bounded rationality in consumer choice and market outcomes.
+- DellaVigna (2018) - Review of behavioral economics and bounded rationality in various economic contexts.
 - @CurrieMacLeod2020Econometrica - Empirical analysis of complex medical decision.
-- @GriffithsLiederGoodman2015Top.Cogn.Sci. - Empirical study of bounded rationality and human decision-making in cognitive science.
+- @{GriffithsLiederGoodman2015Top.Cogn.Sci.} - Empirical study of bounded rationality and human decision-making in cognitive science.
 
 # Bounded Rationality Implies Judicial Discretion (Hart's Penumbra)
 

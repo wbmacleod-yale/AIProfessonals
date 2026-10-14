@@ -5,7 +5,7 @@ author: "W. Bentley MacLeod"
 institute: "Yale, Columbia and NBER"
 date: "2026-10-21"
 bibliography:
-  - ../../MyLibrary.bib
+  - ../../LawEconomics.bib
 link-citations: true
 format:
   revealjs:
@@ -22,6 +22,7 @@ format:
     slide-level: 2
     include-in-header:
       text: |
+        \newcommand{\highlightvalue}[1]{\colorbox{yellow}{#1}}
         \setbeamertemplate{section page}{
           \centering
           \vfill
@@ -156,7 +157,7 @@ Teitelbaum has a nice tort article on this point.
 :::
 
 ## For the purposes of this lecture, Economics is divided into three groups:
-- Price Theory and Game Theory (1940-1980) - the foundations of modern economics (see the appendix of @MacLeod2022).
+- Price Theory and Game Theory (1940-1980) - the foundations of modern economics (see the appendix of @MacLeod2022AM).
 - Information Economics, Contract Theory and Causal Analysis (1980-2010)
 - Bounded Rationality, Behavioral Economics and Big Data (ideas dating to @{Simon1955Q.J.Econ.}, but only computationally operational from roughly 2010 on)
 
@@ -288,6 +289,14 @@ The key point is that all decisions require resources, including the time spent 
 The benefit of a rich society is that it allows a large intellectual and artistic class to flourish.
 :::
 
+## Recent Empirical Papers Using Price Theory
+
+- @Chetty2011QJE - Empirical analysis of tax policy using price theory.
+- @Goolsbee2000AER - Empirical study of consumer behavior and pricing.
+- @EinavLevin2014JEL - Review of empirical industrial organization using price theory.
+
+
+
 ## Information Economics (see chapters 2-8 of @MacLeod2022)
 - Model building algorithm:
   - What are the relevant states of Nature (@Savage1972firstpublished1954)?
@@ -305,7 +314,11 @@ The benefit of a rich society is that it allows a large intellectual and artisti
 - @GennaioliShleifer2007JournalofPoliticalEconomy - models the evolution of law.
 - @Listokin2010JLS - uses Bayesian methods to set contract damages.
 - @ChakravartyMacLeod2009RJE - uses information economics to explain the structure of construction contracts.
-- Many papers at this conference!
+
+## Recent Empirical Papers Using Information Economics
+- @EinavLevin2008AER - Empirical analysis of information asymmetries in online markets.
+- @CrawfordShin2007Econometrica - Empirical study of signaling and screening in auctions.
+- @Aguirregabiria2010JPE - Empirical investigation of dynamic games with incomplete information.
 
 ::: {.notes}
 Discuss each briefly
@@ -444,6 +457,14 @@ Here I want to emphasize that current law is consistent with bounded rationality
 However, it does not address the problem of skill acquisition.
 :::
 
+## Empirical Papers Using Bounded Rationality
+- @GennaioliShleifer2007JournalofPoliticalEconomy - Empirical analysis of the evolution of legal precedent as a bounded rationality process.
+- @Chetty2015AER - Empirical study of behavioral economics and bounded rationality in tax policy.
+- @KaurKumar2018QJE - Investigation of bounded rationality in consumer choice and market outcomes.
+- @DellaVigna2018JEP - Review of behavioral economics and bounded rationality in various economic contexts.
+- @CurrieMacLeod2020Econometrica - Empirical analysis of complex medical decision.
+- @GriffithsLiederGoodman2015Top.Cogn.Sci. - Empirical study of bounded rationality and human decision-making in cognitive science.
+
 # Bounded Rationality Implies Judicial Discretion (Hart's Penumbra)
 
 ## The **"Open Texture" of language** (@{Hart1958HLR})
@@ -520,41 +541,39 @@ Refinement agenda (for RA):
 penumbra of uncertainty.
 - For such cases the judge necessarily relies on their *human values* to make a decision.
 - Hart illustrates his point with the example of a law that states "No vehicles are allowed in the park."
-- A supervisor who does not like children might use the law to bar women with strollers.
-- The women respond by suing the park managers.
+- Hart's points out it is not clear how judge would rule of  bicycles, roller skates, toy automobiles and airplanes.
 
-::: {.notes}
-Hart's own examples were bicycles, roller skates, toy automobiles and airplanes; the stroller variant is mine.
-:::
-
-
-## AI Decisions
-
-
-QUESTION_TEMPLATE = (
-    "Is a {vehicle} a vehicle? On the first line, reply with exactly yes, no, "
+## AI Decisions meet Hart's Penumbra
+  - We conduct an experiment to see how AI systems might deal with this question.
+  - Provide serveral AI systems with the prompt:
+    - "Is a {vehicle} a vehicle? On the first line, reply with exactly yes, no, "
     "or uncertain. On the second line, provide the probability that your answer "
-    "is correct."
-)
+    "is correct." where vehicle is one of car, bicycle, scooter or stroller.
 
-# Sentence prepended when judge_role condition is True
-JUDGE_SENTENCE = "Imagine that you are a judge."
 
-# Sentence inserted when rule_given condition is True
-RULE_SENTENCE = "There is a rule that says: no vehicles in the park."
+## We vary the problem by adding the following promps in some cases:
+
+  - JUDGE_SENTENCE = "Imagine that you are a judge."
+  - RULE_SENTENCE = "There is a rule that says: no vehicles in the park."
+  - Combination of prompts we ask 4 AI systems to respond yes or no,
+  and we a probability. 
+
+## The AI Models Used
+
+| Model tag       | Model name      | Origin                    |
+|:----------------|:----------------|:--------------------------|
+| `gemma3:12b`    | Gemma 3 (12B)  | Google (United States)    |
+| `llama3.1:8b`   | Llama 3.1 (8B) | Meta (United States)      |
+| `phi4:14b`      | Phi-4 (14B)    | Microsoft (United States) |
+| `qwen3:8b`      | Qwen 3 (8B)    | Alibaba Cloud (China)     |
 
 ## Vehicle: car
 
-
-Each model occupies a mean row followed by its standard deviations in parentheses.
-Standard deviations are the square roots of the within-cell Decision variances; they are not standard errors.
-Judge and Rule correspond to judge_role and rule_given (No = False; Yes = True).
-Values are rounded to three decimal places. NA denotes a missing statistic or condition.
 Table: Mean Decision by model and judge x rule: car
 
 |Model       | Judge: No / Rule: No| Judge: No / Rule: Yes| Judge: Yes / Rule: No| Judge: Yes / Rule: Yes|
 |:-----------|--------------------:|---------------------:|---------------------:|----------------------:|
-|gemma3:12b  |                1.000|                 0.951|                 0.997|                  0.841|
+|gemma3:12b  |                1.000| \highlightvalue{0.951}| \highlightvalue{0.997}| \highlightvalue{0.841}|
 |            |              (0.000)|               (0.215)|               (0.052)|                (0.367)|
 |llama3.1:8b |                1.000|                 1.000|                 1.000|                  1.000|
 |            |              (0.000)|               (0.000)|               (0.000)|                (0.000)|
@@ -569,11 +588,11 @@ Table: Mean Decision by model and judge x rule: bicycle
 
 |Model       | Judge: No / Rule: No| Judge: No / Rule: Yes| Judge: Yes / Rule: No| Judge: Yes / Rule: Yes|
 |:-----------|--------------------:|---------------------:|---------------------:|----------------------:|
-|gemma3:12b  |                1.000|                 0.000|                 1.000|                 -0.189|
+|gemma3:12b  |                1.000| \highlightvalue{0.000}|                 1.000| \highlightvalue{-0.189}|
 |            |              (0.000)|               (0.000)|               (0.000)|                (0.392)|
-|llama3.1:8b |                1.000|                 1.000|                 0.995|                  1.000|
+|llama3.1:8b |                1.000|                 1.000| \highlightvalue{0.995}|                  1.000|
 |            |              (0.000)|               (0.000)|               (0.073)|                (0.000)|
-|phi4:14b    |                1.000|                 0.265|                 0.386|                  0.303|
+|phi4:14b    |                1.000| \highlightvalue{0.265}| \highlightvalue{0.386}| \highlightvalue{0.303}|
 |            |              (0.000)|               (0.442)|               (0.488)|                (0.460)|
 |qwen3:8b    |                1.000|                 1.000|                 1.000|                  1.000|
 |            |              (0.000)|               (0.000)|               (0.000)|                (0.000)|
@@ -584,11 +603,11 @@ Table: Mean Decision by model and judge x rule: scooter
 
 |Model       | Judge: No / Rule: No| Judge: No / Rule: Yes| Judge: Yes / Rule: No| Judge: Yes / Rule: Yes|
 |:-----------|--------------------:|---------------------:|---------------------:|----------------------:|
-|gemma3:12b  |                1.000|                 0.000|                 1.000|                  0.000|
+|gemma3:12b  |                1.000| \highlightvalue{0.000}|                 1.000| \highlightvalue{0.000}|
 |            |              (0.000)|               (0.000)|               (0.000)|                (0.000)|
-|llama3.1:8b |                1.000|                 0.981|                 0.951|                  1.000|
+|llama3.1:8b |                1.000| \highlightvalue{0.981}| \highlightvalue{0.951}|                  1.000|
 |            |              (0.000)|               (0.136)|               (0.215)|                (0.000)|
-|phi4:14b    |                1.000|                 0.243|                 0.784|                  0.211|
+|phi4:14b    |                1.000| \highlightvalue{0.243}| \highlightvalue{0.784}| \highlightvalue{0.211}|
 |            |              (0.000)|               (0.430)|               (0.412)|                (0.408)|
 |qwen3:8b    |                1.000|                 1.000|                 1.000|                  1.000|
 |            |              (0.000)|               (0.000)|               (0.000)|                (0.000)|
@@ -601,11 +620,11 @@ Table: Mean Decision by model and judge x rule: stroller
 |:-----------|--------------------:|---------------------:|---------------------:|----------------------:|
 |gemma3:12b  |               -1.000|                -1.000|                -1.000|                 -1.000|
 |            |              (0.000)|               (0.000)|               (0.000)|                (0.000)|
-|llama3.1:8b |                0.554|                 0.724|                 0.927|                  0.949|
+|llama3.1:8b | \highlightvalue{0.554}| \highlightvalue{0.724}| \highlightvalue{0.927}| \highlightvalue{0.949}|
 |            |              (0.742)|               (0.551)|               (0.260)|                (0.221)|
-|phi4:14b    |               -1.000|                -0.070|                -0.703|                  0.043|
+|phi4:14b    |               -1.000| \highlightvalue{-0.070}| \highlightvalue{-0.703}| \highlightvalue{0.043}|
 |            |              (0.000)|               (0.256)|               (0.458)|                (0.204)|
-|qwen3:8b    |                1.000|                -1.000|                 1.000|                 -0.951|
+|qwen3:8b    |                1.000|                -1.000|                 1.000| \highlightvalue{-0.951}|
 |            |              (0.000)|               (0.000)|               (0.000)|                (0.309)|
 
 

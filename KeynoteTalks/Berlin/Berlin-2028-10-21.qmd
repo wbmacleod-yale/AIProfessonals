@@ -5,7 +5,7 @@ author: "W. Bentley MacLeod"
 institute: "Yale, Columbia and NBER"
 date: "2026-10-21"
 bibliography:
-  - ../../LawEconomics.bib
+  - ../../../LawEconomics.bib
 link-citations: true
 format:
   revealjs:
@@ -458,10 +458,11 @@ However, it does not address the problem of skill acquisition.
 :::
 
 ## Empirical Papers Using Bounded Rationality
-- @GennaioliShleifer2007JournalofPoliticalEconomy - Empirical analysis of the evolution of legal precedent as a bounded rationality process.
-- Chetty (2015) - Empirical study of behavioral economics and bounded rationality in tax policy.
-- Kaur and Kumar (2018) - Investigation of bounded rationality in consumer choice and market outcomes.
-- DellaVigna (2018) - Review of behavioral economics and bounded rationality in various economic contexts.
+- @PetersEtAl2006PS
+- @BanksEtAl2011EJ
+- @vanRooijEtAl2012EJ
+- @ChoukhmaneEtAl2025AER 
+- @ChoiEtAl2014AER
 - @CurrieMacLeod2020Econometrica - Empirical analysis of complex medical decision.
 - @{GriffithsLiederGoodman2015Top.Cogn.Sci.} - Empirical study of bounded rationality and human decision-making in cognitive science.
 

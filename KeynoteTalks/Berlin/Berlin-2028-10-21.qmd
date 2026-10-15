@@ -1,6 +1,6 @@
 ---
-title: "Law and Economics in the Age of Computers"
-subtitle: "What are the implications of computational complexity for law and economics?"
+title: "What are the implications of computational complexity for law and economics?"
+subtitle: "Notes for Book Project" 
 author: "W. Bentley MacLeod"
 institute: "Yale, Columbia and NBER"
 date: "2026-10-21"
@@ -356,7 +356,7 @@ makes it impossible to study all states.
 - We can study the game using the tools of information economics - specifically game theory:
   - Zermelo proved that in a game of perfect information like chess, either one player has a winning strategy or both have a drawing strategy.
   - Since the game is finite, and parties observe the state at each stage, the optimal
-  play can be found by backwards induction from the end.
+    play can be found by backward induction from the end.
 - Yet the game tree has roughly $10^{120}$ paths (Shannon's estimate), so backward
   induction is computationally infeasible for any player, human or machine. (Note
   that the number of atoms in the universe is about $10^{80}$.)
@@ -368,11 +368,11 @@ An implication is that game theory is false in the sense that it does not predic
 The failure is not one of information (the state is observed) but of computation.
 :::
 
-## So what do we know about chess skill - @ChaseSimon1973CP
+## So, what do we know about chess skill? @ChaseSimon1973CP
 ![](../figures/Chess_Lookup_Tables_Diagram.svg){fig-align="center" width="95%"}
 
 - The study of chess skill highlights the importance of pattern recognition and
-experience in decision making, which are not captured by traditional game theory
+experience in decision-making, which are not captured by traditional game theory
 models.
 - @ChurchlandSejnowski2016 explicitly show that this sort of knowledge can be
 modelled as a lookup table.
@@ -400,7 +400,7 @@ This is the bridge to the judge: a judge's "human values" play the same role
 when a case is not covered by the rules.
 :::
 
-## Medical Skill - The Case of Nursing
+## Medical Skill: The Case of Nursing
 
 ![](../figures/Nurse_Lookup_Tables_Diagram.svg){fig-align="center" width="102%"}
 
@@ -457,16 +457,30 @@ Here I want to emphasize that current law is consistent with bounded rationality
 However, it does not address the problem of skill acquisition.
 :::
 
-## Empirical Papers Using Bounded Rationality
-- @PetersEtAl2006PS
-- @BanksEtAl2011EJ
-- @vanRooijEtAl2012EJ
-- @ChoukhmaneEtAl2025AER 
-- @ChoiEtAl2014AER
-- @CurrieMacLeod2020Econometrica - Empirical analysis of complex medical decision.
-- @{GriffithsLiederGoodman2015Top.Cogn.Sci.} - Empirical study of bounded rationality and human decision-making in cognitive science.
+## Empirical Papers Using Bounded Rationality {.allowframebreaks}
+
+- @PetersEtAl2006PS - shows that numerical skill translates into better decision-making in economic contexts.
+- @BanksEtAl2011EJ - Shows that skill affects pension savings and financial decision-making.
+- @vanRooijEtAl2012EJ - Shows that financial literacy and skill affect investment behavior and financial decision-making.
+- @ChoiEtAl2014AER - Wealthy individuals are better at utility maximization.
+- @ChoukhmaneEtAl2025AER - Shows that there is great variation in family decision-making skill.
+- @CurrieMacLeod2020Econometrica - Shows that searching over alternatives is important for complex medical decisions.
+- @{GriffithsLiederGoodman2015Top.Cogn.Sci.} - Shows that patterns observed in behavioral economics can be explained as a combination of Bayesian choice and limited resources.
 
 # Bounded Rationality Implies Judicial Discretion (Hart's Penumbra)
+
+## Notes on Complexity and Rules {.allowframebreaks}
+
+- The rule of law that guides modern economies relies on laws that are
+enforced by courts and informal arrangements.
+- Similarly, modern contract theory is concerned with the *ex ante* design
+of reward structures that incentivize skill acquisition.
+- The purpose of this section is to highlight the fact that rules
+are necessarily incomplete. In fact, contractual incompleteness can explain
+the *AI winters* that occurred from 1974 to 1980 and from 1987 to 1993.
+  - Brittle Systems (Lack of Generalization):
+Early AI relied heavily on hand-coded rules (symbolic logic). When exposed to real-world edge cases outside their programmed logic, the systems broke down completely.
+
 
 ## The **"Open Texture" of language** (@{Hart1958HLR})
 - @Hart1958HLR introduced the idea that courts are often faced with cases that
@@ -542,22 +556,22 @@ Refinement agenda (for RA):
 penumbra of uncertainty.
 - For such cases the judge necessarily relies on their *human values* to make a decision.
 - Hart illustrates his point with the example of a law that states "No vehicles are allowed in the park."
-- Hart's points out it is not clear how judge would rule of  bicycles, roller skates, toy automobiles and airplanes.
+- Hart points out that it is not clear how a judge would rule on bicycles, roller skates, toy automobiles, and airplanes.
 
 ## AI Decisions meet Hart's Penumbra
   - We conduct an experiment to see how AI systems might deal with this question.
-  - Provide serveral AI systems with the prompt:
+  - We provide several AI systems with the prompt:
     - "Is a {vehicle} a vehicle? On the first line, reply with exactly yes, no, "
     "or uncertain. On the second line, provide the probability that your answer "
     "is correct." where vehicle is one of car, bicycle, scooter or stroller.
 
 
-## We vary the problem by adding the following promps in some cases:
+## We vary the problem by adding the following prompts in some cases:
 
   - JUDGE_SENTENCE = "Imagine that you are a judge."
   - RULE_SENTENCE = "There is a rule that says: no vehicles in the park."
-  - Combination of prompts we ask 4 AI systems to respond yes or no,
-  and we a probability. 
+  - For each combination of prompts, we ask four AI systems to respond yes or no
+  and report a probability.
 
 ## The AI Models Used
 
@@ -635,17 +649,21 @@ for the Berlin talk to discuss the implications for default actions?
 :::
 
 ## How should judges resolve such cases?
-- The example illustrates the contrasting values of the park supervisor and the woman.
-- In deciding the case the judge must weigh these competing sets of values and
-interests to arrive at a fair and just decision.
-- There are a number of principles that a judge might use - for the moment I will postpone providing a solution.
 
-## Rather, let us ask how an AI system might address this problem.
+- These results illustrate the following points:
+  - AI systems are based on classifiers that can produce a probability for the
+  right decision. Unlike rule-based systems, they can make a choice in any situation.
+  - The evidence suggests that this comes at a cost: rule-of-law systems lose some
+  determinacy, and the same situation may result in different outcomes depending on
+  the AI system's interpretation and the specific circumstances.
+
+
+## How should we address this problem of indeterminacy?
 - It has been suggested that AI systems could assist in making legal decisions, as in the case of smart contracts.
-- The question here is how would we want an AI system to resolve the stroller case?
+- The question here is how would we want an AI system to resolve the vehicle case?
 - The "Asilomar AI Principles" (@2017FutureofLifeInstitute) argue that these decisions should reflect human values.
 - The challenge is that there are a number of principles involved here, including the rule of law, the
-ordinary meaning of words, and how children and women are affected by the law.
+ordinary meaning of words, and how park users are affected by the law.
 
 ## The Current Situation
 - AI systems are rapidly developing, so one cannot at a given point in time make a statement that will not soon change.
@@ -654,7 +672,7 @@ result in unintended consequences.
 - In each of these recent cases, the agents were given goals but then acted to achieve
 them in unexpected ways.
 
-## Hoping for A while Rewarding B - @Kerr1975AMJ
+## Hoping for A While Rewarding B - @Kerr1975AMJ
 - This is a well-known problem in agency theory.
 - The Kerr study provides a number of examples where performance measures were designed to achieve specific goals—exactly
   the goal of AI alignment.
@@ -779,11 +797,13 @@ in law and economics on how judges fill gaps in incomplete contracts (e.g., majo
   - Price Theory
   - Information Economics
   - Bounded Rationality
+- Economics can contribute by focusing on which type of model is best for a particular question.
+- We also need more work on the quality of selection mechanisms for experts, which may in turn provide insights into how to manage AI systems effectively.
 
 ::: {.notes}
 Note that we need to highlight to law colleagues
-that the law and economics approaches can lead
-to improvemwents when combined with data.
+that law-and-economics approaches can lead
+to improvements when combined with data.
 :::
 
 ## Summary II - Research Implications

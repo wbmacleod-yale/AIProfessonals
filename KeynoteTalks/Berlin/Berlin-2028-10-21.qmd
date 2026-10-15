@@ -316,9 +316,12 @@ The benefit of a rich society is that it allows a large intellectual and artisti
 - @ChakravartyMacLeod2009RJE - uses information economics to explain the structure of construction contracts.
 
 ## Recent Empirical Papers Using Information Economics
-- Einav and Levin (2008) - Empirical analysis of information asymmetries in online markets.
-- Crawford and Shin (2007) - Empirical study of signaling and screening in auctions.
-- Aguirregabiria (2010) - Empirical investigation of dynamic games with incomplete information.
+- @FarberGibbons1996QJE - Empirical analysis of labor market signaling.
+- @AltonjiPierret2001QJE - classic paper on the role of learning in the labor market.
+- @EinavEtAl2010E - Welfare analysis with asymmetric information..
+- @FrederiksenEtAl2020JPE - Empirical analysis of performance evaluation systems.
+- @{BaldwinIwasakiDonohue2026Proc.Natl.Acad.Sci.} - Empirical analysis of
+investment in advertising to affect gun legislations.
 
 ::: {.notes}
 Discuss each briefly

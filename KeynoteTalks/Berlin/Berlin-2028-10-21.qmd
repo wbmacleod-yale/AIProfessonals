@@ -470,6 +470,18 @@ However, it does not address the problem of skill acquisition.
 - @CurrieMacLeod2020Econometrica - Shows that searching over alternatives is important for complex medical decisions.
 - @{GriffithsLiederGoodman2015Top.Cogn.Sci.} - Shows that patterns observed in behavioral economics can be explained as a combination of Bayesian choice and limited resources.
 
+# Evidence on Heterogeneity
+
+- @ChoukhmaneEtAl2025AER is a particularly important contribution because it
+shows empirically in a large sample of the US population evidence of 
+heterogeneity in decision making skill, and in particular the relevance
+of the three classes of models.
+- The context is families who do not maximize contributions to retirement savings.
+- The authors find that families are in three groups:
+  - Optimally allocating savings to the spouse's account with the highest returns, consistent with price theory and the predictions of family bargaining models.
+  - Investing in their own account because they do not trust their spouse, consistent with information asymmetry models.
+  - Unaware of the optimal strategy, consistent with bounded rationality models.
+
 # Bounded Rationality Implies Judicial Discretion (Hart's Penumbra)
 
 ## Notes on Complexity and Rules {.allowframebreaks}

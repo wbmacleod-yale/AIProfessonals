@@ -78,6 +78,7 @@ project on Law and Economics in the Age of Computers, and comments are very welc
 - I aim to provide a formal model of bounded rationality consistent with
   H.L.A. Hart's account of the "penumbra of uncertainty" in legal rules.
 - This provides a foundation for understanding the importance of values and their role in the design of legal rules that accommodate bounded rationality while remaining effective and practically enforceable.
+- An implication of these results is that one needs to explicitly incorporate complex moral reasoning into AI models if they are to make good decisions.
 
 ::: {.notes}
 This work is preliminary and represents an ongoing effort to integrate insights

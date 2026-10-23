@@ -1,0 +1,84 @@
+---
+title: "Notes: The AI alignment problem has no solution."
+subtitle: "Notes for Book Project" 
+author: "W. Bentley MacLeod"
+institute: "Yale, Columbia and NBER"
+date: "2026-10-21"
+bibliography:
+  - ../../LawEconomics.bib
+link-citations: true
+format:
+  revealjs:
+    theme: simple
+    slide-number: true
+    show-notes: true
+    incremental: false
+    slide-level: 2
+  beamer:
+    theme: metropolis
+    aspectratio: 169
+    incremental: false
+    toc: true
+    slide-level: 2
+    include-in-header:
+      text: |
+        \newcommand{\highlightvalue}[1]{\colorbox{yellow}{#1}}
+        \setbeamertemplate{section page}{
+          \centering
+          \vfill
+          \begin{beamercolorbox}[sep=16pt,center]{part title}
+            \usebeamerfont{section title}\insertsection\par
+          \end{beamercolorbox}
+          \vfill
+        }
+---
+# Notes 2026-10-21
+The Berlin keynote lecture gets the main ideas across.  The currently outline:
+## History of Law
+## Information Economics
+## Chess as a decision example
+## Law is the solution to the AI alignment problem
+## HLA Hart example and theorem on incompleteness.
+## Data on AI decision making
+## Arrow Impossibility Theorem
+
+The solution to the vehicle problem can be viewed as a social choice problem.
+For example, scooters by small children might be acceptable, but powered scooters
+would be unacceptable.  The optimal decision is a function of the preferences
+of the individuals using the park.
+
+For example, suppose that only power scooters and bicycles use the park, in
+which case the goal is to stop cars.  However, if only the pedestrians use the
+park, then the goal is to stop powered vehicles.  The point this is that the
+optimal depends upon the preferences of individuals using the park.  This the
+optimal decision is not simply the literal rule, but also the preferences of the
+individuals using the park.
+
+However, we know that no social choice mechanism can perfectly aggregate
+individual preferences into a collective decision that satisfies all desirable
+criteria, as demonstrated by Arrow's Impossibility Theorem.
+
+This implies that any attempt to design an AI system that aligns with human
+values must confront the inherent limitations of aggregating diverse
+preferences.  In other words, the AI alignment problem cannot be fully solved
+because there is no mechanism that can perfectly reconcile all individual
+preferences into a single, optimal decision. 
+
+Since the optimal choice is a function of individuals to whom the AI has no
+contact with, it is not possible for the AI to make a fully optimal decision that accounts for all individual preferences.  This limitation is inherent and cannot be overcome by any algorithmic design.  
+
+In the legal context the decision problem is solved (imperfectly) by having a court
+case where parties present information, and then the judge decides.  This illustrates that
+that "human values" are not represented by an axiomatic system, but the explicit
+consequence of a human judge and jury deliberating over the case.  This highlights the contrast with AI systems, which lack the ability to engage in such deliberative processes and therefore cannot fully capture the nuances of human values.
+
+This is a fairly complete paper.  The idea of using the hopfield network to think about AI design would be a new paper.  It could speak to optimal AI intelligence in the context
+of performance design. 
+
+Notes from Janet.
+
+Asks why adding judge makes a difference.  My response it that judge searches a different
+part of the database.  The judge brings in additional context and reasoning that the AI might not have access to, thereby influencing the final decision in a way that purely algorithmic processing cannot replicate.  Janet argues that one solution to the arrow problem is the use of lexigraphical preferences.  This approach prioritizes certain preferences over others in a hierarchical manner, potentially circumventing some of the limitations imposed by Arrow's theorem.
+
+Getting more input on the Hugging face hack.  
+

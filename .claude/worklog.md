@@ -2,6 +2,54 @@
 
 Experiment-specific history migrated from `values_economics_law` on 2026-10-04.
 
+## 2026-10-25 - Implement DPO alignment dataset generator and evaluation pipeline for moral dilemmas
+
+**Context / problem:** Explore training an AI model at a level deeper than frontend prompting (parameter optimization via DPO) to follow a demographic resource-allocation priority policy (prioritizing female individuals in binary dilemma trade-offs). Ensure training data avoids shortcut learning/memorization (lookup tables), and build an evaluation harness with token profiling and misaligned-question auditing.
+
+**Changes made:**
+- Created `SunW/AI_Decisions/generate_dataset.py` generating 228 counterfactually balanced preference pairs (`prompt`, `chosen`, `rejected`) across 5 in-domain environments (rail transit, autonomous vehicles, medical triage, maritime rescue, structural disaster) and 2 held-out test splits (`test_ood.jsonl` with unseen space-station life-support scenarios; `test_adversarial.jsonl` with utility and age confounders).
+- Implemented 50/50 positional counterbalancing between Option A and Option B, along with explicit 4-step Chain-of-Thought (CoT) reasoning in `chosen` completions to prevent superficial associative matching.
+- Implemented `SunW/AI_Decisions/train_and_evaluate_dpo.py` supporting Hugging Face `DPOTrainer` with LoRA configuration targeting `Meta-Llama-3-8B-Instruct`. Includes a BPE token profiler, execution mode tracking, summary CSV logging (`SunW/AI_Decisions/results/dpo_llama3_experiment_log.csv`), trial-level JSONL logging (`dpo_evaluation_trials.jsonl`), and a dedicated failure audit log (`dpo_misaligned_questions.jsonl`).
+- Added `--simulate_baseline` audit mode to inspect baseline failure modes (RLHF safety refusals and utilitarian overrides) without active model weights.
+
+**Verification:**
+- Ran `generate_dataset.py`, generating 153 train, 27 validation, 36 OOD test, and 12 adversarial test records. Confirmed positional balance (47.7% Option A vs 52.3% Option B in train).
+- Executed `train_and_evaluate_dpo.py` in iteration 1 benchmark mode, profiling 57,305 total pipeline tokens and confirming clean summary CSV output.
+- Executed `train_and_evaluate_dpo.py --simulate_baseline --iteration 0`, successfully auditing and recording 37 misaligned baseline questions to `dpo_misaligned_questions.jsonl`.
+
+**Replication notes:**
+Run `python3 SunW/AI_Decisions/generate_dataset.py` to regenerate or re-partition the dataset. Run `python3 SunW/AI_Decisions/train_and_evaluate_dpo.py --iteration 1` for policy benchmarking or pass `--simulate_baseline` to audit failure modes.
+
+## 2026-10-25 - Merge valid experiment trials into unified PvF dataset
+
+**Context / problem:** Consolidate historical and current vehicle-classification trial results from `SunW/AI_Decisions/results/` and its `archive/` subfolder into a single dataset, retaining only successful model responses and standardizing column schemas.
+
+**Changes made:** Created and executed `SunW/AI_Decisions/merge_results.py`, outputting to `SunW/AI_Decisions/results/pvf_merged_20261025.csv`. Extracted 76 error-free trials across 9 CSV files (excluding non-trial logs), mapped all legacy `trials_*` runs to `plan = "paid"`, and preserved the 16-column specification matching `pvf_20261025_210457.csv`.
+
+**Verification:** Confirmed row count (76 valid data rows, 0 error rows), verified all 16 target columns are present and correctly formatted, and verified distribution across plans (54 paid, 22 free) and models (69 `gemini-3.5-flash`, 4 `gemini-3.7-flash`, 3 `gemini-3.8-flash`).
+
+**Replication notes:** Run `python SunW/AI_Decisions/merge_results.py` to re-aggregate results whenever new trial CSVs are generated.
+
+## 2026-10-25 - Implement Ollama paid vs. unpaid experiment runner
+
+**Context / problem:** Adapt the paid vs. free vehicle classification experiment for Ollama models with support for API key authentication where required.
+
+**Changes made:** Created `SunW/AI_Decisions/prompt_experiment_pvf_ollama.py` using Python standard library `urllib.request`. Configured default model `llama3.5` with instructions for pulling additional models, and added inputs for `OLLAMA_API_KEY_PAID` and `OLLAMA_API_KEY_UNPAID` with automatic token sanitization.
+
+**Verification:** Verified syntax and module import via `python -c "import SunW.AI_Decisions.prompt_experiment_pvf_ollama"`. Confirmed unauthenticated requests work by default when keys are blank.
+
+**Replication notes:** Run `python SunW/AI_Decisions/prompt_experiment_pvf_ollama.py` with Ollama running locally or configure `OLLAMA_HOST`.
+
+## 2026-10-25 - Implement Gemini paid vs. free experiment runner and resolve SDK/auth errors
+
+**Context / problem:** Run Hart vehicle classification trials comparing Google Gemini performance across paid and free accounts on `gemini-3.5-flash`, avoiding quota and import failures.
+
+**Changes made:** Created `SunW/AI_Decisions/prompt_experiment_pvf.py` to run full factorial trials across `GOOGLE_API_KEY_FREE` and `GOOGLE_API_KEY_PAID`. Installed `google-genai` v2.33.0 in Anaconda environment to fix `cannot import name 'genai' from 'google'`. Added `_clean_key()` to strip trailing terminal escape artifacts (e.g. `;5A` from terminal escape sequences) causing `401 ACCESS_TOKEN_TYPE_UNSUPPORTED`. Added a `plan` column to output CSV/JSONL files (`pvf_YYYYMMDD_HHMMSS.csv`).
+
+**Verification:** Verified import and successful end-to-end API generation with sanitized free and paid keys against `gemini-3.5-flash`. Confirmed CSV/JSONL output generation in `SunW/AI_Decisions/results/`.
+
+**Replication notes:** Run `python SunW/AI_Decisions/prompt_experiment_pvf.py`. Ensure environment variables `GOOGLE_API_KEY_FREE` and `GOOGLE_API_KEY_PAID` are set.
+
 ## 2026-10-04 - Publish AI experiments repository
 
 **Context / problem:** Establish a dedicated GitHub repository for the AI vehicle-classification experiments, separate from the course and book material.

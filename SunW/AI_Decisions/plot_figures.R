@@ -11,8 +11,15 @@
 #   2. Individual high-resolution PNG image files for each of the 8 figures.
 #
 # Usage:
-#   Rscript plot_figures.R
-#   Rscript plot_figures.R results/trials_20261003_131733.csv
+#   1. Run with default dataset (trials_20261003_131733.csv):
+#        Rscript plot_figures.R
+#
+#   2. Specify a custom dataset via command line argument (Recommended):
+#        Rscript plot_figures.R results/my_custom_trials.csv
+#        Rscript plot_figures.R trials_20261003_131733.csv
+#        Rscript plot_figures.R /absolute/path/to/trials.csv
+#
+#   3. Or permanently change the default file by editing `default_csv` below (line 75).
 # ==============================================================================
 
 suppressPackageStartupMessages({
@@ -59,10 +66,17 @@ base_dir <- find_base_dir()
 results_dir <- file.path(base_dir, "results")
 output_dir <- file.path(results_dir, "figures")
 
+# ------------------------------------------------------------------------------
+# Input Dataset Selection:
+#   To change the dataset examined:
+#     - Pass the CSV path as a command-line argument: `Rscript plot_figures.R <path_to_csv>`
+#     - OR edit the `default_csv` filename below:
+# ------------------------------------------------------------------------------
 args <- commandArgs(trailingOnly = TRUE)
 default_csv <- file.path(results_dir, "trials_20261003_131733.csv")
 
 if (length(args) >= 1) {
+  # Argument provided via CLI
   if (file.exists(args[1])) {
     csv_file <- args[1]
   } else if (file.exists(file.path(results_dir, args[1]))) {
@@ -71,14 +85,15 @@ if (length(args) >= 1) {
     csv_file <- args[1]
   }
 } else if (file.exists(default_csv)) {
+  # Default dataset in results/
   csv_file <- default_csv
 } else {
-  # Auto-detect latest CSV in results/
+  # Auto-detect latest CSV matching trials_*.csv in results/
   csv_files <- list.files(results_dir, pattern = "^trials_.*\\.csv$", full.names = TRUE)
   if (length(csv_files) > 0) {
     csv_file <- sort(csv_files, decreasing = TRUE)[1]
   } else {
-    stop(sprintf("No trial CSV file found in '%s' directory.", results_dir))
+    stop(sprintf("No trial CSV file found in '%s' directory. Please specify an input CSV.", results_dir))
   }
 }
 

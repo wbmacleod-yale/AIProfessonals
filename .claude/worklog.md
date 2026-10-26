@@ -2,6 +2,44 @@
 
 Experiment-specific history migrated from `values_economics_law` on 2026-10-04.
 
+## 2026-10-26 - Merge PvF dataset (20261026) and add response latency bar graphs
+
+**Context / problem:** Incorporate new trial results from `pvf_20261026_160948.csv` with historical baseline `pvf_merged_20261025.csv` into `pvf_merged_20261026.csv`, retaining only error-free rows. Expand `plot_figures_pvf.R` to visualize response latency (`latency_seconds`) alongside decisions, Hart mentions, input tokens, and output tokens across all 4 experimental conditions.
+
+**Changes made:**
+- Created and executed `SunW/AI_Decisions/merge_pvf_20261026.py` to merge `pvf_merged_20261025.csv` (76 valid rows) and `pvf_20261026_160948.csv` (44 valid rows, excluding 156 quota error rows), outputting 120 total error-free records to `SunW/AI_Decisions/results/pvf_merged_20261026.csv`.
+- Updated `SunW/AI_Decisions/plot_figures_pvf.R`:
+  - Updated default input dataset to `pvf_merged_20261026.csv`.
+  - Generalized continuous numerical plotting with `create_continuous_metric_barplot` supporting `input_tokens`, `output_tokens`, and `latency_seconds` with SEM error bars, mean value labels (formatted to 2 decimal places `%.2fs`), sample sizes `N=...`, and Welch t-test significance stars (* p<0.10, ** p<0.05, *** p<0.01).
+  - Added dedicated warm amber/deep burnt orange color palette for latency (`Free = #FFB74D`, `Paid = #E65100`).
+  - Expanded figure loop to generate 20 figures (5 metrics × 4 conditions) saved into multi-page PDF `SunW/AI_Decisions/results/figures/ai_figures_pvf.pdf` (20 pages) and 300 DPI individual PNGs (`pvf_%02d_...png`).
+- Re-ran `Rscript SunW/AI_Decisions/plot_figures_pvf.R SunW/AI_Decisions/results/pvf_merged_20261026.csv`.
+
+**Verification:**
+- Verified `pvf_merged_20261026.csv` contains 120 valid rows (76 paid, 44 free; 113 `gemini-3.5-flash`).
+- Verified `plot_figures_pvf.R` successfully ran, creating `ai_figures_pvf.pdf` (20 pages) and all 20 individual PNGs without errors.
+- Inspected generated latency plots (`pvf_05_no_judge_no_rule_latency.png` and `pvf_10_no_judge_rule_latency.png`) to confirm visual clarity, SEM error bars, formatting, and significance legend.
+
+## 2026-10-26 - Add HF_TOKEN support and revert to persistent cumulative output logs for DPO runner
+
+**Context / problem:** Support authenticated Hugging Face token ingestion for gated model access (e.g. `meta-llama/Meta-Llama-3-8B-Instruct`) and ensure all experiment output files maintain persistent, cumulative logs across sequential iterations without per-run timestamped file fragmentation.
+
+**Changes made:**
+- Updated `SunW/AI_Decisions/train_and_evaluate_dpo.py` to add `get_hf_token()` and `_clean_key()` to discover and sanitize tokens from `--hf_token` CLI args, environment variables (`HF_TOKEN`, `HUGGING_FACE_HUB_TOKEN`, `HF_AUTH_TOKEN`), or `~/.cache/huggingface/token`.
+- Reverted output file generation to persistent, untimestamped paths that append cumulatively:
+  - Summary CSV: `SunW/AI_Decisions/results/dpo_llama3_experiment_log.csv` (appends new row per iteration).
+  - Granular trials JSONL: `SunW/AI_Decisions/results/dpo_evaluation_trials.jsonl` (appends all trial records, prefixed with iteration id).
+  - Misaligned error JSONL: `SunW/AI_Decisions/results/dpo_misaligned_questions.jsonl` (appends failures per iteration).
+  - Run configuration JSON: `SunW/AI_Decisions/results/dpo_config.json` (stores latest configuration state).
+- Cleaned up transient timestamped test files from previous trial.
+
+**Verification:**
+- Executed `python3 SunW/AI_Decisions/train_and_evaluate_dpo.py --iteration 1` and `python3 SunW/AI_Decisions/train_and_evaluate_dpo.py --simulate_baseline --iteration 0`.
+- Verified that each execution appends new records to `dpo_llama3_experiment_log.csv` and `dpo_evaluation_trials.jsonl` without overwriting prior iterations.
+
+**Replication notes:**
+Run `python3 SunW/AI_Decisions/train_and_evaluate_dpo.py --iteration <N>`. Pass `--hf_token <token>` or set `export HF_TOKEN="hf_..."`. Cumulative logs persist in `SunW/AI_Decisions/results/`.
+
 ## 2026-10-25 - Implement DPO alignment dataset generator and evaluation pipeline for moral dilemmas
 
 **Context / problem:** Explore training an AI model at a level deeper than frontend prompting (parameter optimization via DPO) to follow a demographic resource-allocation priority policy (prioritizing female individuals in binary dilemma trade-offs). Ensure training data avoids shortcut learning/memorization (lookup tables), and build an evaluation harness with token profiling and misaligned-question auditing.

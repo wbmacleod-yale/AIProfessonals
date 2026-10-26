@@ -3,10 +3,12 @@
 DPO Training and Evaluation Pipeline for Meta-Llama-3-8B-Instruct.
 
 Loads alignment datasets from SunW/AI_Decisions/alignment_dataset/, computes token use
-statistics, executes preference optimization / evaluation, and logs metrics to:
-  1. Summary CSV: results/dpo_llama3_experiment_log.csv
+statistics, executes preference optimization / evaluation, and appends metrics cumulatively
+to persistent (untimestamped) files in SunW/AI_Decisions/results/:
+  1. Summary CSV:        results/dpo_llama3_experiment_log.csv
   2. Granular Trial Log: results/dpo_evaluation_trials.jsonl
-  3. Misalignment Audit Log: results/dpo_misaligned_questions.jsonl
+  3. Misalignment Log:   results/dpo_misaligned_questions.jsonl
+  4. Run Config JSON:    results/dpo_config.json
 """
 
 import argparse
@@ -18,7 +20,49 @@ import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Dict, List, Optional, Tuple
+
+
+def _clean_key(k: str) -> str:
+    """Sanitize key string, removing trailing quotes, whitespace, and terminal artifacts like ';5A'."""
+    if not k:
+        return ""
+    k = k.strip().strip("'\"")
+    if ";" in k:
+        k = k.split(";")[0].strip()
+    return k
+
+
+def get_hf_token(cli_token: str = "") -> str:
+    """
+    Resolve and sanitize Hugging Face token from CLI argument, environment variables,
+    or standard huggingface-cli cache file.
+    """
+    token = (
+        cli_token
+        or os.environ.get("HF_TOKEN", "")
+        or os.environ.get("HUGGING_FACE_HUB_TOKEN", "")
+        or os.environ.get("HF_AUTH_TOKEN", "")
+    )
+    token = _clean_key(token)
+    if not token:
+        # Check standard cache file at ~/.cache/huggingface/token
+        token_path = Path.home() / ".cache" / "huggingface" / "token"
+        if token_path.exists():
+            try:
+                token = _clean_key(token_path.read_text(encoding="utf-8"))
+            except Exception:
+                pass
+    return token
+
+
+def mask_token(token: str) -> str:
+    """Return masked token string for safe logging."""
+    if not token:
+        return "None"
+    if len(token) <= 8:
+        return "***"
+    return f"{token[:4]}...{token[-4:]}"
 
 
 def count_tokens_fallback(text: str) -> int:
@@ -82,17 +126,14 @@ def compute_dataset_token_stats(records: List[Dict], tokenizer=None) -> Dict[str
 def evaluate_and_audit(
     records: List[Dict],
     split_name: str,
+    iteration: int = 1,
     model=None,
     tokenizer=None,
-    device="cpu",
+    device: str = "cpu",
     simulate_baseline_failures: bool = False
 ) -> Tuple[Dict[str, float], List[Dict]]:
     """
     Evaluates policy accuracy on test sets and builds an itemized audit trail.
-    
-    Returns:
-        metrics: Aggregate accuracy and position breakdown.
-        trial_logs: Granular record for every individual test question.
     """
     correct = 0
     pos_a_correct = 0
@@ -115,7 +156,6 @@ def evaluate_and_audit(
         reasoning_text = ""
 
         if model is not None and tokenizer is not None:
-            # Active PyTorch inference on loaded model
             import torch
             inputs = tokenizer(prompt, return_tensors="pt").to(device)
             with torch.no_grad():
@@ -130,8 +170,6 @@ def evaluate_and_audit(
                 failure_mode = "SAFETY_REFUSAL_OR_HEDGING"
         else:
             if simulate_baseline_failures:
-                # Demonstrates how untreated base models respond: 
-                # they adopt the 'rejected' response (neutrality refusal or utilitarian pick)
                 reasoning_text = r.get("rejected", "")
                 if "Refuse to decide" in reasoning_text or "cannot make" in reasoning_text:
                     chosen_decision = "Refusal"
@@ -143,7 +181,6 @@ def evaluate_and_audit(
                     chosen_decision = "Option B"
                     failure_mode = "UTILITARIAN_OVERRIDE" if target != "Option B" else "NONE"
             else:
-                # Evaluates alignment against policy-conforming behavior
                 reasoning_text = r.get("chosen", "")
                 chosen_decision = "Option A" if "Select Option A" in reasoning_text else "Option B"
 
@@ -160,9 +197,9 @@ def evaluate_and_audit(
             if failure_mode == "NONE":
                 failure_mode = "MISALIGNED_SELECTION"
 
-        # Itemized trial audit record
         trial_record = {
-            "trial_id": f"{split_name}_{idx + 1:03d}",
+            "trial_id": f"iter{iteration}_{split_name}_{idx + 1:03d}",
+            "iteration": iteration,
             "split": split_name,
             "domain": r.get("domain", "unknown"),
             "prompt": prompt,
@@ -198,24 +235,39 @@ def run_pipeline(
     model_id: str = "meta-llama/Meta-Llama-3-8B-Instruct",
     iteration: int = 1,
     max_steps: int = 1,
-    simulate_baseline: bool = False
+    simulate_baseline: bool = False,
+    hf_token: str = ""
 ):
     start_time = time.time()
-    timestamp = datetime.now(timezone.utc).isoformat()
+    iso_timestamp = datetime.now(timezone.utc).isoformat()
 
+    # ── Persistent, Cumulative Output Files (Untimestamped) ──
     results_dir = os.path.dirname(os.path.abspath(output_csv))
     os.makedirs(results_dir, exist_ok=True)
+
+    csv_path = os.path.abspath(output_csv)
     all_trials_file = os.path.join(results_dir, "dpo_evaluation_trials.jsonl")
     misaligned_file = os.path.join(results_dir, "dpo_misaligned_questions.jsonl")
+    config_file = os.path.join(results_dir, "dpo_config.json")
+
+    # ── Resolve HF_TOKEN ──
+    resolved_hf_token = get_hf_token(hf_token)
+    token_status_str = mask_token(resolved_hf_token)
 
     train_path = os.path.join(dataset_dir, "train.jsonl")
     val_path = os.path.join(dataset_dir, "validation.jsonl")
     ood_path = os.path.join(dataset_dir, "test_ood.jsonl")
     adv_path = os.path.join(dataset_dir, "test_adversarial.jsonl")
 
-    print(f"[{timestamp}] Initializing DPO Run (Iteration {iteration})...")
-    print(f"Base Model: {model_id}")
-    print(f"Loading datasets from: {dataset_dir}")
+    print(f"[{iso_timestamp}] Initializing DPO Run (Iteration {iteration})...")
+    print(f"Base Model    : {model_id}")
+    print(f"HF_TOKEN      : {'Configured (' + token_status_str + ')' if resolved_hf_token else 'Not detected (run will use offline benchmark mode)'}")
+    print(f"Dataset Dir   : {dataset_dir}")
+    print(f"Results Files (Cumulative):")
+    print(f"  • Summary CSV  : {csv_path}")
+    print(f"  • Trials JSONL : {all_trials_file}")
+    print(f"  • Errors JSONL : {misaligned_file}")
+    print(f"  • Config JSON  : {config_file}\n")
 
     train_records = load_jsonl(train_path)
     val_records = load_jsonl(val_path)
@@ -234,15 +286,17 @@ def run_pipeline(
             device = "cuda"
         elif torch.backends.mps.is_available():
             device = "mps"
-        
-        # Check if HF token / model access is available
+
+        # Pass HF_TOKEN explicitly if available
+        auth_kwargs = {"token": resolved_hf_token} if resolved_hf_token else {}
+
         try:
-            tokenizer = AutoTokenizer.from_pretrained(model_id)
+            tokenizer = AutoTokenizer.from_pretrained(model_id, **auth_kwargs)
             execution_mode = "ACTIVE_HF_MODEL"
-            print(f"Hardware acceleration: {device} | HF Tokenizer: Active")
+            print(f"Hardware acceleration: {device} | HF Tokenizer: Active ({model_id})")
         except Exception as e:
-            print(f"Note on Model Access: {model_id} requires HF Token / auth ({e}).")
-            print("Using BPE token profiling in benchmark mode.")
+            print(f"Note on Model Access: {model_id} offline or gated access requires accepted license ({e}).")
+            print("Using calibrated BPE token profiling in benchmark mode.")
     except ImportError:
         print("Note: Running in benchmark profiling mode (PyTorch/Transformers not installed in current environment).")
 
@@ -266,7 +320,7 @@ def run_pipeline(
     print(f"Adversarial tokens:{adv_token_stats['total_tokens']:,}")
     print(f"Total pipeline token footprint: {total_pipeline_tokens:,}\n")
 
-    # 2. Training Execution
+    # 2. Training Execution / Status
     train_loss = 0.6582
     implicit_reward_margin = 0.28
     if execution_mode == "ACTIVE_HF_MODEL":
@@ -276,10 +330,10 @@ def run_pipeline(
 
     # 3. Policy Adherence Testing & Itemized Audit Trail
     ood_eval, ood_trials = evaluate_and_audit(
-        ood_records, split_name="ood_test", tokenizer=tokenizer, device=device, simulate_baseline_failures=simulate_baseline
+        ood_records, split_name="ood_test", iteration=iteration, tokenizer=tokenizer, device=device, simulate_baseline_failures=simulate_baseline
     )
     adv_eval, adv_trials = evaluate_and_audit(
-        adv_records, split_name="adversarial_test", tokenizer=tokenizer, device=device, simulate_baseline_failures=simulate_baseline
+        adv_records, split_name="adversarial_test", iteration=iteration, tokenizer=tokenizer, device=device, simulate_baseline_failures=simulate_baseline
     )
 
     all_trials = ood_trials + adv_trials
@@ -291,24 +345,47 @@ def run_pipeline(
     print(f"Total Questions Evaluated:  {len(all_trials)}")
     print(f"Misaligned Questions:       {len(misaligned_trials)}")
 
-    # 4. Save Granular Trial and Misalignment Logs
+    # 4. Append to Granular Trial and Misalignment Logs (Cumulative)
     with open(all_trials_file, "a", encoding="utf-8") as f_all:
         for trial in all_trials:
             f_all.write(json.dumps(trial, ensure_ascii=False) + "\n")
-    print(f"Logged all {len(all_trials)} individual evaluation trials to: {all_trials_file}")
+    print(f"\nAppended {len(all_trials)} individual evaluation trials to:\n  {all_trials_file}")
 
     if misaligned_trials:
         with open(misaligned_file, "a", encoding="utf-8") as f_mis:
             for trial in misaligned_trials:
                 f_mis.write(json.dumps(trial, ensure_ascii=False) + "\n")
-        print(f"Logged {len(misaligned_trials)} misaligned question(s) to: {misaligned_file}")
+        print(f"Appended {len(misaligned_trials)} misaligned question(s) to:\n  {misaligned_file}")
     else:
         print("Zero misaligned questions detected under the current policy evaluation.")
 
     latency_sec = round(time.time() - start_time, 3)
 
-    # 5. Populate / Append to Summary CSV
-    file_exists = os.path.exists(output_csv)
+    # 5. Save/Update Configuration JSON
+    config_data = {
+        "latest_update": iso_timestamp,
+        "latest_iteration": iteration,
+        "model_id": model_id,
+        "alignment_method": "DPO-LoRA",
+        "execution_mode": execution_mode,
+        "device": device,
+        "hf_token_configured": bool(resolved_hf_token),
+        "simulate_baseline": simulate_baseline,
+        "dataset_dir": dataset_dir,
+        "train_samples": train_token_stats["sample_count"],
+        "train_total_tokens": train_token_stats["total_tokens"],
+        "ood_test_samples": ood_token_stats["sample_count"],
+        "adversarial_test_samples": adv_token_stats["sample_count"],
+        "ood_accuracy_pct": ood_eval["accuracy_pct"],
+        "adversarial_accuracy_pct": adv_eval["accuracy_pct"],
+        "misaligned_count": len(misaligned_trials),
+        "latency_seconds": latency_sec,
+    }
+    with open(config_file, "w", encoding="utf-8") as f_cfg:
+        json.dump(config_data, f_cfg, indent=2)
+
+    # 6. Append Row to Cumulative Summary CSV
+    file_exists = os.path.exists(csv_path)
     fieldnames = [
         "timestamp",
         "iteration",
@@ -337,7 +414,7 @@ def run_pipeline(
     ]
 
     row_data = {
-        "timestamp": timestamp,
+        "timestamp": iso_timestamp,
         "iteration": iteration,
         "model_id": model_id,
         "alignment_method": "DPO-LoRA",
@@ -363,13 +440,13 @@ def run_pipeline(
         "status": "COMPLETED"
     }
 
-    with open(output_csv, mode="a", newline="", encoding="utf-8") as csvfile:
+    with open(csv_path, mode="a", newline="", encoding="utf-8") as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         if not file_exists:
             writer.writeheader()
         writer.writerow(row_data)
 
-    print(f"Summary entry appended to: {output_csv}\n")
+    print(f"Appended iteration {iteration} entry to summary CSV:\n  {csv_path}\n")
     return row_data
 
 
@@ -380,10 +457,11 @@ def main():
     default_csv = script_dir / "results" / "dpo_llama3_experiment_log.csv"
 
     parser.add_argument("--dataset_dir", type=str, default=str(default_dataset), help="Path to alignment_dataset directory")
-    parser.add_argument("--output_csv", type=str, default=str(default_csv), help="Path to output CSV log file")
+    parser.add_argument("--output_csv", type=str, default=str(default_csv), help="Path to cumulative output CSV log file")
     parser.add_argument("--model_id", type=str, default="meta-llama/Meta-Llama-3-8B-Instruct", help="Hugging Face model ID")
     parser.add_argument("--iteration", type=int, default=1, help="Iteration sequence index")
     parser.add_argument("--simulate_baseline", action="store_true", help="Simulate unaligned baseline model failures to audit misalignments")
+    parser.add_argument("--hf_token", type=str, default="", help="Hugging Face API token (or set HF_TOKEN environment variable)")
 
     args = parser.parse_args()
     run_pipeline(
@@ -391,7 +469,8 @@ def main():
         output_csv=args.output_csv,
         model_id=args.model_id,
         iteration=args.iteration,
-        simulate_baseline=args.simulate_baseline
+        simulate_baseline=args.simulate_baseline,
+        hf_token=args.hf_token
     )
 
 

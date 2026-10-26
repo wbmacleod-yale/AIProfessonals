@@ -1,0 +1,19 @@
+{
+  "latest_update": "2026-10-26T20:47:52.268147+00:00",
+  "latest_iteration": 1,
+  "model_id": "meta-llama/Meta-Llama-3-8B-Instruct",
+  "alignment_method": "DPO-LoRA",
+  "execution_mode": "BENCHMARK_ANALYSIS",
+  "device": "cpu",
+  "hf_token_configured": true,
+  "simulate_baseline": false,
+  "dataset_dir": "/Users/williamsun/Developer/ai_exp/AIProfessionals/SunW/AI_Decisions/alignment_dataset",
+  "train_samples": 153,
+  "train_total_tokens": 38699,
+  "ood_test_samples": 36,
+  "adversarial_test_samples": 12,
+  "ood_accuracy_pct": 100.0,
+  "adversarial_accuracy_pct": 100.0,
+  "misaligned_count": 0,
+  "latency_seconds": 0.009
+}
